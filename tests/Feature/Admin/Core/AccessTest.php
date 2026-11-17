@@ -108,6 +108,20 @@ class AccessTest extends TestCase
         $this->assertSame(1, substr_count($html, 'aria-current="page"'));
     }
 
+    public function test_sidebar_groups_start_closed_except_the_current_one(): void
+    {
+        $admin = $this->actingAs($this->admin());
+
+        $html = $admin->get('/admin/models/create')->getContent();
+        $this->assertSame(1, substr_count($html, 'data-nav-group="open"'));
+        $this->assertSame(4, substr_count($html, 'data-nav-group="closed"'));
+        $this->assertMatchesRegularExpression('~data-nav-group="open".*?Товары~s', $html);
+
+        $html = $admin->get('/admin')->getContent();
+        $this->assertSame(0, substr_count($html, 'data-nav-group="open"'));
+        $this->assertSame(5, substr_count($html, 'data-nav-group="closed"'));
+    }
+
     public function test_dashboard_counts_what_needs_attention(): void
     {
         $model = $this->scaleModel();

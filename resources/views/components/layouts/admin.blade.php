@@ -134,12 +134,19 @@
             </div>
 
             <nav class="flex-1 overflow-y-auto px-2 py-3" aria-label="Разделы панели">
-                @foreach ($nav as [$groupLabel, $items])
-                    <div class="mb-3">
+                {{-- Groups fold: all start closed except the one holding the current page. --}}
+                @foreach ($nav as $groupIndex => [$groupLabel, $items])
+                    @php $groupOpen = collect($items)->contains('active', true); @endphp
+                    <div class="mb-1" @if ($groupLabel) x-data="{ open: {{ $groupOpen ? 'true' : 'false' }} }" data-nav-group="{{ $groupOpen ? 'open' : 'closed' }}" @endif>
                         @if ($groupLabel)
-                            <div class="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-wider text-steel">{{ $groupLabel }}</div>
+                            <button type="button" x-on:click="open = ! open" x-bind:aria-expanded="open.toString()"
+                                    aria-expanded="{{ $groupOpen ? 'true' : 'false' }}" aria-controls="nav-group-{{ $groupIndex }}"
+                                    class="flex w-full items-center justify-between rounded-m px-3 pb-1 pt-2 text-left text-[11px] font-semibold uppercase tracking-wider text-steel hover:text-ink">
+                                <span>{{ $groupLabel }}</span>
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 flex-none transition-transform motion-reduce:transition-none" x-bind:class="open ? 'rotate-90' : ''" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                            </button>
                         @endif
-                        <ul>
+                        <ul @if ($groupLabel) id="nav-group-{{ $groupIndex }}" x-show="open" @unless ($groupOpen) style="display:none" @endunless @endif class="mb-2">
                             @foreach ($items as $item)
                                 <li>
                                     <a href="{{ $item['url'] }}"
