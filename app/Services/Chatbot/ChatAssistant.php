@@ -7,6 +7,7 @@ use App\Models\ChatMessage;
 use App\Services\Chatbot\Claude\ClaudeClient;
 use App\Services\Chatbot\Claude\ClaudeFactory;
 use App\Services\Chatbot\Claude\ClaudeUnavailable;
+use App\Support\UzbekText;
 
 /**
  * Answers one visitor message with Claude and stores the reply.
@@ -71,7 +72,9 @@ class ChatAssistant
         $reason = null;
 
         // Live display goes through the price guard: text it would block is never shown.
-        $stream = $onText === null ? null : new GuardedStream($onText(...));
+        // Uzbek replies get the site's oʻ/gʻ apostrophes, live and stored alike.
+        $tidy = $locale === 'uz' ? UzbekText::normalize(...) : static fn (string $t): string => $t;
+        $stream = $onText === null ? null : new GuardedStream(fn (string $shown) => $onText($tidy($shown)));
 
         try {
             for ($round = 1; $round <= self::MAX_ROUNDS; $round++) {
@@ -145,7 +148,7 @@ class ChatAssistant
 
         $answer = $conversation->messages()->create([
             'role' => ChatMessage::ROLE_ASSISTANT,
-            'content' => $text,
+            'content' => $tidy($text),
             'status' => $status,
             'model' => $model,
             'tool_calls' => $calls === [] ? null : $calls,
