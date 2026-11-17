@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+@import './site.css';
+@import './pages-b.css';
+@import './chat.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views';
+@source '../../app/Livewire';
+
+/*
+ | Design tokens, carried over from the approved prototype (.claude/design/prototype-src/head.html).
+ | The brand colour lives in ONE variable, --accent. The site layout re-declares it from the
+ | admin "accent" setting, so every bg-accent / text-accent / border-accent follows.
+ | --accent-ink and --accent-soft are its two companions (settings "accent_ink", "accent_soft").
+ */
+:root {
+    --accent: #FF6400;       /* Rongta orange, sampled from the official logo */
+    --accent-ink: #B04300;   /* darker orange: text on light backgrounds, hover fills */
+    --accent-soft: #FFF0E6;  /* pale orange panel background */
+    --on-accent: #151A21;    /* text on the orange accent (white fails contrast) */
+}
+
+@theme inline {
+    --color-accent: var(--accent);
+    --color-accent-ink: var(--accent-ink);
+    --color-accent-soft: var(--accent-soft);
+    --color-on-accent: var(--on-accent);
+}
+
+@theme {
+    /* Light site */
+    --color-paper: #EEF1F2;      /* the counter: page background */
+    --color-paper-2: #E2E7EA;
+    --color-label: #FFFFFF;      /* label stock: cards and panels */
+    --color-ink: #151A21;        /* thermal-print black: text */
+    --color-steel: #55606C;      /* secondary text */
+    --color-line: #CFD6DB;
+    --color-led: #FF7A1F;        /* scale readout digits */
+
+    /* Dark: AURORA AI sections only */
+    --color-night: #0E1828;
+    --color-night-2: #16243A;
+    --color-night-line: #2B3D58;
+    --color-night-text: #E9EEF4;
+    --color-night-soft: #A9B8C9;
+    --color-aurora: #8FE3F0;
+
+    --radius-s: 4px;
+    --radius-m: 10px;
+    --radius-l: 16px;
+
+    --shadow-card: 0 1px 0 var(--color-line), 0 14px 28px -20px rgb(21 26 33 / 0.45);
+
+    --font-display: 'Sofia Sans Condensed', 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+    --font-body: 'Golos Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-sans: 'Golos Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}

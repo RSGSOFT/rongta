@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+
+/* Admin panel styles (admin agent A). Separate Vite entry; the admin layout loads this instead of app.css. */
+
+@source '../views/components/layouts/admin.blade.php';
+@source '../views/components/admin';
+@source '../views/livewire/admin';
+@source '../../app/Livewire/Admin';
+
+/* Same brand tokens as the public site. The admin layout re-declares --accent from the "accent" setting. */
+:root {
+    --accent: #FF6400;
+    --accent-ink: #B04300;
+    --accent-soft: #FFF0E6;
+    --on-accent: #151A21;
+}
+
+@theme inline {
+    --color-accent: var(--accent);
+    --color-accent-ink: var(--accent-ink);
+    --color-accent-soft: var(--accent-soft);
+    --color-on-accent: var(--on-accent);
+}
+
+@theme {
+    --color-paper: #F3F5F6;
+    --color-paper-2: #E6EAED;
+    --color-label: #FFFFFF;
+    --color-ink: #151A21;
+    --color-steel: #55606C;
+    --color-line: #D5DBE0;
+    --color-ok: #1E7A46;
+    --color-ok-soft: #E5F4EB;
+    --color-warn: #8A5A00;
+    --color-warn-soft: #FFF3D6;
+    --color-danger: #B3261E;
+    --color-danger-soft: #FCE9E7;
+
+    --radius-s: 4px;
+    --radius-m: 8px;
+    --radius-l: 12px;
+
+    --shadow-card: 0 1px 0 var(--color-line), 0 10px 24px -20px rgb(21 26 33 / 0.45);
+
+    --font-sans: 'Golos Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--accent-ink);
+        outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+@layer components {
+    /* Text controls: x-admin.input, x-admin.textarea, x-admin.select */
+    .adm-control {
+        display: block;
+        width: 100%;
+        min-height: 2.5rem;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-m);
+        background: var(--color-label);
+        color: var(--color-ink);
+        font-size: 0.875rem;
+        line-height: 1.4;
+        transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .adm-control::placeholder {
+        color: #8A949E;
+    }
+
+    .adm-control:hover {
+        border-color: #AEB8C1;
+    }
+
+    .adm-control:focus {
+        outline: none;
+        border-color: var(--accent-ink);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .adm-control:disabled {
+        background: var(--color-paper);
+        color: var(--color-steel);
+        cursor: not-allowed;
+    }
+
+    .adm-control[aria-invalid='true'] {
+        border-color: var(--color-danger);
+    }
+
+    textarea.adm-control {
+        min-height: 5rem;
+        resize: vertical;
+    }
+
+    /* Trilingual inputs: language tag on the left of each row */
+    .adm-lang {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .adm-lang-tag {
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        border: 1px solid var(--color-line);
+        border-right: 0;
+        border-radius: var(--radius-m) 0 0 var(--radius-m);
+        background: var(--color-paper);
+        color: var(--color-steel);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .adm-lang .adm-control {
+        border-radius: 0 var(--radius-m) var(--radius-m) 0;
+    }
+
+    .adm-lang.is-missing .adm-lang-tag {
+        border-color: #E2B93B;
+        background: var(--color-warn-soft);
+        color: var(--color-warn);
+    }
+
+    .adm-lang.is-missing .adm-control:not(:focus) {
+        border-color: #E2B93B;
+    }
+
+    /* Table: x-admin.table */
+    .adm-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.875rem;
+    }
+
+    .adm-table th {
+        padding: 0.625rem 0.75rem;
+        border-bottom: 1px solid var(--color-line);
+        background: var(--color-paper);
+        color: var(--color-steel);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .adm-table td {
+        padding: 0.625rem 0.75rem;
+        border-bottom: 1px solid var(--color-paper-2);
+        vertical-align: middle;
+    }
+
+    .adm-table tbody tr:last-child td {
+        border-bottom: 0;
+    }
+
+    .adm-table tbody tr:hover td {
+        background: #FAFBFB;
+    }
+}
