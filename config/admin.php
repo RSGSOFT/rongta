@@ -12,4 +12,11 @@ return [
     'email' => env('ADMIN_EMAIL'),
     'password' => env('ADMIN_PASSWORD'),
 
+    /*
+    | Local development only: open /admin without a password, signed in as the first active
+    | admin. Ignored unless APP_ENV=local (see App\Http\Middleware\DevAutoLogin).
+    */
+
+    'auto_login' => (bool) env('ADMIN_AUTO_LOGIN', false),
+
 ];

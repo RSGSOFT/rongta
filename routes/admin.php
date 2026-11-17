@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\DevAutoLogin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 | Everything is under /admin with route names starting "admin.".
 */
 
-Route::prefix('admin')->name('admin.')->group(function () {
+// DevAutoLogin signs a guest in on a local machine only (APP_ENV=local + ADMIN_AUTO_LOGIN=true).
+Route::prefix('admin')->name('admin.')->middleware(DevAutoLogin::class)->group(function () {
     require __DIR__.'/admin/auth.php';
 
     Route::middleware(['auth', 'staff'])->group(function () {
