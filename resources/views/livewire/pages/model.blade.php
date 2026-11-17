@@ -1,5 +1,6 @@
 @php
-    $photos = filled($model->image);
+    // The "schematic, a photo will replace it" note only for the prototype drawing.
+    $photos = filled($model->image) || filled($model->drawing);
     $sourceUrl = (string) ($model->source_url ?? '');
 @endphp
 <div>

@@ -22,6 +22,7 @@ class Labels
         'deactivated' => 'Отключение доступа',
         'status_changed' => 'Смена статуса',
         'exported' => 'Выгрузка',
+        'drawing_generated' => 'Рисунок ИИ',
     ];
 
     public const SUBJECTS = [

@@ -201,4 +201,8 @@
             </x-slot:footer>
         </x-admin.card>
     </form>
+
+    @if ($model)
+        <livewire:admin.items.models.drawing :model-id="$model->id" :key="'drawing-'.$model->id" />
+    @endif
 </x-admin.page>

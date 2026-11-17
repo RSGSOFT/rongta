@@ -27,6 +27,7 @@ class ScaleModel extends Model
             'headline' => 'array',
             'intro' => 'array',
             'gallery' => 'array',
+            'drawing_views' => 'array',
             'is_aurora' => 'boolean',
             'is_published' => 'boolean',
         ];

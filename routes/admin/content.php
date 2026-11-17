@@ -65,4 +65,5 @@ Route::middleware('staff:admin')->group(function () {
     Route::livewire('/settings', Settings\Index::class)->name('settings');
     Route::livewire('/settings/trust', Settings\Trust::class)->name('settings.trust');
     Route::livewire('/settings/maker', Settings\Maker::class)->name('settings.maker');
+    Route::livewire('/settings/lineart', Settings\DrawingPrompt::class)->name('settings.lineart');
 });

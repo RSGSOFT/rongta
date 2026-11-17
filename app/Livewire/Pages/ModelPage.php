@@ -4,6 +4,7 @@ namespace App\Livewire\Pages;
 
 use App\Models\ModelSpec;
 use App\Models\ScaleModel;
+use App\Support\LineArt;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
@@ -38,6 +39,20 @@ class ModelPage extends Component
     protected function views(): array
     {
         $model = $this->model;
+
+        // The model's own line drawing and its detail crops, then its real photos.
+        if (filled($model->drawing)) {
+            $views = [['src' => null, 'viewBox' => $model->drawing_views['viewBox'] ?? '0 0 240 210', 'caption' => ui('view.general')]];
+            foreach (LineArt::crops((array) ($model->drawing_views['crops'] ?? [])) as $crop) {
+                $views[] = ['src' => null, 'viewBox' => $crop['viewBox'], 'caption' => ui($crop['key'])];
+            }
+            $photos = filled($model->image) ? array_merge([$model->image], array_values(array_filter((array) $model->gallery, 'is_string'))) : [];
+            foreach ($photos as $i => $path) {
+                $views[] = ['src' => self::fileUrl($path), 'viewBox' => null, 'caption' => ui('site.view.photo', ['n' => $i + 1])];
+            }
+
+            return $views;
+        }
 
         if (filled($model->image)) {
             $views = [];

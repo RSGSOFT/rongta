@@ -1,6 +1,7 @@
 {{--
-    Scale picture. Shows the model's real photo when it has one; otherwise the schematic SVG
-    drawing ported from the approved prototype (prototype-src/app1.js, ILL).
+    Scale picture. Shows the model's own line drawing when it has one (made in the admin from its
+    photos, stored already cleaned by App\Support\LineArt); otherwise its real photo; otherwise the
+    schematic SVG drawing ported from the approved prototype (prototype-src/app1.js, ILL).
 
     <x-site.scale-ill :model="$scaleModel" />
     <x-site.scale-ill :model="$scaleModel" view-box="84 0 144 120" />      detail crop (always the drawing)
@@ -12,16 +13,19 @@
     $o = array_merge((array) ($model?->illustration ?? []), (array) $opts);
     $name = $name ?? $model?->name ?? '';
 
+    $drawing = $model && filled($model->drawing) ? (string) $model->drawing : null;
+    $fullBox = ($drawing !== null ? ($model->drawing_views['viewBox'] ?? null) : null) ?: '0 0 240 210';
+
     $image = null;
-    if ($photo && $viewBox === null && $model && filled($model->image)) {
+    if ($drawing === null && $photo && $viewBox === null && $model && filled($model->image)) {
         $path = (string) $model->image;
         $image = preg_match('#^(https?:)?//#', $path) || str_starts_with($path, '/')
             ? $path
             : (is_file(public_path($path)) ? asset($path) : asset('storage/'.ltrim($path, '/')));
     }
 
-    $svg = '';
-    if ($image === null) {
+    $svg = $drawing ?? '';
+    if ($image === null && $drawing === null) {
         $shadow = fn ($cx, $w, $y = 184) => '<ellipse class="i-shadow" cx="'.$cx.'" cy="'.$y.'" rx="'.($w / 2).'" ry="6"/>';
         $platter = fn ($x, $y, $w, $baseTop) => '<rect class="i-neck" x="'.($x + $w / 2 - 16).'" y="'.($y + 6).'" width="32" height="'.($baseTop - $y - 5).'"/><rect class="i-steel" x="'.$x.'" y="'.$y.'" width="'.$w.'" height="8" rx="4"/>';
         $disp = fn ($x, $y, $w, $h, $txt = '', $fs = 10) => '<rect class="i-dark" x="'.$x.'" y="'.$y.'" width="'.$w.'" height="'.$h.'" rx="3"/>'
@@ -130,5 +134,5 @@
 @if ($image !== null)
     <img {{ $attributes->class('ill-photo') }} src="{{ $image }}" alt="{{ $name }}" loading="lazy">
 @else
-    <svg {{ $attributes->class('ill') }} viewBox="{{ $viewBox ?? '0 0 240 210' }}" role="img" aria-label="{{ ui('ill.alt', ['name' => $name]) }}">{!! $svg !!}</svg>
+    <svg {{ $attributes->class('ill') }} viewBox="{{ $viewBox ?? $fullBox }}" role="img" aria-label="{{ ui('ill.alt', ['name' => $name]) }}">{!! $svg !!}</svg>
 @endif
