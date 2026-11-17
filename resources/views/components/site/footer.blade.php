@@ -1,10 +1,18 @@
 {{-- Site footer: about line, distributor badge, section links, contacts. --}}
+@php
+    // Distributor website from admin settings; the badge links to it (new tab) only when set.
+    $distributorUrl = (string) setting('contacts.distributor_url', '');
+@endphp
 <footer class="ftr">
     <div class="wrap ftr-in">
         <div>
             <x-site.logo />
             <p style="margin-top:12px;max-width:44ch">{{ ui('ftr.about') }}</p>
-            <span class="badge"><span class="badge-dot"></span>{{ ui('badge.dist') }}</span>
+            @if ($distributorUrl !== '')
+                <a class="badge" id="ftr-dist" href="{{ $distributorUrl }}" target="_blank" rel="noopener"><span class="badge-dot"></span>{{ ui('ftr.dist') }}</a>
+            @else
+                <span class="badge" id="ftr-dist"><span class="badge-dot"></span>{{ ui('ftr.dist') }}</span>
+            @endif
         </div>
         <div>
             <h4>{{ ui('ftr.site') }}</h4>

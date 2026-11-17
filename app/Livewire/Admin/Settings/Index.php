@@ -19,7 +19,7 @@ use Livewire\WithFileUploads;
 
 /**
  * /admin/settings: site settings, admins only. Stored shapes are the ones the public site reads:
- *   contacts       {phone, telegram, is_placeholder}
+ *   contacts       {phone, telegram, is_placeholder, distributor_url}
  *   accent         "#RRGGBB";  accent_ink / accent_soft  "#RRGGBB" or null (stylesheet default)
  *   logo           {logo, symbol, wordmark}: paths under public/
  *   home.sections  [{key, visible}, ...] in display order
@@ -97,6 +97,7 @@ class Index extends Component
         $this->contacts = [
             'phone' => (string) ($contacts['phone'] ?? ''),
             'telegram' => (string) ($contacts['telegram'] ?? ''),
+            'distributor_url' => (string) ($contacts['distributor_url'] ?? ''),
             // Same rule as App\Support\RsgContacts: a missing flag means "not confirmed".
             'is_placeholder' => (bool) ($contacts['is_placeholder'] ?? true),
         ];
@@ -244,6 +245,7 @@ class Index extends Component
         return [
             'contacts.phone' => [Rule::requiredIf(! ($this->contacts['is_placeholder'] ?? false)), 'nullable', 'string', 'max:30', 'regex:'.Options::PHONE_REGEX],
             'contacts.telegram' => ['nullable', 'string', 'max:40', 'regex:'.Options::TELEGRAM_REGEX],
+            'contacts.distributor_url' => ['nullable', 'string', 'max:255', 'url:https'],
             'contacts.is_placeholder' => ['boolean'],
 
             'colors.accent' => ['required', 'string', 'regex:'.self::HEX],
@@ -275,6 +277,7 @@ class Index extends Component
             'contacts.phone.required' => 'Укажите телефон или включите «Контакты ещё не подтверждены».',
             'contacts.phone.regex' => 'Телефон: только цифры, пробелы, скобки и дефис, можно с «+» в начале. Например +998 71 200 00 00.',
             'contacts.telegram.regex' => 'Telegram: имя пользователя латиницей, например @rongta_uz.',
+            'contacts.distributor_url.url' => 'Сайт дистрибьютора: полный адрес, начинающийся с https://, например https://example.uz.',
             'colors.accent.regex' => $hex,
             'colors.accent_ink.regex' => $hex,
             'colors.accent_soft.regex' => $hex,
@@ -291,6 +294,7 @@ class Index extends Component
         return [
             'contacts.phone' => 'Телефон',
             'contacts.telegram' => 'Telegram',
+            'contacts.distributor_url' => 'Сайт дистрибьютора',
             'colors.accent' => 'Фирменный цвет',
             'colors.accent_ink' => 'Тёмный оттенок',
             'colors.accent_soft' => 'Светлый оттенок',
@@ -306,7 +310,7 @@ class Index extends Component
 
     public function save(): void
     {
-        foreach (['phone', 'telegram'] as $field) {
+        foreach (['phone', 'telegram', 'distributor_url'] as $field) {
             $this->contacts[$field] = trim((string) ($this->contacts[$field] ?? ''));
         }
         foreach (['accent', 'accent_ink', 'accent_soft'] as $field) {
@@ -344,11 +348,17 @@ class Index extends Component
         }
 
         $values = [
-            'contacts' => array_merge((array) setting('contacts', []), [
-                'phone' => $this->contacts['phone'],
-                'telegram' => $this->contacts['telegram'] !== '' ? '@'.ltrim($this->contacts['telegram'], '@') : '',
-                'is_placeholder' => (bool) $this->contacts['is_placeholder'],
-            ]),
+            // distributor_url is kept only while set, so an empty field changes nothing.
+            'contacts' => array_filter(
+                array_merge((array) setting('contacts', []), [
+                    'phone' => $this->contacts['phone'],
+                    'telegram' => $this->contacts['telegram'] !== '' ? '@'.ltrim($this->contacts['telegram'], '@') : '',
+                    'is_placeholder' => (bool) $this->contacts['is_placeholder'],
+                    'distributor_url' => $this->contacts['distributor_url'],
+                ]),
+                fn (mixed $value, string $key) => $key !== 'distributor_url' || $value !== '',
+                ARRAY_FILTER_USE_BOTH,
+            ),
             'accent' => $this->colors['accent'],
             'accent_ink' => $this->colors['accent_ink'] !== '' ? $this->colors['accent_ink'] : null,
             'accent_soft' => $this->colors['accent_soft'] !== '' ? $this->colors['accent_soft'] : null,

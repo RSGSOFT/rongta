@@ -525,6 +525,8 @@ textarea.inp{min-height:96px;resize:vertical}
 .ftr li a{text-decoration:none}
 .ftr li a:hover{text-decoration:underline;color:#fff}
 .ftr .badge{margin-top:14px;border:1px solid #414B58;padding:6px 12px;border-radius:99px;font-size:.8125rem;color:#fff}
+.ftr a.badge{text-decoration:none;transition:border-color .2s}
+.ftr a.badge:hover,.ftr a.badge:focus-visible{border-color:var(--accent)}
 .ftr-note{border-top:1px solid #2A323D;padding-block:16px 22px;font-size:.8125rem;color:#9AA6B1}
 .ftr :focus-visible{outline-color:#fff}
 @media (max-width:760px){.ftr-in{grid-template-columns:1fr}

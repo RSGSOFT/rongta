@@ -250,4 +250,32 @@ class SettingsTest extends TestCase
 
         $this->assertSame($before, ActivityLog::count());
     }
+
+    public function test_footer_distributor_badge_links_to_the_saved_site_in_a_new_tab(): void
+    {
+        $this->get('/')->assertOk()
+            ->assertSee('<span class="badge" id="ftr-dist">', false)
+            ->assertSee(ui('ftr.dist', [], 'ru'));
+
+        Livewire::test(Settings::class)
+            ->set('contacts.distributor_url', ' https://distributor.example/ ')
+            ->call('save')
+            ->assertHasNoErrors();
+
+        $this->get('/en')->assertOk()
+            ->assertSee('<a class="badge" id="ftr-dist" href="https://distributor.example/" target="_blank" rel="noopener">', false)
+            ->assertSee(ui('ftr.dist', [], 'en'));
+    }
+
+    public function test_distributor_site_must_be_a_full_https_address(): void
+    {
+        foreach (['distributor.example', 'http://distributor.example', 'javascript:alert(1)'] as $bad) {
+            Livewire::test(Settings::class)
+                ->set('contacts.distributor_url', $bad)
+                ->call('save')
+                ->assertHasErrors(['contacts.distributor_url' => 'url']);
+        }
+
+        $this->assertNull(setting('contacts.distributor_url'));
+    }
 }

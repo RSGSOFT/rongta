@@ -21,6 +21,10 @@
                 <x-admin.field label="Telegram" for="st-telegram" :error="$errors->first('contacts.telegram')" hint="Имя пользователя, например @rongta_uz.">
                     <x-admin.input id="st-telegram" wire:model="contacts.telegram" autocomplete="off" :invalid="$errors->has('contacts.telegram')" />
                 </x-admin.field>
+                <x-admin.field label="Сайт дистрибьютора" for="st-distributor-url" :error="$errors->first('contacts.distributor_url')"
+                               hint="Полный адрес с https://. Надпись дистрибьютора в подвале станет ссылкой и откроется в новой вкладке. Пусто: без ссылки. Текст надписи: «Тексты интерфейса», ключ ftr.dist.">
+                    <x-admin.input type="url" id="st-distributor-url" wire:model="contacts.distributor_url" autocomplete="off" placeholder="https://" :invalid="$errors->has('contacts.distributor_url')" />
+                </x-admin.field>
                 <div class="md:col-span-2">
                     <x-admin.toggle wire:model.live="contacts.is_placeholder" label="Контакты ещё не подтверждены"
                                     hint="Пока включено, сайт не показывает телефон и Telegram, а пишет «уточняется». Выключите, когда впишете настоящие контакты." />

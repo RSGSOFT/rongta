@@ -58,6 +58,12 @@ class SiteStringSeeder extends Seeder
         // Trust block material supplied in the admin panel.
         'tr.open' => ['ru' => 'Открыть', 'uz' => 'Ochish', 'en' => 'Open'],
         'tr.address' => ['ru' => 'Адрес', 'uz' => 'Manzil', 'en' => 'Address'],
+        // Footer distributor badge, edited separately from the top strip's badge.dist.
+        'ftr.dist' => [
+            'ru' => 'Официальный дистрибьютор в Узбекистане: RSG',
+            'uz' => 'Oʻzbekistondagi rasmiy distribyutor: RSG',
+            'en' => 'Official distributor in Uzbekistan: RSG',
+        ],
     ];
 
     public function run(): void
