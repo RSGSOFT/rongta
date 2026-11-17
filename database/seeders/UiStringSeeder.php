@@ -32,12 +32,47 @@ class UiStringSeeder extends Seeder
         'kb.sample', 'chat.proto', 'chat.sub',
     ];
 
+    /**
+     * Strings of features the owner removed: the buying guide's cost row, the hero label's
+     * currency word, and the partner login and partner area (every "pa." key). Also removed
+     * from existing databases by the 2026_11_17_2000xx migrations.
+     */
+    public const REMOVED_KEYS = ['g.cost', 'lbl.cur', 'ps.login'];
+
+    public const REMOVED_PREFIXES = ['pa.'];
+
+    /**
+     * Texts that replace the prototype's wording. The hero readout is a decorative scale display:
+     * its captions and description carry no currency. Applied to existing databases by the
+     * 2026_11_17_200004 migration.
+     */
+    public const REWORDED = [
+        'ro.unit' => ['ru' => 'Цена за кг', 'uz' => '1 kg narxi', 'en' => 'Price per kg'],
+        'ro.total' => ['ru' => 'Сумма', 'uz' => 'Summa', 'en' => 'Total'],
+        'hero.readout.alt' => [
+            'ru' => 'Табло весов: вес 1,250 кг, цена за килограмм и итоговая сумма',
+            'uz' => 'Tarozi tablosi: vazn 1,250 kg, 1 kg narxi va jami summa',
+            'en' => 'Scale display: weight 1.250 kg, price per kilogram and total',
+        ],
+        // The trust block shows only material RSG has supplied: no more placeholder frames.
+        'tr.lead' => [
+            'ru' => 'Документы и сведения, которые подтверждают официальную поставку и сервис.',
+            'uz' => 'Rasmiy yetkazib berish va servisni tasdiqlovchi hujjatlar va maʼlumotlar.',
+            'en' => 'Documents and details that confirm official supply and service.',
+        ],
+        'm.works.note' => [
+            'ru' => 'Кассовые программы, с которыми работают весы Rongta.',
+            'uz' => 'Rongta tarozilari ishlaydigan kassa dasturlari.',
+            'en' => 'POS software that works with Rongta scales.',
+        ],
+    ];
+
     public static function isSkipped(string $key): bool
     {
-        if (in_array($key, self::SKIP_KEYS, true) || in_array($key, self::PROTOTYPE_KEYS, true) || str_contains($key, 'price')) {
+        if (in_array($key, self::SKIP_KEYS, true) || in_array($key, self::PROTOTYPE_KEYS, true) || in_array($key, self::REMOVED_KEYS, true) || str_contains($key, 'price')) {
             return true;
         }
-        foreach (self::SKIP_PREFIXES as $prefix) {
+        foreach ([...self::SKIP_PREFIXES, ...self::REMOVED_PREFIXES] as $prefix) {
             if (str_starts_with($key, $prefix)) {
                 return true;
             }
@@ -57,6 +92,7 @@ class UiStringSeeder extends Seeder
             if (self::isSkipped($key)) {
                 continue;
             }
+            $text = self::REWORDED[$key] ?? $text;
             UiString::firstOrCreate(
                 ['key' => $key],
                 ['ru' => $text['ru'] ?? null, 'uz' => $text['uz'] ?? null, 'en' => $text['en'] ?? null],

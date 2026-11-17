@@ -35,7 +35,6 @@
             ['admin.regions', 'Регионы', false],
             ['admin.cities', 'Города', false],
             ['admin.partners', 'Партнёры', false],
-            ['admin.partner-users', 'Доступы партнёров', true],
             ['admin.partner-requests', 'Заявки на партнёрство', false],
         ]],
         ['Контент', [
@@ -45,8 +44,8 @@
             ['admin.chooser', 'Подбор весов', false],
         ]],
         ['Чат-бот', [
-            ['admin.leads', 'Лиды', false],
-            ['admin.chatbot.conversations', 'Диалоги', false],
+            ['admin.leads', 'Лиды', true],
+            ['admin.chatbot.conversations', 'Диалоги', true],
             ['admin.chatbot.articles', 'База ответов', false],
             ['admin.chatbot.settings', 'Настройки бота', true],
         ]],

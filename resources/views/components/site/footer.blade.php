@@ -1,7 +1,4 @@
 {{-- Site footer: about line, distributor badge, section links, contacts. --}}
-@php
-    $partnerUrl = auth('partner')->check() ? lroute('partner') : lroute('partner.login');
-@endphp
 <footer class="ftr">
     <div class="wrap ftr-in">
         <div>
@@ -16,7 +13,7 @@
                 <li><a href="{{ lroute('compare') }}">{{ ui('nav.compare') }}</a></li>
                 <li><a href="{{ lroute('dealers') }}">{{ ui('nav.dealers') }}</a></li>
                 <li><a href="{{ lroute('knowledge') }}">{{ ui('nav.knowledge') }}</a></li>
-                <li><a href="{{ $partnerUrl }}">{{ ui('nav.partner') }}</a></li>
+                <li><a href="{{ lroute('dealers') }}#partner-form">{{ ui('nav.partner') }}</a></li>
             </ul>
         </div>
         <div>

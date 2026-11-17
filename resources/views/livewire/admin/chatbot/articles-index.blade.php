@@ -3,7 +3,9 @@
 @endphp
 <x-admin.page title="База ответов" subtitle="Статьи, по которым отвечает чат-бот. Бот видит только опубликованные статьи.">
     <x-slot:actions>
-        <x-admin.btn :href="route('admin.chatbot.conversations.unanswered')">Вопросы без ответа</x-admin.btn>
+        @if (auth()->user()?->isAdmin())
+            <x-admin.btn :href="route('admin.chatbot.conversations.unanswered')">Вопросы без ответа</x-admin.btn>
+        @endif
         <x-admin.btn :href="route('admin.chatbot.articles.import')">Обучить по руководству (PDF)</x-admin.btn>
         <x-admin.btn variant="primary" :href="route('admin.chatbot.articles.create')">Добавить статью</x-admin.btn>
     </x-slot:actions>

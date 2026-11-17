@@ -34,8 +34,8 @@ class SeedDataTest extends TestCase
         $this->assertSame(3, Family::count());
         $this->assertSame(11, ScaleModel::count());
         $this->assertSame(14, Region::count());
-        $this->assertSame(13, Partner::resellers()->count());
-        $this->assertSame(4, Partner::integrators()->count());
+        // The prototype's sample dealers and integrators are not imported (owner decision).
+        $this->assertSame(0, Partner::count());
         $this->assertSame(26, Document::count());
         $this->assertSame(3, ChooserOption::count());
         $this->assertSame(1, User::where('role', 'admin')->count());

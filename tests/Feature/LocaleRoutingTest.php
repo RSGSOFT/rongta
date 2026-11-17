@@ -2,8 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Models\PartnerUser;
+use App\Support\Locales;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
@@ -25,7 +26,7 @@ class LocaleRoutingTest extends TestCase
     #[DataProvider('locales')]
     public function test_public_pages_return_200_in_each_locale(string $locale, string $prefix): void
     {
-        foreach (['', '/catalog', '/compare', '/model/c1', '/dealers', '/knowledge', '/partner/login'] as $path) {
+        foreach (['', '/catalog', '/compare', '/model/c1', '/dealers', '/knowledge'] as $path) {
             $url = ($prefix.$path) ?: '/';
             $this->get($url)
                 ->assertOk()
@@ -34,17 +35,12 @@ class LocaleRoutingTest extends TestCase
     }
 
     #[DataProvider('locales')]
-    public function test_partner_area_needs_a_partner_login(string $locale, string $prefix): void
+    public function test_there_is_no_partner_area(string $locale, string $prefix): void
     {
-        $this->get($prefix.'/partner')->assertRedirect(lroute('partner.login', [], $locale));
-
-        $partnerUser = PartnerUser::create(['is_active' => true,
-            'name' => 'Test', 'login' => 'test-'.$locale, 'password' => 'secret-secret', 'type' => 'reseller',
-        ]);
-        $this->actingAs($partnerUser, 'partner')->get($prefix.'/partner')->assertOk();
-
-        $partnerUser->update(['is_active' => false]);
-        $this->actingAs($partnerUser, 'partner')->get($prefix.'/partner')->assertRedirect();
+        $this->get($prefix.'/partner')->assertNotFound();
+        $this->get($prefix.'/partner/login')->assertNotFound();
+        $this->assertFalse(Route::has(Locales::routeName('partner', $locale)));
+        $this->assertFalse(Route::has(Locales::routeName('partner.login', $locale)));
     }
 
     public function test_unknown_model_is_404(): void

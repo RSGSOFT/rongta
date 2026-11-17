@@ -97,7 +97,8 @@ class Index extends Component
         $this->contacts = [
             'phone' => (string) ($contacts['phone'] ?? ''),
             'telegram' => (string) ($contacts['telegram'] ?? ''),
-            'is_placeholder' => (bool) ($contacts['is_placeholder'] ?? false),
+            // Same rule as App\Support\RsgContacts: a missing flag means "not confirmed".
+            'is_placeholder' => (bool) ($contacts['is_placeholder'] ?? true),
         ];
 
         $this->colors = [

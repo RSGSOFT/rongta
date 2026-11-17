@@ -16,6 +16,8 @@ class Index extends Component
 {
     use RequiresStaff, WithTable;
 
+    protected bool $adminOnly = true;
+
     protected array $sortable = ['id', 'last_message_at', 'unanswered_count'];
 
     protected string $defaultSort = 'id';

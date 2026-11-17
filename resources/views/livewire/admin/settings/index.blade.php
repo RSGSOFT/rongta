@@ -9,6 +9,8 @@
     $uploadProps = ['logo' => 'newLogo', 'symbol' => 'newSymbol', 'wordmark' => 'newWordmark'];
 @endphp
 <x-admin.page title="Настройки сайта" subtitle="Контакты RSG, фирменный цвет, логотип и главная страница. Изменения сразу видны на сайте.">
+    @include('livewire.admin.settings.tabs', ['current' => 'admin.settings'])
+
     <form wire:submit="save" novalidate>
         {{-- Contacts --}}
         <x-admin.card title="Контакты RSG" hint="Показываются на главной, в подвале, в кнопке «Позвонить» и в ответах чат-бота.">

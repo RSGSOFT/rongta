@@ -4,24 +4,6 @@
         <x-admin.btn variant="primary" :href="route('admin.partners.create', array_filter(['kind' => $filterKind]))">Добавить партнёра</x-admin.btn>
     </x-slot:actions>
 
-    @if ($samples > 0)
-        <x-admin.card title="Образцы из прототипа: {{ $samples }}"
-                      hint="Это записи-примеры, а не настоящие партнёры. На сайте они помечены как «образец» и показаны без контактов.">
-            <p class="max-w-3xl text-steel">
-                Настоящих партнёров сейчас: <b class="text-ink">{{ $real }}</b>. Образцов на сайте: <b class="text-ink">{{ $samplesLive }}</b>.
-                Чтобы заменить образец, откройте его, впишите данные настоящего партнёра и выключите переключатель «Образец».
-                Или добавьте настоящих партнёров и уберите образцы одной кнопкой.
-            </p>
-            <x-slot:footer>
-                <x-admin.btn size="sm" wire:click="$set('filterStatus', 'sample')">Показать только образцы</x-admin.btn>
-                <x-admin.btn size="sm" wire:click="hideSamples" :disabled="$samplesLive === 0"
-                             confirm="Скрыть с сайта все образцы ({{ $samplesLive }})? Записи останутся в этом списке.">Скрыть образцы с сайта</x-admin.btn>
-                <x-admin.btn size="sm" variant="danger" wire:click="deleteSamples"
-                             confirm="Удалить все образцы ({{ $samples }})? Это действие нельзя отменить.">Удалить все образцы</x-admin.btn>
-            </x-slot:footer>
-        </x-admin.card>
-    @endif
-
     <x-admin.table :count="$rows->count()" empty="Партнёров не найдено.">
         <x-slot:toolbar>
             <x-admin.search placeholder="Название, телефон или Telegram" />

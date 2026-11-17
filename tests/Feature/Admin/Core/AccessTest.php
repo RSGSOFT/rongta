@@ -119,7 +119,10 @@ class AccessTest extends TestCase
         UiString::create(['key' => 'x.full', 'ru' => 'a', 'uz' => 'b', 'en' => 'c']);
         UiString::create(['key' => 'x.gap', 'ru' => 'a', 'uz' => '', 'en' => null]);
 
-        $this->actingAs($this->editor())->get('/admin')
+        // Leads are for admins only: an editor does not get the card.
+        $this->actingAs($this->editor())->get('/admin')->assertOk()->assertDontSee('Лиды из чат-бота');
+
+        $this->actingAs($this->admin())->get('/admin')
             ->assertOk()
             ->assertSeeInOrder(['Модели весов', '2', 'скрыто с сайта: 1'])
             ->assertSeeInOrder(['Новые заявки на партнёрство', '1'])

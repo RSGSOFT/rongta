@@ -15,6 +15,8 @@ class Show extends Component
 {
     use LogsActivity, RequiresStaff, TurnsQuestionsIntoArticles;
 
+    protected bool $adminOnly = true;
+
     #[Locked]
     public int $conversationId;
 

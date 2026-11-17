@@ -113,7 +113,7 @@
                             <div class="pb-guide-col {{ $entry->family?->isAurora() ? 'pb-guide-night' : '' }}" wire:key="guide-{{ $entry->id }}">
                                 <h3>{{ $entry->family?->tr('name') }}</h3>
                                 <dl>
-                                    @foreach (['does', 'fits', 'limit', 'cost', 'peak'] as $row)
+                                    @foreach (['does', 'fits', 'limit', 'peak'] as $row)
                                         @if ($entry->tr($row) !== '')
                                             <dt>{{ ui('g.'.$row) }}</dt>
                                             <dd>{{ $entry->tr($row) }}</dd>

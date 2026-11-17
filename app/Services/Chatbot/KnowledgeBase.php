@@ -62,11 +62,11 @@ class KnowledgeBase
         }
 
         $out[] = '';
-        $out[] = '## Buying guide (per family; "running cost" is a level in words, not money)';
+        $out[] = '## Buying guide (per family)';
         foreach (GuideEntry::query()->with('family')->orderBy('sort')->orderBy('id')->get() as $entry) {
             $out[] = '- '.($entry->family?->tr('name', $locale) ?? '').': does: '.$entry->tr('does', $locale)
                 .' | fits: '.$entry->tr('fits', $locale).' | limits: '.$entry->tr('limit', $locale)
-                .' | running cost: '.$entry->tr('cost', $locale).' | busy hours: '.$entry->tr('peak', $locale);
+                .' | busy hours: '.$entry->tr('peak', $locale);
         }
         foreach (GuideCheck::query()->orderBy('sort')->orderBy('id')->get() as $check) {
             $out[] = '- Before buying, check: '.$check->tr('text', $locale);

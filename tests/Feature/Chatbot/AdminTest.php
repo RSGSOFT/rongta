@@ -60,16 +60,27 @@ class AdminTest extends ChatbotTestCase
         }
     }
 
-    public function test_editor_can_teach_the_bot_but_not_change_its_settings(): void
+    public function test_editor_can_teach_the_bot_but_not_change_its_settings_or_read_conversations(): void
     {
         FakeClaude::bind();
         $urls = $this->urls();
         $this->actingAs($this->staff('editor'));
 
+        // Settings (first) and the three conversation screens (last) are for admins only.
         $this->get(array_shift($urls))->assertForbidden();
+        foreach (array_splice($urls, -3) as $url) {
+            $this->get($url)->assertForbidden();
+        }
         foreach ($urls as $url) {
             $this->get($url)->assertOk();
         }
+
+        Livewire::test(Conversations\Index::class)->assertForbidden();
+        Livewire::test(Conversations\Unanswered::class)->assertForbidden();
+
+        // No way into the conversations from the screens an editor uses.
+        $this->get(route('admin.chatbot.articles.index'))->assertDontSee(route('admin.chatbot.conversations.unanswered'));
+        $this->get(route('admin.dashboard'))->assertDontSee(route('admin.chatbot.conversations.index'));
     }
 
     public function test_inactive_staff_are_locked_out(): void
@@ -307,7 +318,7 @@ class AdminTest extends ChatbotTestCase
         $conversation->update(['unanswered_count' => 1]);
         $quiet = $this->passGate('ru');
         $quiet->lead->update(['first_name' => 'Timur', 'last_name' => 'Aliyev', 'phone' => '+998935554433']);
-        $this->actingAs($this->staff('editor'));
+        $this->actingAs($this->staff('admin'));
 
         Livewire::test(Conversations\Index::class)
             ->assertSee('Karimov')->assertSee('+998901234567')->assertSee('Timur')
@@ -335,7 +346,7 @@ class AdminTest extends ChatbotTestCase
         $question = $conversation->messages()->create(['role' => 'user', 'content' => "Kafolat\n qancha?", 'is_unanswered' => true]);
         $other = $conversation->messages()->create(['role' => 'user', 'content' => 'spam', 'is_unanswered' => true]);
         $conversation->update(['unanswered_count' => 2]);
-        $admin = $this->staff('editor');
+        $admin = $this->staff('admin');
         $this->actingAs($admin);
 
         $article = null;

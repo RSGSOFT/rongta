@@ -62,7 +62,6 @@ class PromptBuilder
             'Compare models' => lroute('compare', [], $locale, false),
             'Dealers (map by region, resellers and software integrators, "Become a partner" form)' => lroute('dealers', [], $locale, false),
             'Knowledge base (manuals, drivers and PC software, SDK, videos, FAQ, buying guide)' => lroute('knowledge', [], $locale, false),
-            'Partner area (login for existing partners)' => lroute('partner.login', [], $locale, false),
         ];
         $lines = ['# Site pages you may link to'];
         foreach ($pages as $label => $path) {

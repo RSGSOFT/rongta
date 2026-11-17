@@ -51,8 +51,8 @@ class PriceGuardTest extends ChatbotTestCase
     }
 
     /**
-     * Every seeded text of the catalog, knowledge base and interface, line by line. The only
-     * amounts are on the hero's decorative scale readout (weight, unit price, total).
+     * Every seeded text of the catalog, knowledge base and interface, line by line, with no
+     * exceptions: the hero readout's description no longer names a currency or a sum.
      */
     public function test_seeded_content_has_no_false_positives(): void
     {
@@ -84,9 +84,6 @@ class PriceGuardTest extends ChatbotTestCase
             foreach (DB::table($table)->get() as $row) {
                 $row = (array) $row;
                 $id = $row['key'] ?? $row['slug'] ?? $row['id'];
-                if ($table === 'ui_strings' && $id === 'hero.readout.alt') {
-                    continue;
-                }
                 foreach (array_diff_key($row, array_flip($skip)) as $column => $value) {
                     $walk($value, "$table#$id.$column");
                 }

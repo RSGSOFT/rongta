@@ -151,14 +151,12 @@ class WebContentTest extends TestCase
         foreach ($fields as $field => $text) {
             $page->set('form.'.$field, $this->tr($text));
         }
-        $page->set('form.cost', $this->tr('от 5 500 000'))->call('save')
-            ->assertHasErrors(['form.cost.ru' => 'not_regex'])
-            ->set('form.cost', ['ru' => 'Низкие', 'uz' => 'Past', 'en' => 'Low'])->call('save')
+        $page->assertDontSee('Расходы')->call('save')
             ->assertHasNoErrors()
             ->assertRedirect(route('admin.guide.index'));
 
         $entry = GuideEntry::firstOrFail();
-        $this->assertSame('Низкие', $entry->cost['ru']);
+        $this->assertArrayNotHasKey('cost', $entry->getAttributes());
         $this->assertSame('Магазинам uz', $entry->fits['uz']);
 
         Livewire::test(Guide\EntryForm::class)->set('form.family_id', $family->id)->call('save')
@@ -167,7 +165,7 @@ class WebContentTest extends TestCase
         Livewire::test(Guide\EntryForm::class, ['entry' => $entry])->set('form.peak.en', 'Copes well')->call('save')->assertHasNoErrors();
         $this->assertSame('Copes well', $entry->fresh()->peak['en']);
 
-        Livewire::test(Guide\Index::class)->assertSee('Label scales')->assertSee('Низкие')->call('deleteEntry', $entry->id);
+        Livewire::test(Guide\Index::class)->assertSee('Label scales')->assertDontSee('Расходы')->call('deleteEntry', $entry->id);
         $this->assertSame(0, GuideEntry::count());
     }
 

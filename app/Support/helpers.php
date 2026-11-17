@@ -48,7 +48,7 @@ if (! function_exists('trv')) {
 if (! function_exists('lroute')) {
     /**
      * Locale-aware URL for a public route. Names: home, catalog, compare, model, dealers,
-     * knowledge, partner.login, partner. lroute('model', ['slug' => 'c1']), lroute('catalog', [], 'uz').
+     * knowledge. lroute('model', ['slug' => 'c1']), lroute('catalog', [], 'uz').
      */
     function lroute(string $name, array $parameters = [], ?string $locale = null, bool $absolute = true): string
     {

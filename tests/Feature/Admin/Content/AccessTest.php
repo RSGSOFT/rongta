@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Admin\Content;
 
+use App\Livewire\Admin\Leads;
 use App\Livewire\Admin\Partners;
-use App\Livewire\Admin\PartnerUsers;
 use App\Livewire\Admin\Settings;
 use App\Models\ChooserOption;
 use App\Models\FaqItem;
@@ -12,7 +12,6 @@ use App\Models\GuideCheck;
 use App\Models\GuideEntry;
 use App\Models\Lead;
 use App\Models\PartnerRequest;
-use App\Models\PartnerUser;
 use App\Models\UiString;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
@@ -32,13 +31,12 @@ class AccessTest extends TestCase
         $family = $this->family();
         $topic = FaqTopic::create(['slug' => 'setup', 'name' => $this->tr('Настройка'), 'sort' => 1]);
         $item = FaqItem::create(['faq_topic_id' => $topic->id, 'question' => $this->tr('Вопрос'), 'answer' => $this->tr('Ответ'), 'sort' => 1]);
-        $entry = GuideEntry::create(['family_id' => $family->id, 'does' => $this->tr('a'), 'fits' => $this->tr('b'), 'limit' => $this->tr('c'), 'cost' => $this->tr('низкие'), 'peak' => $this->tr('d'), 'sort' => 1]);
+        $entry = GuideEntry::create(['family_id' => $family->id, 'does' => $this->tr('a'), 'fits' => $this->tr('b'), 'limit' => $this->tr('c'), 'peak' => $this->tr('d'), 'sort' => 1]);
         $check = GuideCheck::create(['text' => $this->tr('Проверьте'), 'sort' => 1]);
         $option = ChooserOption::create(['key' => 'shop', 'family_id' => $family->id, 'why' => $this->tr('Потому что'), 'sort' => 1]);
         $string = UiString::create(['key' => 'hero.h1', 'ru' => 'Заголовок', 'uz' => 'Sarlavha', 'en' => 'Title']);
         $request = PartnerRequest::create(['company' => 'Shop', 'contact_name' => 'Ali', 'phone' => '+998901234567', 'type' => 'reseller', 'status' => 'new']);
         $lead = Lead::create(['first_name' => 'Ali', 'last_name' => 'Valiyev', 'phone' => '+998901234567']);
-        $login = PartnerUser::create(['name' => 'Ali', 'login' => 'ali', 'password' => 'secret-pass-1', 'type' => 'reseller']);
 
         return [
             'staff' => [
@@ -46,7 +44,6 @@ class AccessTest extends TestCase
                 '/admin/cities', '/admin/cities/create', "/admin/cities/{$city->id}/edit",
                 '/admin/partners', '/admin/partners/create', "/admin/partners/{$partner->id}/edit",
                 '/admin/partner-requests', "/admin/partner-requests/{$request->id}",
-                '/admin/leads', "/admin/leads/{$lead->id}",
                 '/admin/strings', "/admin/strings/{$string->id}/edit",
                 '/admin/faq', '/admin/faq/topics/create', "/admin/faq/topics/{$topic->id}/edit",
                 '/admin/faq/items/create', "/admin/faq/items/{$item->id}/edit",
@@ -55,20 +52,20 @@ class AccessTest extends TestCase
                 '/admin/chooser', '/admin/chooser/create', "/admin/chooser/{$option->id}/edit",
             ],
             'admin' => [
-                '/admin/partner-users', '/admin/partner-users/create', "/admin/partner-users/{$login->id}/edit",
-                '/admin/settings',
+                '/admin/leads', "/admin/leads/{$lead->id}",
+                '/admin/settings', '/admin/settings/trust', '/admin/settings/maker',
             ],
         ];
     }
 
     public function test_guest_is_sent_to_the_login_page(): void
     {
-        foreach (['/admin/partners', '/admin/leads', '/admin/strings', '/admin/settings', '/admin/partner-users'] as $url) {
+        foreach (['/admin/partners', '/admin/leads', '/admin/strings', '/admin/settings', '/admin/settings/trust', '/admin/settings/maker'] as $url) {
             $this->get($url)->assertRedirect('/admin/login');
         }
     }
 
-    public function test_editor_opens_content_screens_but_not_settings_or_partner_logins(): void
+    public function test_editor_opens_content_screens_but_not_settings_or_leads(): void
     {
         $pages = $this->pages();
         $this->actingAs($this->editor());
@@ -96,8 +93,9 @@ class AccessTest extends TestCase
         $this->actingAs($this->editor());
 
         Livewire::test(Settings\Index::class)->assertForbidden();
-        Livewire::test(PartnerUsers\Index::class)->assertForbidden();
-        Livewire::test(PartnerUsers\Form::class)->assertForbidden();
+        Livewire::test(Settings\Trust::class)->assertForbidden();
+        Livewire::test(Settings\Maker::class)->assertForbidden();
+        Livewire::test(Leads\Index::class)->assertForbidden();
     }
 
     public function test_components_recheck_the_account_on_livewire_requests(): void
@@ -117,7 +115,7 @@ class AccessTest extends TestCase
             ->assertSee(route('admin.regions.index'))
             ->assertSee(route('admin.cities.index'))
             ->assertSee(route('admin.partner-requests.index'))
-            ->assertSee(route('admin.leads.index'))
+            ->assertDontSee(route('admin.leads.index'))
             ->assertSee(route('admin.strings.index'))
             ->assertSee(route('admin.faq.index'))
             ->assertSee(route('admin.guide.index'))
@@ -126,7 +124,8 @@ class AccessTest extends TestCase
 
         $this->actingAs($this->admin())->get('/admin/partners')
             ->assertSee(route('admin.settings'))
-            ->assertSee(route('admin.partner-users.index'));
+            ->assertSee(route('admin.leads.index'))
+            ->assertDontSee('/admin/partner-users');
     }
 
     public function test_no_content_screen_shows_a_price(): void

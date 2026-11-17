@@ -22,8 +22,11 @@ class Import extends Component
 {
     use LogsActivity, RequiresStaff, RussianValidation, WithFileUploads;
 
-    /** Livewire's own temporary-upload limit is 12 MB. */
-    public const MAX_KB = 12 * 1024;
+    /**
+     * Claude's API accepts a request of at most 32 MB, and the PDF is sent base64-encoded,
+     * which adds a third: 20 MB of PDF is about 27 MB on the wire, leaving room for the prompt.
+     */
+    public const MAX_KB = 20 * 1024;
 
     public $pdf = null;
 

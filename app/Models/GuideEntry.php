@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * Buying guide: one row per family. "cost" is a running-cost level in words, not money.
+ * Buying guide: one row per family.
  */
 class GuideEntry extends Model
 {
@@ -21,7 +21,6 @@ class GuideEntry extends Model
             'does' => 'array',
             'fits' => 'array',
             'limit' => 'array',
-            'cost' => 'array',
             'peak' => 'array',
         ];
     }

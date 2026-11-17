@@ -83,6 +83,7 @@ class InboxTest extends TestCase
         $lead = Lead::create(['first_name' => 'Ali', 'last_name' => 'Valiyev', 'phone' => '+998901234567', 'locale' => 'uz', 'source' => 'chatbot', 'page_url' => 'https://rongta.uz/uz/catalog']);
         Lead::create(['first_name' => 'Olga', 'last_name' => 'Kim', 'phone' => '+998935550011', 'locale' => 'ru', 'source' => 'chatbot']);
         $conversation = ChatConversation::create(['lead_id' => $lead->id, 'locale' => 'uz', 'unanswered_count' => 2]);
+        $this->actingAs($this->admin());
 
         Livewire::test(Leads\Index::class)
             ->assertSee('Valiyev')->assertSee('Kim')
@@ -103,11 +104,29 @@ class InboxTest extends TestCase
         $this->assertSame(1, $lead->conversations()->count());
     }
 
+    public function test_leads_are_for_admins_only(): void
+    {
+        $lead = Lead::create(['first_name' => 'Ali', 'last_name' => 'Valiyev', 'phone' => '+998901234567']);
+
+        // setUp signed in an editor.
+        $this->get('/admin/leads')->assertForbidden();
+        $this->get("/admin/leads/{$lead->id}")->assertForbidden();
+        Livewire::test(Leads\Index::class)->assertForbidden();
+        Livewire::test(Leads\Show::class, ['lead' => $lead])->assertForbidden();
+
+        $this->get('/admin')->assertOk()->assertDontSee('Лиды из чат-бота')->assertDontSee(route('admin.leads.index'));
+
+        $this->actingAs($this->admin());
+        $this->get('/admin')->assertOk()->assertSee('Лиды из чат-бота')->assertSee(route('admin.leads.index'));
+        $this->get('/admin/leads')->assertOk()->assertSee('Valiyev');
+    }
+
     public function test_leads_csv_export_follows_the_filter(): void
     {
         $lead = Lead::create(['first_name' => '=HYPERLINK("http://evil")', 'last_name' => 'Valiyev', 'phone' => '+998901234567', 'locale' => 'uz', 'source' => 'chatbot']);
         Lead::create(['first_name' => 'Ольга', 'last_name' => 'Ким; Ли', 'phone' => '+998935550011', 'locale' => 'ru', 'source' => 'chatbot']);
         ChatConversation::create(['lead_id' => $lead->id, 'locale' => 'uz']);
+        $this->actingAs($this->admin());
 
         $all = Livewire::test(Leads\Index::class)->call('export')->assertFileDownloaded();
         $csv = base64_decode($all->effects['download']['content']);

@@ -80,7 +80,7 @@ class Catalog
 
     public const FILE_MIMES = 'pdf,zip,rar,7z,doc,docx,xls,xlsx,txt';
 
-    public const FILE_MAX_KB = 12288;
+    public const FILE_MAX_KB = 51200;
 
     /** Content types (as detected from the file content) accepted for each document extension. */
     public const FILE_CONTENT_TYPES = [

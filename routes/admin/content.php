@@ -7,7 +7,6 @@ use App\Livewire\Admin\Guide;
 use App\Livewire\Admin\Leads;
 use App\Livewire\Admin\PartnerRequests;
 use App\Livewire\Admin\Partners;
-use App\Livewire\Admin\PartnerUsers;
 use App\Livewire\Admin\Regions;
 use App\Livewire\Admin\Settings;
 use App\Livewire\Admin\Strings;
@@ -35,8 +34,11 @@ Route::livewire('/partners/{partner}/edit', Partners\Form::class)->name('partner
 Route::livewire('/partner-requests', PartnerRequests\Index::class)->name('partner-requests.index');
 Route::livewire('/partner-requests/{partnerRequest}', PartnerRequests\Show::class)->name('partner-requests.show');
 
-Route::livewire('/leads', Leads\Index::class)->name('leads.index');
-Route::livewire('/leads/{lead}', Leads\Show::class)->name('leads.show');
+// Chatbot leads (visitor names and phone numbers): admins only.
+Route::middleware('staff:admin')->group(function () {
+    Route::livewire('/leads', Leads\Index::class)->name('leads.index');
+    Route::livewire('/leads/{lead}', Leads\Show::class)->name('leads.show');
+});
 
 // Web content
 Route::livewire('/strings', Strings\Index::class)->name('strings.index');
@@ -58,11 +60,9 @@ Route::livewire('/chooser', Chooser\Index::class)->name('chooser.index');
 Route::livewire('/chooser/create', Chooser\Form::class)->name('chooser.create');
 Route::livewire('/chooser/{option}/edit', Chooser\Form::class)->name('chooser.edit');
 
-// Partner logins and site settings: admins only.
+// Site settings: admins only.
 Route::middleware('staff:admin')->group(function () {
-    Route::livewire('/partner-users', PartnerUsers\Index::class)->name('partner-users.index');
-    Route::livewire('/partner-users/create', PartnerUsers\Form::class)->name('partner-users.create');
-    Route::livewire('/partner-users/{partnerUser}/edit', PartnerUsers\Form::class)->name('partner-users.edit');
-
     Route::livewire('/settings', Settings\Index::class)->name('settings');
+    Route::livewire('/settings/trust', Settings\Trust::class)->name('settings.trust');
+    Route::livewire('/settings/maker', Settings\Maker::class)->name('settings.maker');
 });

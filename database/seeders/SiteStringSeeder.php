@@ -55,8 +55,9 @@ class SiteStringSeeder extends Seeder
         // Capacity filter values and the card fact that follows the filter.
         'val.cap.15' => ['ru' => "15\u{00A0}кг", 'uz' => "15\u{00A0}kg", 'en' => "15\u{00A0}kg"],
         'val.cap.30' => ['ru' => "30\u{00A0}кг", 'uz' => "30\u{00A0}kg", 'en' => "30\u{00A0}kg"],
-        // Currency word on the decorative printed label in the home hero (a scale's sample label, not a product price).
-        'lbl.cur' => ['ru' => 'сум', 'uz' => 'soʻm', 'en' => 'soʻm'],
+        // Trust block material supplied in the admin panel.
+        'tr.open' => ['ru' => 'Открыть', 'uz' => 'Ochish', 'en' => 'Open'],
+        'tr.address' => ['ru' => 'Адрес', 'uz' => 'Manzil', 'en' => 'Address'],
     ];
 
     public function run(): void

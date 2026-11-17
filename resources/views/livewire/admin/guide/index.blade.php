@@ -12,14 +12,13 @@
         <x-slot:head>
             <x-admin.th>№</x-admin.th>
             <x-admin.th>Семейство</x-admin.th>
-            <x-admin.th>Расходы</x-admin.th>
             <x-admin.th>Переводы</x-admin.th>
             <x-admin.th align="right"><span class="sr-only">Действия</span></x-admin.th>
         </x-slot:head>
 
         @foreach ($entries as $entry)
             @php
-                $missing = collect(['ru', 'uz', 'en'])->filter(fn ($l) => collect(['does', 'fits', 'limit', 'cost', 'peak'])->contains(fn ($f) => blank($entry->{$f}[$l] ?? null)))->map(fn ($l) => strtoupper($l));
+                $missing = collect(['ru', 'uz', 'en'])->filter(fn ($l) => collect(['does', 'fits', 'limit', 'peak'])->contains(fn ($f) => blank($entry->{$f}[$l] ?? null)))->map(fn ($l) => strtoupper($l));
             @endphp
             <tr wire:key="entry-{{ $entry->id }}">
                 <td class="w-12 tabular-nums text-steel">{{ $entry->sort }}</td>
@@ -27,7 +26,6 @@
                     <a href="{{ route('admin.guide.entries.edit', $entry) }}" class="font-semibold hover:text-accent-ink">{{ $entry->family?->tr('name', 'ru') ?: 'Семейство удалено' }}</a>
                     <div class="line-clamp-1 max-w-xl text-xs text-steel">{{ $entry->tr('does', 'ru') }}</div>
                 </td>
-                <td>{{ $entry->tr('cost', 'ru') }}</td>
                 <td>
                     @if ($missing->isEmpty())
                         <x-admin.badge tone="ok">RU · UZ · EN</x-admin.badge>

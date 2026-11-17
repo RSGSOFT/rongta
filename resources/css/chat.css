@@ -42,6 +42,9 @@
     font-family: var(--font-body); color: var(--color-ink);
 }
 @media (max-width: 760px) {
+    /* Smaller on phones, still a 44px touch target; the footer leaves room for it (site.css). */
+    .rc-fab { width: 44px; height: 44px; right: 12px; bottom: calc(var(--rc-bar) + var(--rc-tray) + 12px); }
+    .rc-fab img { width: 30px; }
     .rc-fab-hint { display: none; }
     .rc-panel {
         left: 0; right: 0; width: 100%; bottom: var(--rc-bar);

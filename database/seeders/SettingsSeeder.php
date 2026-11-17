@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Setting;
+use App\Support\Maker;
 use Database\Seeders\Concerns\ReadsDesignData;
 use Illuminate\Database\Seeder;
 
@@ -57,6 +58,10 @@ class SettingsSeeder extends Seeder
                 'contact_key' => 'hero.contact',
                 'readout_alt_key' => 'hero.readout.alt',
             ],
+
+            // "About the manufacturer" figures (App\Support\Maker). Trust material (setting "trust")
+            // is not seeded: RSG supplies it in the admin panel, and the block stays hidden until then.
+            'maker' => Maker::defaults(),
 
             // Names of the connection codes used in scale_models.conn (same in every language).
             'connection_names' => $models['connectionNames'],

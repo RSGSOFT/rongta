@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Dashboard;
 
 use App\Livewire\Admin\Concerns\RequiresStaff;
 use App\Models\ActivityLog;
+use App\Models\ChatConversation;
 use App\Models\Document;
 use App\Models\Lead;
 use App\Models\Partner;
@@ -21,12 +22,12 @@ class Index extends Component
 
     public function render(): View
     {
+        $user = auth()->user();
+
         $models = ScaleModel::count();
         $hidden = ScaleModel::where('is_published', false)->count();
         $partners = Partner::count();
         $requests = PartnerRequest::where('status', 'new')->count();
-        $leads = Lead::count();
-        $leadsWeek = Lead::where('created_at', '>=', now()->subDays(7))->count();
         $docsNoFile = Document::whereNull('file_path')->orWhere('file_path', '')->count();
         $strings = UiString::where(function ($q) {
             foreach (['ru', 'uz', 'en'] as $locale) {
@@ -39,10 +40,16 @@ class Index extends Component
             ['Модели весов', $models, $hidden ? "скрыто с сайта: {$hidden}" : 'все опубликованы', 'admin.models.index', [], false],
             ['Партнёры', $partners, 'реселлеры и интеграторы', 'admin.partners.index', [], false],
             ['Новые заявки на партнёрство', $requests, 'со статусом «новая»', 'admin.partner-requests.index', [], $requests > 0],
-            ['Лиды из чат-бота', $leadsWeek, "за 7 дней · всего {$leads}", 'admin.leads.index', [], $leadsWeek > 0],
             ['Документы без файла', $docsNoFile, 'на сайте нет ссылки для скачивания', 'admin.documents.index', ['file' => 'missing'], $docsNoFile > 0],
             ['Тексты без перевода', $strings, 'пусто в RU, UZ или EN', 'admin.strings.index', [], $strings > 0],
         ];
+
+        // Leads hold visitors' names and phone numbers: admins only.
+        if ($user->isAdmin()) {
+            $leads = Lead::count();
+            $leadsWeek = Lead::where('created_at', '>=', now()->subDays(7))->count();
+            array_splice($cards, 3, 0, [['Лиды из чат-бота', $leadsWeek, "за 7 дней · всего {$leads}", 'admin.leads.index', [], $leadsWeek > 0]]);
+        }
 
         $cards = array_map(fn (array $c) => [
             'label' => $c[0],
@@ -52,13 +59,13 @@ class Index extends Component
             'attention' => $c[5],
         ], $cards);
 
-        $user = auth()->user();
-
         return view('livewire.admin.dashboard', [
             'cards' => $cards,
             'recent' => $user->isAdmin()
                 ? ActivityLog::with('user')->latest('id')->limit(8)->get()
-                : ActivityLog::with('user')->where('user_id', $user->id)->latest('id')->limit(8)->get(),
+                : ActivityLog::with('user')->where('user_id', $user->id)
+                    ->where(fn ($q) => $q->whereNull('subject_type')->orWhereNotIn('subject_type', [Lead::class, ChatConversation::class]))
+                    ->latest('id')->limit(8)->get(),
         ])->layout('components.layouts.admin', ['title' => 'Обзор']);
     }
 }

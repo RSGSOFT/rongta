@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             CatalogSeeder::class,     // families, models, features, specs  (models.json)
-            SampleDataSeeder::class,  // regions, cities, partners, documents, videos, FAQ, guide, chooser (sample-data.json)
+            SampleDataSeeder::class,  // regions, cities, documents, videos, FAQ, guide, chooser (sample-data.json)
             UiStringSeeder::class,    // interface strings (ui-strings.json), price keys skipped
             SiteStringSeeder::class,  // extra strings for the site shell, Home, Catalog, Compare and Model pages
-            SiteBStringSeeder::class, // extra strings for Dealers, Knowledge base and Partner pages
+            SiteBStringSeeder::class, // extra strings for the Dealers and Knowledge base pages
             ChatbotStringSeeder::class, // chatbot widget strings
             SettingsSeeder::class,    // contacts, accent, logo, home sections, hero
             AdminUserSeeder::class,   // staff admin from .env

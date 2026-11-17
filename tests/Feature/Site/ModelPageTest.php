@@ -22,8 +22,9 @@ class ModelPageTest extends SiteTestCase
                 ->assertSee('class="gal-thumbs"', false)
                 ->assertSee(ui('m.specs', [], $locale))
                 ->assertSee(ui('m.downloads', [], $locale))
-                ->assertSee(ui('m.works', [], $locale))
-                ->assertSee(ui('tr.h.compact', [], $locale))
+                // No trust material and no POS logos yet: neither block is rendered.
+                ->assertDontSee(ui('m.works', [], $locale))
+                ->assertDontSee(ui('tr.h.compact', [], $locale))
                 ->assertSee(ui('m.buy.h', ['name' => $model->name], $locale));
 
             foreach ($model->features as $feature) {

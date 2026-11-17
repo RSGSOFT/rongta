@@ -74,7 +74,9 @@ class DealersTest extends TestCase
     {
         $html = $this->get('/en/dealers')->assertOk()->getContent();
 
-        $this->assertLessThan(strpos($html, 'pb-dealer-sample'), strpos($html, 'pb-dealer-official'));
+        $this->realPartner(['phone' => null]);
+        $html = $this->get('/en/dealers')->assertOk()->getContent();
+        $this->assertLessThan(strpos($html, 'Test Trading House'), strpos($html, 'pb-dealer-official'));
         // The seeded contact is a placeholder, so no number is printed anywhere on the page.
         $this->assertStringNotContainsString('000-00-00', $html);
         $this->assertStringNotContainsString('href="tel:', $html);
@@ -83,7 +85,7 @@ class DealersTest extends TestCase
 
     public function test_placeholder_partners_are_labelled_and_never_show_a_phone(): void
     {
-        Partner::query()->update(['phone' => '+998 90 111 22 33']);
+        $this->realPartner(['is_placeholder' => true, 'phone' => '+998 90 111 22 33']);
 
         $this->get('/en/dealers')
             ->assertOk()

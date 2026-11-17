@@ -15,6 +15,8 @@ class Unanswered extends Component
 {
     use LogsActivity, RequiresStaff, TurnsQuestionsIntoArticles, WithPagination;
 
+    protected bool $adminOnly = true;
+
     public function render(): View
     {
         return view('livewire.admin.chatbot.conversations-unanswered', [

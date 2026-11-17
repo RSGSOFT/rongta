@@ -6,7 +6,6 @@ use App\Models\Concerns\HasTranslations;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * A reseller or a software integrator shown on the Dealers page.
@@ -53,10 +52,5 @@ class Partner extends Model
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
-    }
-
-    public function users(): HasMany
-    {
-        return $this->hasMany(PartnerUser::class);
     }
 }

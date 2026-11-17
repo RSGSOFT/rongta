@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\PartnerUser;
 use App\Models\User;
 
 return [
@@ -43,12 +42,6 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
-        // Partner area logins (resellers and integrators), table partner_users.
-        'partner' => [
-            'driver' => 'session',
-            'provider' => 'partner_users',
-        ],
     ],
 
     /*
@@ -72,11 +65,6 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', User::class),
-        ],
-
-        'partner_users' => [
-            'driver' => 'eloquent',
-            'model' => PartnerUser::class,
         ],
 
         // 'users' => [

@@ -263,6 +263,27 @@ a{text-decoration-line:underline}
 .slot{border:1.5px dashed #9AA6B1;border-radius:8px;min-height:58px;display:grid;place-items:center;font-size:.75rem;color:var(--steel);text-align:center;padding:6px}
 .night .slot{border-color:#5B6F8A;color:var(--night-soft)}
 @media (max-width:960px){.trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trust-cols{grid-template-columns:1fr}}
+/* trust material supplied in the admin panel (settings "trust" and "maker") */
+.trust-item{border:1px solid var(--line);border-radius:10px;padding:16px 14px;display:flex;flex-direction:column;gap:8px;background:var(--label);min-width:0}
+.trust-item b{font-family:var(--font-display);font-size:1.15rem;line-height:1.1}
+.trust-item span{font-size:.8125rem;color:var(--steel)}
+.trust-item .trust-text{color:var(--ink);overflow-wrap:anywhere}
+.trust-item .pic{width:34px;height:34px;color:var(--steel)}
+.trust-cert img{display:block;width:100%;max-height:140px;object-fit:contain;border:1px solid var(--line);border-radius:6px;background:#fff}
+.trust-open{font-size:.875rem;margin-top:auto}
+.trust-logos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.trust-logos li{flex:0 1 calc(50% - 4px);min-width:0;height:48px;display:grid;place-items:center;border:1px solid var(--line);border-radius:6px;background:#fff;padding:4px}
+.trust-logos img{max-width:100%;max-height:38px;object-fit:contain}
+.trust-docs{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.875rem}
+.trust-docs a{overflow-wrap:anywhere}
+.trust-photo{margin:0;min-width:0}
+.trust-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:var(--paper-2)}
+.trust-photo figcaption{font-size:.8125rem;color:var(--steel);margin-top:6px}
+.trust-cols-one{grid-template-columns:minmax(0,1fr)}
+.trust-cols-one>.receipt{max-width:520px}
+.trust-cols-first{margin-top:0}
+.slots-logos .slot{border-style:solid;border-color:var(--line);background:#fff}
+.slots-logos img{max-width:100%;max-height:44px;object-fit:contain}
 @media (max-width:560px){.photos{grid-template-columns:1fr 1fr}.photos .ph:last-child{display:none}.slots{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* knowledge teaser + partner strip */
@@ -506,7 +527,10 @@ textarea.inp{min-height:96px;resize:vertical}
 .ftr .badge{margin-top:14px;border:1px solid #414B58;padding:6px 12px;border-radius:99px;font-size:.8125rem;color:#fff}
 .ftr-note{border-top:1px solid #2A323D;padding-block:16px 22px;font-size:.8125rem;color:#9AA6B1}
 .ftr :focus-visible{outline-color:#fff}
-@media (max-width:760px){.ftr-in{grid-template-columns:1fr}}
+@media (max-width:760px){.ftr-in{grid-template-columns:1fr}
+  /* The footer is the last thing on every page: room below its last line for the chat button
+     (44px + 12px gap, chat.css) so nothing ends up behind it; body padding already clears the bottom bar. */
+  .ftr-note{padding-bottom:calc(22px + 44px + 12px)}}
 
 /* bottom bar (phones) */
 .bar{display:none}

@@ -10,7 +10,6 @@ use App\Models\FaqItem;
 use App\Models\FaqTopic;
 use App\Models\GuideCheck;
 use App\Models\GuideEntry;
-use App\Models\Partner;
 use App\Models\Region;
 use App\Models\ScaleModel;
 use App\Models\Video;
@@ -20,7 +19,9 @@ use Illuminate\Database\Seeder;
 
 /**
  * sample-data.json. Regions, FAQ, buying guide and chooser are real content.
- * Dealers, integrators, documents and videos are placeholders (is_placeholder = true).
+ * Documents and videos are placeholders (is_placeholder = true). The sample dealers and
+ * integrators are not imported (owner decision): only their regions link cities to regions.
+ * The buying guide's "cost" row is not imported either.
  * "partnerTerms" (prices and the 10 + 1 offer) is never read.
  */
 class SampleDataSeeder extends Seeder
@@ -63,25 +64,6 @@ class SampleDataSeeder extends Seeder
                 ['slug' => $slug],
                 ['name' => $name, 'region_id' => $regionSlug ? ($regions[$regionSlug] ?? null) : null, 'sort' => ++$n],
             )->id;
-        }
-
-        // Partners (placeholders)
-        foreach (['resellers', 'integrators'] as $list) {
-            foreach ($data[$list] as $i => $partner) {
-                Partner::updateOrCreate(
-                    ['slug' => $partner['id']],
-                    [
-                        'kind' => $partner['kind'],
-                        'name' => $partner['name'],
-                        'region_id' => $regions[$partner['region']] ?? null,
-                        'city_id' => $cities[$partner['city']['en']] ?? null,
-                        'offers' => $partner['offers'] ?? [],
-                        'is_placeholder' => true,
-                        'is_published' => true,
-                        'sort' => $i + 1,
-                    ],
-                );
-            }
         }
 
         // Documents (placeholders: version, date and size are sample values, no file)
@@ -143,7 +125,6 @@ class SampleDataSeeder extends Seeder
                     'does' => $entry['does'],
                     'fits' => $entry['fits'],
                     'limit' => $entry['limit'],
-                    'cost' => $entry['cost'],
                     'peak' => $entry['peak'],
                     'sort' => $i + 1,
                 ],

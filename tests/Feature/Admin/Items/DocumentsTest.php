@@ -116,7 +116,7 @@ class DocumentsTest extends TestCase
         // An empty file is not a document either.
         $page()->set('newFile', UploadedFile::fake()->create('empty.pdf', 0))->assertHasErrors('newFile');
         // Too big.
-        $page()->set('newFile', $this->zip('big.zip', 13000))->assertHasErrors('newFile');
+        $page()->set('newFile', $this->zip('big.zip', 51300))->assertHasErrors('newFile');
 
         $this->assertSame([], Storage::disk('public')->allFiles());
         $this->assertSame(0, Document::count());

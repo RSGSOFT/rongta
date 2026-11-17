@@ -8,7 +8,9 @@
         <p class="mb-4 rounded-m border border-line bg-label px-3 py-2.5">
             Статья создана из вопроса посетителя, на который бот не ответил:
             <b>«{{ $question->content }}»</b>
-            <a class="ml-1 font-semibold text-accent-ink hover:underline" href="{{ route('admin.chatbot.conversations.show', $question->chat_conversation_id) }}">Открыть диалог</a>
+            @if (auth()->user()?->isAdmin())
+                <a class="ml-1 font-semibold text-accent-ink hover:underline" href="{{ route('admin.chatbot.conversations.show', $question->chat_conversation_id) }}">Открыть диалог</a>
+            @endif
         </p>
     @endif
 

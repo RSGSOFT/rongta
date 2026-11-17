@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Middleware\EnsurePartnerActive;
 use App\Http\Middleware\EnsureStaffActive;
 use App\Http\Middleware\SetLocale;
-use App\Support\Locales;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -23,19 +21,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'locale' => SetLocale::class,
             'staff' => EnsureStaffActive::class,
-            'partner.active' => EnsurePartnerActive::class,
         ]);
 
-        // Staff go to the admin login; everyone else is a partner-area visitor.
-        // The locale is read from the URL here because "auth" runs before the locale middleware.
-        $middleware->redirectGuestsTo(function (Request $request) {
-            if ($request->is('admin', 'admin/*')) {
-                return '/admin/login';
-            }
-            $locale = in_array($request->segment(1), Locales::prefixed(), true) ? $request->segment(1) : Locales::DEFAULT;
-
-            return lroute('partner.login', [], $locale);
-        });
+        // Only the admin panel needs a login: guests go to the admin login page.
+        $middleware->redirectGuestsTo('/admin/login');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

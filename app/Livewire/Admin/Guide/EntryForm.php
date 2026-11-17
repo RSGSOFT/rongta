@@ -15,7 +15,6 @@ use Livewire\Component;
 
 /**
  * Create (/admin/guide/entries/create) and edit (/admin/guide/entries/{entry}/edit) the guide column of one family.
- * "cost" is the running-cost level in words; sums of money are refused.
  */
 class EntryForm extends Component
 {
@@ -26,7 +25,6 @@ class EntryForm extends Component
         'does' => ['Что делают', 'Коротко: для чего эти весы.', 600],
         'fits' => ['Кому подходят', 'Какие магазины и задачи.', 600],
         'limit' => ['Ограничения', 'Чего эти весы не умеют или когда не подходят.', 600],
-        'cost' => ['Расходы на эксплуатацию', 'Только уровень словами: низкие, средние, высокие. Без цифр.', 120],
         'peak' => ['Нагрузка в часы пик', 'Как ведут себя при большом потоке покупателей.', 600],
     ];
 
@@ -59,11 +57,6 @@ class EntryForm extends Component
             $rules = [...$rules, ...$this->transRules('form.'.$field, max: $max)];
         }
 
-        // No sums of money in the running-cost level.
-        foreach (self::LOCALES as $locale) {
-            $rules['form.cost.'.$locale][] = 'not_regex:/\d/';
-        }
-
         return $rules;
     }
 
@@ -72,7 +65,6 @@ class EntryForm extends Component
         return [
             ...$this->russianMessages(),
             'form.family_id.unique' => 'Для этого семейства раздел гида уже есть. Откройте его для правки.',
-            'not_regex' => 'Поле «:attribute»: укажите уровень словами, без цифр.',
         ];
     }
 

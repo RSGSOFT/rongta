@@ -18,6 +18,8 @@ class Index extends Component
 {
     use LogsActivity, RequiresStaff, RussianValidation, WithTable;
 
+    protected bool $adminOnly = true;
+
     protected array $searchable = ['first_name', 'last_name', 'phone'];
 
     protected array $sortable = ['id', 'last_name', 'created_at'];

@@ -1,7 +1,6 @@
 @php
     $contactsReal = \App\Support\RsgContacts::areConfirmed();
     $hero = (array) setting('hero', []);
-    $partnerUrl = auth('partner')->check() ? lroute('partner') : lroute('partner.login');
 @endphp
 <div>
     @foreach ($sections as $section)
@@ -18,7 +17,7 @@
                             </div>
                             <p class="hero-contact">@if ($contactsReal){{ ui($hero['contact_key'] ?? 'hero.contact') }} @endif<x-site.contact /></p>
                         </div>
-                        {{-- Decorative motif: a scale's own display and a printed label. Not a product price. --}}
+                        {{-- Decorative motif: a scale's own display and a printed label. Not a product price: no currency anywhere. --}}
                         <div class="rig" wire:ignore>
                             <div class="readout" role="img" aria-label="{{ ui($hero['readout_alt_key'] ?? 'hero.readout.alt') }}" data-readout>
                                 <div class="readout-win"><span class="readout-cap">{{ ui('ro.weight') }}</span><div data-ro="weight"><x-site.seg7 value="1.250" /></div></div>
@@ -30,7 +29,7 @@
                                 <span class="cap">Rongta Uzbekistan</span>
                                 <b>{{ ui('lbl.product') }}</b>
                                 <dl><dt>{{ ui('lbl.weight') }}</dt><dd>1.250</dd><dt>{{ ui('lbl.unit') }}</dt><dd>12&nbsp;000</dd></dl>
-                                <div class="sum num">15&nbsp;000 {{ ui('lbl.cur') }}</div>
+                                <div class="sum num">15&nbsp;000</div>
                                 <x-site.barcode seed="rongta-hero" :n="46" />
                                 <div class="cap">{{ ui('lbl.sample') }}</div>
                             </div>
@@ -146,7 +145,6 @@
                         <div><h2>{{ ui('ps.h') }}</h2><p>{{ ui('ps.lead') }}</p></div>
                         <div class="btn-row">
                             <a class="btn btn-s" href="{{ lroute('dealers') }}#partner-form" id="ps-form">{{ ui('ps.form') }}</a>
-                            <a class="btn-q" href="{{ $partnerUrl }}" id="ps-login">{{ ui('ps.login') }}</a>
                         </div>
                     </div>
                 </section>

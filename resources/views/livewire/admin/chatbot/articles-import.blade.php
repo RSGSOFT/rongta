@@ -31,7 +31,7 @@
         <x-admin.card title="Руководство">
             <div class="grid gap-4 md:grid-cols-2">
                 <x-admin.field label="Файл PDF" for="imp-pdf" required :error="$errors->first('pdf')"
-                               hint="До {{ $maxMb }} МБ, с текстовым слоем (не только сканы). Большое руководство разделите на части.">
+                               hint="До {{ $maxMb }} МБ, с текстовым слоем (не только сканы). Больше нельзя: Claude принимает запрос не более 32 МБ, а файл при отправке увеличивается примерно на треть. Большое руководство разделите на части.">
                     <input type="file" id="imp-pdf" wire:model="pdf" accept="application/pdf,.pdf" class="adm-control" @disabled(! $available)>
                     <span wire:loading wire:target="pdf" class="mt-1 block text-xs text-steel">Файл загружается…</span>
                 </x-admin.field>

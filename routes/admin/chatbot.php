@@ -15,9 +15,12 @@ Route::prefix('chatbot')->name('chatbot.')->group(function () {
     Route::livewire('/articles/import', Articles\Import::class)->name('articles.import');
     Route::livewire('/articles/{article}/edit', Articles\Form::class)->name('articles.edit');
 
-    Route::livewire('/conversations', Conversations\Index::class)->name('conversations.index');
-    Route::livewire('/conversations/unanswered', Conversations\Unanswered::class)->name('conversations.unanswered');
-    Route::livewire('/conversations/{conversation}', Conversations\Show::class)->name('conversations.show');
+    // Conversations carry visitors' names and phone numbers: admins only.
+    Route::middleware('staff:admin')->group(function () {
+        Route::livewire('/conversations', Conversations\Index::class)->name('conversations.index');
+        Route::livewire('/conversations/unanswered', Conversations\Unanswered::class)->name('conversations.unanswered');
+        Route::livewire('/conversations/{conversation}', Conversations\Show::class)->name('conversations.show');
+    });
 
     // Switching the bot off, its rules and its spending limits: admins only.
     Route::livewire('/settings', Settings::class)->middleware('staff:admin')->name('settings');

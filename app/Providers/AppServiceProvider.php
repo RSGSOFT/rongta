@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Http\Middleware\EnsurePartnerActive;
 use App\Http\Middleware\EnsureStaffActive;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
@@ -23,10 +22,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Livewire update requests re-run these route middleware, so a deactivated or demoted
-        // account is stopped on its next click on every admin and partner screen.
+        // account is stopped on its next click on every admin screen.
         Livewire::addPersistentMiddleware([
             EnsureStaffActive::class,
-            EnsurePartnerActive::class,
         ]);
     }
 }

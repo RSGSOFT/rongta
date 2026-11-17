@@ -120,7 +120,6 @@
             <div>
                 <h2>{{ ui('pf.h') }}</h2>
                 <p class="pb-lead" style="margin-top:12px">{{ ui('pf.lead') }}</p>
-                <p style="margin-top:16px"><a class="pb-link" href="{{ lroute('partner.login') }}" id="pf-login">{{ ui('ps.login') }}</a></p>
             </div>
 
             <div class="pb-panel" id="pf-wrap">

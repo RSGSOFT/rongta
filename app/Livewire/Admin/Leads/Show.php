@@ -13,6 +13,8 @@ class Show extends Component
 {
     use RequiresStaff;
 
+    protected bool $adminOnly = true;
+
     #[Locked]
     public int $leadId;
 

@@ -108,13 +108,17 @@
                 @endif
                 <p class="small" style="margin-top:10px"><a class="link" href="{{ lroute('knowledge') }}" id="m-kb">{{ ui('m.allfiles') }}</a></p>
 
-                <h2 style="font-size:1.7rem;margin:32px 0 6px">{{ ui('m.works') }}</h2>
-                <p class="small muted">{{ ui('m.works.note') }}</p>
-                <div class="slots">
-                    @for ($i = 0; $i < 4; $i++)
-                        <div class="slot">{{ ui('ph.poslogo') }}</div>
-                    @endfor
-                </div>
+                {{-- POS software logos supplied in the admin panel (setting "trust"); nothing until there are some. --}}
+                @php $posLogos = \App\Support\Trust::all()['pos']; @endphp
+                @if ($posLogos)
+                    <h2 style="font-size:1.7rem;margin:32px 0 6px">{{ ui('m.works') }}</h2>
+                    <p class="small muted">{{ ui('m.works.note') }}</p>
+                    <ul class="slots slots-logos" id="m-works" style="list-style:none;padding:0">
+                        @foreach ($posLogos as $logo)
+                            <li class="slot"><img src="{{ asset($logo['path']) }}" alt="{{ $logo['name'] }}" title="{{ $logo['name'] }}" loading="lazy"></li>
+                        @endforeach
+                    </ul>
+                @endif
                 <p class="small" style="margin-top:10px"><a class="link" href="{{ lroute('dealers', ['tab' => 'integrator']) }}" id="m-integrators">{{ ui('m.integrators') }}</a></p>
             </div>
         </div>

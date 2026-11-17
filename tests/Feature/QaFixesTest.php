@@ -4,9 +4,7 @@ namespace Tests\Feature;
 
 use App\Livewire\Admin\Auth\Login as AdminLogin;
 use App\Livewire\Admin\Settings\Index as Settings;
-use App\Livewire\Pages\Partner\Login as PartnerLogin;
 use App\Models\Family;
-use App\Models\PartnerUser;
 use App\Models\Setting;
 use App\Models\UiString;
 use App\Services\Chatbot\KnowledgeBase;
@@ -54,7 +52,7 @@ class QaFixesTest extends TestCase
         $this->assertSame(0, UiString::where('key', 'like', 'chat.a.%')->count());
 
         // Their replacements, and keys that only look similar, are still there.
-        foreach (['site.buy.lead', 'site.ftr.note', 'pa.i.terms.h', 'chat.chip.dealers', 'file.get'] as $key) {
+        foreach (['site.buy.lead', 'site.ftr.note', 'chat.chip.dealers', 'file.get'] as $key) {
             $this->assertDatabaseHas('ui_strings', ['key' => $key]);
         }
     }
@@ -95,9 +93,8 @@ class QaFixesTest extends TestCase
         $this->assertNull(app(KnowledgeBase::class)->rsgContacts());
         $this->assertArrayNotHasKey('rsg_contacts', app(KnowledgeBase::class)->dealers('all', 'any', 'en'));
 
-        // Header, footer, phone bar and hero; the dealers page; the partner area.
-        $this->actingAs(PartnerUser::create(['name' => 'A', 'login' => 'r1', 'password' => 'correct-horse', 'type' => 'reseller', 'is_active' => true]), 'partner');
-        foreach (['/en', '/en/dealers', '/en/partner'] as $url) {
+        // Header, footer, phone bar and hero; the dealers page.
+        foreach (['/en', '/en/dealers'] as $url) {
             $this->get($url)->assertOk()
                 ->assertDontSee('555 11 22')
                 ->assertDontSee('rsg_test')
@@ -114,8 +111,7 @@ class QaFixesTest extends TestCase
         $this->assertSame(['phone' => '+998 71 555 11 22', 'telegram' => 'rsg_test', 'tel' => '+998715551122'], RsgContacts::confirmed());
         $this->assertSame(['phone' => '+998 71 555 11 22', 'telegram' => '@rsg_test'], app(KnowledgeBase::class)->rsgContacts());
 
-        $this->actingAs(PartnerUser::create(['name' => 'A', 'login' => 'r1', 'password' => 'correct-horse', 'type' => 'reseller', 'is_active' => true]), 'partner');
-        foreach (['/en', '/en/dealers', '/en/partner'] as $url) {
+        foreach (['/en', '/en/dealers'] as $url) {
             $this->get($url)->assertOk()
                 ->assertSee('href="tel:+998715551122"', false)
                 ->assertSee('https://t.me/rsg_test', false);
@@ -142,46 +138,23 @@ class QaFixesTest extends TestCase
         $this->assertSame([], array_filter(Storage::disk('public')->allFiles(), fn (string $file) => str_ends_with($file, '.html')));
     }
 
+    // Settings form: same "not confirmed" rule as RsgContacts
+
+    public function test_settings_form_reads_a_missing_flag_as_not_confirmed(): void
+    {
+        Setting::write('contacts', ['phone' => '+998 71 555 11 22', 'telegram' => '@rsg_test']);
+        $this->actingAs($this->admin());
+
+        $this->assertFalse(RsgContacts::areConfirmed());
+        Livewire::test(Settings::class)->assertSet('contacts.is_placeholder', true);
+
+        // Saving the form unchanged keeps them unconfirmed, as the site already treats them.
+        Livewire::test(Settings::class)->call('save')->assertHasNoErrors();
+        $this->assertTrue(setting('contacts.is_placeholder'));
+        $this->assertFalse(RsgContacts::areConfirmed());
+    }
+
     // Login throttling per address
-
-    public function test_partner_login_is_throttled_per_address_across_logins(): void
-    {
-        PartnerUser::create(['name' => 'A', 'login' => 'reseller1', 'password' => 'correct-horse', 'type' => 'reseller', 'is_active' => true]);
-        app()->setLocale('en');
-
-        // A different login each time: the per-login limit never trips.
-        for ($i = 0; $i < PartnerLogin::IP_MAX_ATTEMPTS; $i++) {
-            Livewire::test(PartnerLogin::class)->set('login', 'guess'.$i)->set('password', 'wrong')
-                ->call('authenticate')->assertSee(ui('pa.err.login'));
-        }
-
-        Livewire::test(PartnerLogin::class)->set('login', 'reseller1')->set('password', 'correct-horse')
-            ->call('authenticate')
-            ->assertHasErrors(['login'])
-            ->assertDontSee(ui('pa.err.login'))
-            ->assertNoRedirect();
-        $this->assertGuest('partner');
-
-        // Another address is not affected.
-        $this->assertTrue(RateLimiter::tooManyAttempts('partner-login-ip:127.0.0.1', PartnerLogin::IP_MAX_ATTEMPTS));
-        $this->assertFalse(RateLimiter::tooManyAttempts('partner-login-ip:10.0.0.9', PartnerLogin::IP_MAX_ATTEMPTS));
-    }
-
-    public function test_a_successful_partner_login_does_not_reset_the_address_count(): void
-    {
-        PartnerUser::create(['name' => 'A', 'login' => 'reseller1', 'password' => 'correct-horse', 'type' => 'reseller', 'is_active' => true]);
-
-        for ($i = 0; $i < PartnerLogin::IP_MAX_ATTEMPTS - 1; $i++) {
-            Livewire::test(PartnerLogin::class)->set('login', 'guess'.$i)->set('password', 'wrong')->call('authenticate');
-        }
-        Livewire::test(PartnerLogin::class)->set('login', 'reseller1')->set('password', 'correct-horse')
-            ->call('authenticate')->assertHasNoErrors();
-        auth('partner')->logout();
-
-        Livewire::test(PartnerLogin::class)->set('login', 'guess-last')->set('password', 'wrong')->call('authenticate');
-        Livewire::test(PartnerLogin::class)->set('login', 'reseller1')->set('password', 'correct-horse')
-            ->call('authenticate')->assertHasErrors(['login']);
-    }
 
     public function test_admin_login_is_throttled_per_address_across_emails(): void
     {

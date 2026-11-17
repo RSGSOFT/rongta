@@ -20,11 +20,6 @@ $pages = function () {
     Route::livewire('/model/{slug}', Pages\ModelPage::class)->name('model');
     Route::livewire('/dealers', Pages\Dealers::class)->name('dealers');
     Route::livewire('/knowledge', Pages\Knowledge::class)->name('knowledge');
-
-    Route::livewire('/partner/login', Pages\Partner\Login::class)->name('partner.login');
-    Route::livewire('/partner', Pages\Partner\Area::class)
-        ->middleware(['auth:partner', 'partner.active'])
-        ->name('partner');
 };
 
 // Prefixed locales first, so "/uz" and "/en" are never read as something else.

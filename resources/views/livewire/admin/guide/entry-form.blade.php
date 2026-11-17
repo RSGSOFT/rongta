@@ -14,7 +14,7 @@
         <x-admin.card title="Тексты">
             <div class="grid gap-5 lg:grid-cols-2">
                 @foreach ($fields as $field => [$label, $hint])
-                    <x-admin.trans-textarea :label="$label" :model="'form.'.$field" :hint="$hint" :rows="$field === 'cost' ? 1 : 3" required />
+                    <x-admin.trans-textarea :label="$label" :model="'form.'.$field" :hint="$hint" :rows="3" required />
                 @endforeach
             </div>
             <x-slot:footer>
