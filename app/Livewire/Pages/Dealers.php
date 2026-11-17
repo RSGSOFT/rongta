@@ -199,6 +199,6 @@ class Dealers extends Component
             'counts' => $all->countBy('region_id'),
             'partners' => $current ? $all->where('region_id', $current->id)->values() : $all,
             'summaryRegion' => ($this->summary['region'] ?? null) ? $regions->firstWhere('slug', $this->summary['region']) : null,
-        ])->layout('components.layouts.site', ['title' => ui('dl.h')]);
+        ])->layout('components.layouts.site', ['title' => ui('dl.h'), 'description' => ui('dl.lead')]);
     }
 }

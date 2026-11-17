@@ -5,6 +5,7 @@
         'admin.settings.trust' => 'Доверие',
         'admin.settings.maker' => 'О производителе',
         'admin.settings.lineart' => 'Промпт рисунков',
+        'admin.settings.search' => 'Поиск и аналитика',
     ];
 @endphp
 <nav class="mb-5 flex flex-wrap gap-1.5" aria-label="Разделы настроек">

@@ -61,14 +61,18 @@ class Locales
         return $route ? self::baseName($route->getName()) : null;
     }
 
-    public static function currentUrlIn(string $locale): string
+    /**
+     * The page being viewed, in a locale. With $withQuery off the query string is dropped:
+     * that is the canonical address used by the canonical link, hreflang and the sitemap.
+     */
+    public static function currentUrlIn(string $locale, bool $withQuery = true): string
     {
         $route = self::pageRoute();
         if (! $route) {
             return lroute('home', [], $locale);
         }
 
-        [$pageRoute, $query] = [$route, self::pageQuery()];
+        [$pageRoute, $query] = [$route, $withQuery ? self::pageQuery() : []];
 
         return lroute(self::baseName($pageRoute->getName()), $pageRoute->parameters() + $query, $locale);
     }

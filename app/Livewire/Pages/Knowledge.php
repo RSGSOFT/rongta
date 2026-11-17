@@ -8,6 +8,7 @@ use App\Models\GuideCheck;
 use App\Models\GuideEntry;
 use App\Models\ScaleModel;
 use App\Models\Video;
+use App\Support\Seo;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Livewire\Attributes\Url;
@@ -114,6 +115,11 @@ class Knowledge extends Component
             // The buying guide is reference reading, not a search result.
             'guide' => $needle === '' ? GuideEntry::with(['family' => fn ($family) => $family->withAuroraFlag()])->orderBy('sort')->get() : new Collection,
             'checks' => $needle === '' ? GuideCheck::orderBy('sort')->get() : new Collection,
-        ])->layout('components.layouts.site', ['title' => ui('kb.h')]);
+        ])->layout('components.layouts.site', [
+            'title' => ui('kb.h'),
+            'description' => ui('kb.lead'),
+            // FAQ structured data only for the full, unsearched list (the canonical page).
+            'schema' => $needle === '' ? [Seo::faqPage($faq->flatMap(fn (FaqTopic $topic) => $topic->items))] : [],
+        ]);
     }
 }

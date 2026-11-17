@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Concerns\HasTranslations;
+use App\Support\SearchTools;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -17,6 +18,12 @@ class ScaleModel extends Model
     use HasTranslations;
 
     protected $guarded = ['id'];
+
+    /** Published pages that change are reported to IndexNow engines (when enabled in admin settings). */
+    protected static function booted(): void
+    {
+        static::saved(fn (ScaleModel $model) => SearchTools::modelChanged($model));
+    }
 
     protected function casts(): array
     {

@@ -4,6 +4,7 @@ namespace App\Livewire\Pages;
 
 use App\Models\Family;
 use App\Models\ScaleModel;
+use App\Support\Seo;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -86,6 +87,10 @@ class Catalog extends Component
                 ->values(),
             'filtered' => $this->family !== 'all' || $this->cap !== 'all' || $this->label !== 'all' || $this->conn !== 'all',
             'connNames' => collect(self::CONN_KEYS)->mapWithKeys(fn (string $k) => [$k => $names[$k] ?? strtoupper($k)])->all(),
-        ])->layout('components.layouts.site', ['title' => ui('cat.h'), 'description' => ui('cat.lead')]);
+        ])->layout('components.layouts.site', [
+            'title' => ui('cat.h'),
+            'description' => ui('cat.lead'),
+            'schema' => [Seo::breadcrumbs([[ui('nav.home'), lroute('home')], [ui('nav.catalog'), lroute('catalog')]])],
+        ]);
     }
 }

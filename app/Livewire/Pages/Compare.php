@@ -64,7 +64,11 @@ class Compare extends Component
         return view('livewire.pages.compare', [
             'models' => $models,
             'groups' => $this->groups($models),
-        ])->layout('components.layouts.site', ['title' => ui('cmp.h')]);
+        ])->layout('components.layouts.site', [
+            'title' => ui('cmp.h'),
+            // The list lives in the visitor's session: a utility page, not content for search engines.
+            'noindex' => true,
+        ]);
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Livewire\Pages;
 use App\Models\ModelSpec;
 use App\Models\ScaleModel;
 use App\Support\LineArt;
+use App\Support\Seo;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
@@ -110,6 +111,19 @@ class ModelPage extends Component
                 ->orderBy('sort')
                 ->limit(3)
                 ->get(),
-        ])->layout('components.layouts.site', ['title' => $model->name, 'description' => $model->tr('intro')]);
+        ])->layout('components.layouts.site', [
+            'title' => $model->name,
+            'description' => $model->tr('intro') ?: $model->tr('headline'),
+            'image' => Seo::modelImages($model)[0] ?? null,
+            'schema' => [
+                Seo::product($model),
+                Seo::breadcrumbs(array_values(array_filter([
+                    [ui('nav.home'), lroute('home')],
+                    [ui('nav.catalog'), lroute('catalog')],
+                    $model->family ? [$model->family->tr('name'), lroute('catalog', ['family' => $model->family->slug])] : null,
+                    [$model->name, lroute('model', ['slug' => $model->slug])],
+                ]))),
+            ],
+        ]);
     }
 }

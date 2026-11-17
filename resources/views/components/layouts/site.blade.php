@@ -7,6 +7,11 @@
     ])->filter(fn ($v) => is_string($v) && preg_match('/^#[0-9A-Fa-f]{6}$/', $v));
 
     $compare = \App\Livewire\Pages\Compare::slugs();
+
+    // Page data for <head>: title, description (the site's about line when a page has none),
+    // image (raster photo URL), noindex, schema (the page's JSON-LD nodes).
+    $pageTitle = (isset($title) && $title !== '' ? $title.' · ' : '').config('app.name');
+    $pageDescription = isset($description) && trim((string) $description) !== '' ? (string) $description : ui('ftr.about');
 @endphp
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
@@ -14,14 +19,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ isset($title) && $title !== '' ? $title.' · ' : '' }}{{ config('app.name') }}</title>
-    @isset($description)
-        <meta name="description" content="{{ $description }}">
-    @endisset
-
-    @foreach (\App\Support\Locales::ALL as $altLocale)
-        <link rel="alternate" hreflang="{{ $altLocale }}" href="{{ locale_url($altLocale) }}">
-    @endforeach
+    <title>{{ $pageTitle }}</title>
+    <meta name="description" content="{{ $pageDescription }}">
+    <x-site.seo :title="$pageTitle" :description="$pageDescription" :image="$image ?? null" :noindex="$noindex ?? false" :schema="$schema ?? []" />
+    <x-site.analytics />
 
     <link rel="icon" type="image/png" href="{{ asset('images/rongta-symbol.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

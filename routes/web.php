@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SeoController;
 use App\Livewire\Pages;
 use App\Support\Locales;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,15 @@ $pages = function () {
     Route::livewire('/dealers', Pages\Dealers::class)->name('dealers');
     Route::livewire('/knowledge', Pages\Knowledge::class)->name('knowledge');
 };
+
+// Files for search engines and AI assistants (one address each, not per language).
+Route::controller(SeoController::class)->group(function () {
+    Route::get('/sitemap.xml', 'sitemap')->name('sitemap');
+    Route::get('/robots.txt', 'robots')->name('robots');
+    Route::get('/llms.txt', 'llms')->name('llms');
+    Route::get('/llms-full.txt', 'llmsFull')->name('llms-full');
+    Route::get('/indexnow.txt', 'indexNowKey')->name('indexnow-key');
+});
 
 // Prefixed locales first, so "/uz" and "/en" are never read as something else.
 foreach (Locales::prefixed() as $locale) {
