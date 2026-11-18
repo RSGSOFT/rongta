@@ -132,7 +132,7 @@
     }
 @endphp
 @if ($image !== null)
-    <img {{ $attributes->class('ill-photo') }} src="{{ $image }}" alt="{{ $name }}" loading="lazy">
+    <img {{ $attributes->class('ill-photo') }} src="{{ $image }}" alt="{{ $model ? $model->photoAlt((string) $model->image) : $name }}" loading="lazy">
 @else
-    <svg {{ $attributes->class('ill') }} viewBox="{{ $viewBox ?? $fullBox }}" role="img" aria-label="{{ ui('ill.alt', ['name' => $name]) }}">{!! $svg !!}</svg>
+    <svg {{ $attributes->class('ill') }} viewBox="{{ $viewBox ?? $fullBox }}" role="img" aria-label="{{ ui($drawing !== null ? 'ill.drawing' : 'ill.alt', ['name' => $name]) }}">{!! $svg !!}</svg>
 @endif

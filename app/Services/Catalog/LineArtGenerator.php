@@ -98,7 +98,7 @@ class LineArtGenerator
      */
     public function generate(ScaleModel $model, array $paths): array
     {
-        $photos = $this->photos($paths);
+        $photos = self::photos($paths);
 
         try {
             // Streamed: a long answer would otherwise run into HTTP timeouts.
@@ -144,7 +144,7 @@ class LineArtGenerator
      * @param  list<string>  $paths
      * @return list<array{mediaType: string, data: string}>
      */
-    private function photos(array $paths): array
+    public static function photos(array $paths): array
     {
         $paths = array_slice(array_values(array_unique($paths)), 0, self::MAX_PHOTOS);
         if ($paths === []) {

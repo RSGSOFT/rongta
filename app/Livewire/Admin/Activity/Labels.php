@@ -24,6 +24,7 @@ class Labels
         'exported' => 'Выгрузка',
         'drawing_generated' => 'Рисунок ИИ',
         'seo_generated' => 'SEO ИИ',
+        'alt_generated' => 'Описания фото ИИ',
     ];
 
     public const SUBJECTS = [

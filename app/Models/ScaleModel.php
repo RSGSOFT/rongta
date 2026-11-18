@@ -36,6 +36,7 @@ class ScaleModel extends Model
             'intro' => 'array',
             'gallery' => 'array',
             'drawing_views' => 'array',
+            'image_alts' => 'array',
             'seo_title' => 'array',
             'seo_description' => 'array',
             'is_aurora' => 'boolean',
@@ -78,6 +79,42 @@ class ScaleModel extends Model
         $locale ??= app()->getLocale();
 
         return trim((string) ($this->seo_description[$locale] ?? '')) ?: ($this->tr('intro', $locale) ?: $this->tr('headline', $locale));
+    }
+
+    /**
+     * Stored photo paths: the main photo first, then the gallery.
+     *
+     * @return list<string>
+     */
+    public function photoPaths(): array
+    {
+        if (! filled($this->image)) {
+            return [];
+        }
+
+        return array_values(array_unique(array_merge([(string) $this->image], array_filter((array) $this->gallery, 'is_string'))));
+    }
+
+    /**
+     * Alt text of one photo: the description staff wrote for that language, else
+     * "Rongta C1: Весы с печатью этикеток" (plus ". Фото 2" for the later photos).
+     */
+    public function photoAlt(string $path, ?string $locale = null): string
+    {
+        $locale ??= app()->getLocale();
+        $written = trim((string) ($this->image_alts[$path][$locale] ?? ''));
+        if ($written !== '') {
+            return $written;
+        }
+
+        $alt = 'Rongta '.$this->name;
+        $type = $this->tr('type', $locale);
+        if ($type !== '') {
+            $alt .= ': '.$type;
+        }
+        $index = array_search($path, $this->photoPaths(), true);
+
+        return $index ? $alt.'. '.ui('site.view.photo', ['n' => $index + 1], $locale) : $alt;
     }
 
     public function getRouteKeyName(): string

@@ -200,6 +200,37 @@
             </div>
         </x-admin.card>
 
+        @if ($altPhotos)
+            <x-admin.card title="Описания фото (alt)" hint="Что видно на каждом фото. Их читают поисковики и программы чтения с экрана. Пустое поле: «Rongta {название}: {тип весов}». Новые фото появятся здесь после сохранения.">
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <x-admin.btn wire:click="generateAlts" wire:loading.attr="disabled" wire:target="generateAlts" :disabled="! $seoAvailable">
+                        <span wire:loading.remove wire:target="generateAlts">Описать фото с ИИ</span>
+                        <span wire:loading wire:target="generateAlts">Claude смотрит фото…</span>
+                    </x-admin.btn>
+                    <span class="text-xs text-steel">
+                        @if ($seoAvailable)
+                            Claude описывает фото без описания, до {{ \App\Services\Catalog\AltTextGenerator::MAX_PHOTOS }} за раз. Поля заполнятся, сохраните их сами.
+                        @else
+                            Ключ Claude API не задан (ANTHROPIC_API_KEY в .env): описания можно написать вручную.
+                        @endif
+                    </span>
+                </div>
+                @if ($altProblem)
+                    <p class="mb-3 text-sm font-medium text-danger" role="alert">{{ $altProblem }}</p>
+                @elseif ($altStatus)
+                    <p class="mb-3 text-sm font-medium text-ok" role="status">{{ $altStatus }}</p>
+                @endif
+                <ul class="space-y-4">
+                    @foreach ($altPhotos as $i => $path)
+                        <li wire:key="alt-{{ md5($path) }}" class="grid gap-3 sm:grid-cols-[6rem_1fr]">
+                            <img src="{{ asset('storage/'.$path) }}" alt="" class="aspect-square w-24 rounded-s border border-line bg-paper object-contain" loading="lazy">
+                            <x-admin.trans-input :label="$i === 0 ? 'Главное фото' : 'Фото '.($i + 1)" :model="'alts.'.md5($path)" />
+                        </li>
+                    @endforeach
+                </ul>
+            </x-admin.card>
+        @endif
+
         <x-admin.card title="Преимущества" hint="Блоки с иконкой на странице модели. Порядок здесь = порядок на сайте.">
             <x-slot:tools>
                 <x-admin.btn size="sm" wire:click="addFeature" :disabled="count($features) >= 12">Добавить блок</x-admin.btn>

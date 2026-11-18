@@ -64,6 +64,12 @@ class SiteStringSeeder extends Seeder
             'uz' => 'Oʻzbekistondagi rasmiy distribyutor: RSG',
             'en' => 'Official distributor in Uzbekistan: RSG',
         ],
+        // Alt text of a model's own line drawing (made in the admin from its photos).
+        'ill.drawing' => [
+            'ru' => 'Рисунок весов Rongta {name}',
+            'uz' => 'Rongta {name} tarozisining chizmasi',
+            'en' => 'Line drawing of the Rongta {name} scale',
+        ],
     ];
 
     public function run(): void

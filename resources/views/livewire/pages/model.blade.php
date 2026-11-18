@@ -26,7 +26,7 @@
                         @foreach ($views as $n => $view)
                             <div x-show="i === {{ $n }}" @if ($n > 0) x-cloak @endif>
                                 @if ($view['src'])
-                                    <img class="ill-photo" src="{{ $view['src'] }}" alt="{{ $model->name }}: {{ $view['caption'] }}" @if ($n > 0) loading="lazy" @endif>
+                                    <img class="ill-photo" src="{{ $view['src'] }}" alt="{{ $view['alt'] }}" @if ($n > 0) loading="lazy" @endif>
                                 @else
                                     <x-site.scale-ill :model="$model" :view-box="$view['viewBox']" :photo="false" />
                                 @endif

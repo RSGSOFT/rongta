@@ -49,7 +49,7 @@ class ModelPage extends Component
             }
             $photos = filled($model->image) ? array_merge([$model->image], array_values(array_filter((array) $model->gallery, 'is_string'))) : [];
             foreach ($photos as $i => $path) {
-                $views[] = ['src' => self::fileUrl($path), 'viewBox' => null, 'caption' => ui('site.view.photo', ['n' => $i + 1])];
+                $views[] = ['src' => self::fileUrl($path), 'viewBox' => null, 'caption' => ui('site.view.photo', ['n' => $i + 1]), 'alt' => $model->photoAlt($path)];
             }
 
             return $views;
@@ -62,6 +62,7 @@ class ModelPage extends Component
                     'src' => self::fileUrl($path),
                     'viewBox' => null,
                     'caption' => $i === 0 ? ui('view.general') : ui('site.view.photo', ['n' => $i + 1]),
+                    'alt' => $model->photoAlt($path),
                 ];
             }
 

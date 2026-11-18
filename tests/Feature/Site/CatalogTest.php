@@ -123,6 +123,6 @@ class CatalogTest extends SiteTestCase
     {
         ScaleModel::where('slug', 'c1')->update(['image' => 'images/rongta-logo.png']);
 
-        $this->get('/catalog')->assertSee('src="'.asset('images/rongta-logo.png').'" alt="C1"', false);
+        $this->get('/catalog')->assertSee('src="'.asset('images/rongta-logo.png').'" alt="Rongta C1: ', false);
     }
 }

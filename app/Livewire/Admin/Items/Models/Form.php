@@ -10,6 +10,7 @@ use App\Livewire\Admin\Items\Catalog;
 use App\Models\Family;
 use App\Models\ModelFeature;
 use App\Models\ScaleModel;
+use App\Services\Catalog\AltTextGenerator;
 use App\Services\Catalog\SeoGenerator;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
@@ -65,6 +66,16 @@ class Form extends Component
     #[Locked]
     public ?string $seoProblem = null;
 
+    /** Photo descriptions (alt texts): md5(stored path) => {ru, uz, en}. */
+    public array $alts = [];
+
+    /** Result line of the "Describe photos" button. */
+    #[Locked]
+    public ?string $altStatus = null;
+
+    #[Locked]
+    public ?string $altProblem = null;
+
     /** New main photo (temporary upload). */
     public $newImage = null;
 
@@ -110,6 +121,9 @@ class Form extends Component
 
         $this->image = $model?->image ?: null;
         $this->gallery = array_values(array_filter($model?->gallery ?? [], 'is_string'));
+        foreach ($model?->photoPaths() ?? [] as $path) {
+            $this->alts[md5($path)] = $this->transFill($model->image_alts[$path] ?? null);
+        }
 
         $this->features = $model
             ? $model->features->map(fn (ModelFeature $f) => [
@@ -142,6 +156,7 @@ class Form extends Component
             ...$this->transRules('form.seo_title', required: false, max: SeoGenerator::TITLE_MAX + 20),
             ...$this->transRules('form.seo_description', required: false, max: SeoGenerator::DESCRIPTION_MAX + 20),
             'form.source_url' => ['nullable', 'url:http,https', 'max:255'],
+            'alts' => ['array'],
             'form.sort' => ['required', 'integer', 'min:0', 'max:100000'],
             'form.is_published' => ['boolean'],
 
@@ -152,6 +167,10 @@ class Form extends Component
             'features' => ['array', 'max:12'],
             'features.*.icon' => ['nullable', Rule::in(Catalog::FEATURE_ICONS)],
         ];
+
+        foreach (array_keys($this->alts) as $key) {
+            $rules += $this->transRules("alts.{$key}", required: false, max: AltTextGenerator::ALT_MAX + 25);
+        }
 
         foreach (array_keys($this->features) as $i) {
             $rules += $this->transRules("features.{$i}.title", max: 160);
@@ -184,6 +203,10 @@ class Form extends Component
             ...$this->transAttributes('form.seo_title', 'Заголовок для поиска'),
             ...$this->transAttributes('form.seo_description', 'Описание для поиска'),
         ];
+
+        foreach (array_keys($this->alts) as $key) {
+            $names += $this->transAttributes("alts.{$key}", 'Описание фото');
+        }
 
         foreach (array_keys($this->features) as $i) {
             $n = $i + 1;
@@ -243,6 +266,74 @@ class Form extends Component
                     'output_tokens' => $reply?->outputTokens,
                 ]);
             }
+        }
+    }
+
+    /**
+     * Written photo descriptions of the photos the model keeps, ready to store; null when none.
+     *
+     * @param  list<string>  $paths
+     * @return array<string, array{ru: string, uz: string, en: string}>|null
+     */
+    private function altsFor(array $paths): ?array
+    {
+        $out = [];
+        foreach ($paths as $path) {
+            $alt = $this->alts[md5($path)] ?? null;
+            if ($alt !== null && ! $this->transBlank($alt)) {
+                $out[$path] = $this->transClean($alt);
+            }
+        }
+
+        return $out ?: null;
+    }
+
+    /**
+     * "Describe photos": Claude writes alt texts for saved photos that have no Russian
+     * description yet, a few at a time. Only the form is filled; staff save it.
+     */
+    public function generateAlts(AltTextGenerator $generator): void
+    {
+        $this->altStatus = $this->altProblem = null;
+        if (! $this->modelId || ! $this->image) {
+            $this->altProblem = 'Сначала загрузите фото и сохраните модель.';
+
+            return;
+        }
+
+        $paths = array_values(array_filter(
+            array_unique([$this->image, ...$this->gallery]),
+            fn (string $path) => trim((string) ($this->alts[md5($path)]['ru'] ?? '')) === '',
+        ));
+        if ($paths === []) {
+            $this->altProblem = 'У всех фото уже есть описания. Чтобы написать заново, очистите поле RU у нужного фото.';
+
+            return;
+        }
+        $batch = array_slice($paths, 0, AltTextGenerator::MAX_PHOTOS);
+
+        $model = ScaleModel::findOrFail($this->modelId);
+        $model->forceFill(['name' => trim((string) $this->form['name']) ?: $model->name, 'type' => $this->transClean($this->form['type'])]);
+
+        try {
+            foreach ($generator->generate($model, $batch) as $path => $alt) {
+                $this->alts[md5($path)] = $alt;
+                $this->resetValidation('alts.'.md5($path).'.*');
+            }
+            $left = count($paths) - count($batch);
+            $this->altStatus = 'Готово: описано фото '.count($batch).'.'
+                .($left > 0 ? " Без описания ещё {$left}: нажмите кнопку снова." : '')
+                .' Проверьте тексты и нажмите «Сохранить».';
+        } catch (RuntimeException $e) {
+            $this->altProblem = $e->getMessage();
+        } finally {
+            $reply = $generator->lastReply;
+            $this->logActivity('alt_generated', $model, [
+                'photos' => count($batch),
+                'ok' => $this->altProblem === null,
+                'input_tokens' => $reply?->inputTokens,
+                'output_tokens' => $reply?->outputTokens,
+            ]);
         }
     }
 
@@ -390,6 +481,7 @@ class Form extends Component
                     'source_url' => trim((string) $this->form['source_url']) ?: null,
                     'image' => $image,
                     'gallery' => $gallery ?: null,
+                    'image_alts' => $this->altsFor($image ? [$image, ...$gallery] : []),
                     'sort' => (int) $this->form['sort'],
                     'is_published' => (bool) $this->form['is_published'],
                 ])->save();
@@ -450,6 +542,7 @@ class Form extends Component
             'title' => $title,
             'model' => $this->modelId ? ScaleModel::withCount(['specs', 'documents'])->find($this->modelId) : null,
             'seoAvailable' => app(SeoGenerator::class)->available(),
+            'altPhotos' => $this->image ? array_values(array_unique([$this->image, ...$this->gallery])) : [],
             'families' => Family::orderBy('sort')->get()->mapWithKeys(fn ($f) => [$f->id => $f->tr('name', 'ru')]),
         ])->layout('components.layouts.admin', ['title' => $title]);
     }
