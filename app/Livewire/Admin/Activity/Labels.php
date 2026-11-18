@@ -23,6 +23,7 @@ class Labels
         'status_changed' => 'Смена статуса',
         'exported' => 'Выгрузка',
         'drawing_generated' => 'Рисунок ИИ',
+        'seo_generated' => 'SEO ИИ',
     ];
 
     public const SUBJECTS = [

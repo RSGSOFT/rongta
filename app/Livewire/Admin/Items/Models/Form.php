@@ -10,6 +10,7 @@ use App\Livewire\Admin\Items\Catalog;
 use App\Models\Family;
 use App\Models\ModelFeature;
 use App\Models\ScaleModel;
+use App\Services\Catalog\SeoGenerator;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -18,6 +19,7 @@ use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use RuntimeException;
 
 /**
  * Create (/admin/models/create) and edit (/admin/models/{model}/edit) one scale model:
@@ -56,6 +58,13 @@ class Form extends Component
     #[Locked]
     public bool $slugAuto = false;
 
+    /** Result line of the "Generate SEO" button. */
+    #[Locked]
+    public ?string $seoStatus = null;
+
+    #[Locked]
+    public ?string $seoProblem = null;
+
     /** New main photo (temporary upload). */
     public $newImage = null;
 
@@ -88,6 +97,8 @@ class Form extends Component
             'type' => $this->transFill($model?->type),
             'headline' => $this->transFill($model?->headline),
             'intro' => $this->transFill($model?->intro),
+            'seo_title' => $this->transFill($model?->seo_title),
+            'seo_description' => $this->transFill($model?->seo_description),
             'source_url' => $model->source_url ?? '',
             'sort' => $model->sort ?? ((int) ScaleModel::max('sort') + 1),
             // A new model starts hidden: it has no specs yet.
@@ -128,6 +139,8 @@ class Form extends Component
             ...$this->transRules('form.type', max: 160),
             ...$this->transRules('form.headline', max: 200),
             ...$this->transRules('form.intro', max: 1000),
+            ...$this->transRules('form.seo_title', required: false, max: SeoGenerator::TITLE_MAX + 20),
+            ...$this->transRules('form.seo_description', required: false, max: SeoGenerator::DESCRIPTION_MAX + 20),
             'form.source_url' => ['nullable', 'url:http,https', 'max:255'],
             'form.sort' => ['required', 'integer', 'min:0', 'max:100000'],
             'form.is_published' => ['boolean'],
@@ -168,6 +181,8 @@ class Form extends Component
             ...$this->transAttributes('form.type', 'Тип весов'),
             ...$this->transAttributes('form.headline', 'Заголовок'),
             ...$this->transAttributes('form.intro', 'Вступление'),
+            ...$this->transAttributes('form.seo_title', 'Заголовок для поиска'),
+            ...$this->transAttributes('form.seo_description', 'Описание для поиска'),
         ];
 
         foreach (array_keys($this->features) as $i) {
@@ -187,6 +202,47 @@ class Form extends Component
         }
         if ($key === 'slug') {
             $this->slugAuto = false;
+        }
+    }
+
+    /**
+     * "Generate SEO": Claude writes the search title and description in three languages from
+     * the facts in the form (and the saved specs). Only the form is filled; staff save it.
+     */
+    public function generateSeo(SeoGenerator $generator): void
+    {
+        $this->seoProblem = $this->seoStatus = null;
+
+        $model = $this->modelId ? ScaleModel::with(['family', 'specs', 'features'])->findOrFail($this->modelId) : new ScaleModel;
+        $model->forceFill([
+            'name' => trim((string) $this->form['name']),
+            'family_id' => (int) $this->form['family_id'] ?: null,
+            'is_aurora' => (bool) $this->form['is_aurora'],
+            'label_print' => $this->form['label_print'],
+            'conn' => array_filter($this->form['conn'], fn ($state) => in_array($state, ['std', 'opt'], true)),
+            'type' => $this->transClean($this->form['type']),
+            'headline' => $this->transClean($this->form['headline']),
+            'intro' => $this->transClean($this->form['intro']),
+        ]);
+        $model->setRelation('family', $model->family_id ? Family::find($model->family_id) : null);
+
+        try {
+            $seo = $generator->generate($model);
+            $this->form['seo_title'] = $seo['title'];
+            $this->form['seo_description'] = $seo['description'];
+            $this->resetValidation(['form.seo_title.*', 'form.seo_description.*']);
+            $this->seoStatus = 'Готово. Проверьте тексты и нажмите «Сохранить».';
+        } catch (RuntimeException $e) {
+            $this->seoProblem = $e->getMessage();
+        } finally {
+            if ($this->modelId) {
+                $reply = $generator->lastReply;
+                $this->logActivity('seo_generated', $model, [
+                    'ok' => $this->seoProblem === null,
+                    'input_tokens' => $reply?->inputTokens,
+                    'output_tokens' => $reply?->outputTokens,
+                ]);
+            }
         }
     }
 
@@ -329,6 +385,8 @@ class Form extends Component
                     'type' => $this->transClean($this->form['type']),
                     'headline' => $this->transClean($this->form['headline']),
                     'intro' => $this->transClean($this->form['intro']),
+                    'seo_title' => $this->transBlank($this->form['seo_title']) ? null : $this->transClean($this->form['seo_title']),
+                    'seo_description' => $this->transBlank($this->form['seo_description']) ? null : $this->transClean($this->form['seo_description']),
                     'source_url' => trim((string) $this->form['source_url']) ?: null,
                     'image' => $image,
                     'gallery' => $gallery ?: null,
@@ -391,6 +449,7 @@ class Form extends Component
         return view('livewire.admin.items.models-form', [
             'title' => $title,
             'model' => $this->modelId ? ScaleModel::withCount(['specs', 'documents'])->find($this->modelId) : null,
+            'seoAvailable' => app(SeoGenerator::class)->available(),
             'families' => Family::orderBy('sort')->get()->mapWithKeys(fn ($f) => [$f->id => $f->tr('name', 'ru')]),
         ])->layout('components.layouts.admin', ['title' => $title]);
     }

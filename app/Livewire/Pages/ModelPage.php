@@ -112,8 +112,8 @@ class ModelPage extends Component
                 ->limit(3)
                 ->get(),
         ])->layout('components.layouts.site', [
-            'title' => $model->name,
-            'description' => $model->tr('intro') ?: $model->tr('headline'),
+            'title' => $model->seoTitle(),
+            'description' => $model->seoDescription(),
             'image' => Seo::modelImages($model)[0] ?? null,
             'schema' => [
                 Seo::product($model),

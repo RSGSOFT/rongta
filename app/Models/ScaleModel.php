@@ -36,6 +36,8 @@ class ScaleModel extends Model
             'intro' => 'array',
             'gallery' => 'array',
             'drawing_views' => 'array',
+            'seo_title' => 'array',
+            'seo_description' => 'array',
             'is_aurora' => 'boolean',
             'is_published' => 'boolean',
         ];
@@ -56,6 +58,26 @@ class ScaleModel extends Model
         }
 
         return $slug;
+    }
+
+    /**
+     * Title for search results in a language: the SEO title written for exactly that language,
+     * else the model name. No fallback to another language: a Russian title on the Uzbek page
+     * would be worse than the name.
+     */
+    public function seoTitle(?string $locale = null): string
+    {
+        $locale ??= app()->getLocale();
+
+        return trim((string) ($this->seo_title[$locale] ?? '')) ?: $this->name;
+    }
+
+    /** Search result description in a language, else the page's own intro or headline. */
+    public function seoDescription(?string $locale = null): string
+    {
+        $locale ??= app()->getLocale();
+
+        return trim((string) ($this->seo_description[$locale] ?? '')) ?: ($this->tr('intro', $locale) ?: $this->tr('headline', $locale));
     }
 
     public function getRouteKeyName(): string

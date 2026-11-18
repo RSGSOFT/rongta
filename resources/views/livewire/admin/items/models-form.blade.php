@@ -102,6 +102,33 @@
             </div>
         </x-admin.card>
 
+        <x-admin.card title="SEO: поиск Google и Яндекс" hint="Заголовок и описание страницы в результатах поиска. Пустое поле: берутся название модели и вступление. Без переводов UZ и EN на тех страницах тоже будут название и вступление.">
+            <div class="mb-4 flex flex-wrap items-center gap-3">
+                <x-admin.btn wire:click="generateSeo" wire:loading.attr="disabled" wire:target="generateSeo" :disabled="! $seoAvailable">
+                    <span wire:loading.remove wire:target="generateSeo">Сгенерировать SEO</span>
+                    <span wire:loading wire:target="generateSeo">Claude пишет…</span>
+                </x-admin.btn>
+                <span class="text-xs text-steel">
+                    @if ($seoAvailable)
+                        Claude пишет тексты на трёх языках только из фактов этой формы и характеристик модели. Поля заполнятся, сохраните их сами.
+                    @else
+                        Ключ Claude API не задан (ANTHROPIC_API_KEY в .env): тексты можно написать вручную.
+                    @endif
+                </span>
+            </div>
+            @if ($seoProblem)
+                <p class="mb-3 text-sm font-medium text-danger" role="alert">{{ $seoProblem }}</p>
+            @elseif ($seoStatus)
+                <p class="mb-3 text-sm font-medium text-ok" role="status">{{ $seoStatus }}</p>
+            @endif
+            <div class="grid gap-4 md:grid-cols-2">
+                <x-admin.trans-input label="Заголовок для поиска" model="form.seo_title"
+                                     hint="До {{ \App\Services\Catalog\SeoGenerator::TITLE_MAX }} знаков, начинается с названия модели. «· Rongta Uzbekistan» добавляется сам." />
+                <x-admin.trans-textarea label="Описание для поиска" model="form.seo_description" rows="3"
+                                        hint="120–{{ \App\Services\Catalog\SeoGenerator::DESCRIPTION_MAX }} знаков: что делают весы и где их купить в Узбекистане." />
+            </div>
+        </x-admin.card>
+
         <x-admin.card title="Фото и галерея" hint="Файлы сохраняются при нажатии «Сохранить».">
             <div class="grid gap-5 md:grid-cols-[14rem_1fr]">
                 <div>
