@@ -19,13 +19,23 @@
         <x-admin.card title="Основное">
             <div class="grid gap-4 md:grid-cols-2">
                 <x-admin.field label="Название модели" for="m-name" required :error="$errors->first('form.name')" hint="Одинаково на всех языках, например RLS1000/RLS1100A.">
-                    <x-admin.input id="m-name" wire:model="form.name" :invalid="$errors->has('form.name')" />
+                    <x-admin.input id="m-name" wire:model.blur="form.name" :invalid="$errors->has('form.name')" />
                 </x-admin.field>
 
-                <x-admin.field label="Адрес (slug)" for="m-slug" required :error="$errors->first('form.slug')"
-                               hint="Строчная латиница, цифры и дефис. Это адрес страницы: /model/…; у опубликованной модели менять не рекомендуется.">
-                    <x-admin.input id="m-slug" wire:model="form.slug" :invalid="$errors->has('form.slug')" />
-                </x-admin.field>
+                @if ($slugLocked)
+                    <x-admin.field label="Адрес (slug)" for="m-slug"
+                                   hint="Модель опубликована: адрес страницы не меняется, чтобы не сломать ссылки и результаты поиска. Чтобы изменить, сначала снимите модель с публикации.">
+                        <x-admin.input id="m-slug" :value="$form['slug']" readonly class="font-mono" />
+                    </x-admin.field>
+                @else
+                    <x-admin.field label="Адрес (slug)" for="m-slug" required :error="$errors->first('form.slug')"
+                                   hint="Заполняется из названия. Строчная латиница, цифры и дефис; адрес страницы /model/…. После публикации не меняется.">
+                        <div class="flex gap-2">
+                            <x-admin.input id="m-slug" wire:model.blur="form.slug" class="font-mono" :invalid="$errors->has('form.slug')" />
+                            <x-admin.btn wire:click="slugFromName">Из названия</x-admin.btn>
+                        </div>
+                    </x-admin.field>
+                @endif
 
                 <x-admin.field label="Семейство" for="m-family" required :error="$errors->first('form.family_id')">
                     <x-admin.select id="m-family" wire:model="form.family_id" placeholder="Выберите семейство" :options="$families" :invalid="$errors->has('form.family_id')" />

@@ -80,6 +80,49 @@ class ModelsTest extends TestCase
         $this->assertSame(2, $log->changes['features']);
     }
 
+    public function test_new_model_address_follows_the_name_until_typed(): void
+    {
+        $this->scaleModel(null, ['slug' => 'rls1000-rls1100a']);
+
+        Livewire::test(Form::class)
+            ->set('form.name', 'RLS1000/RLS1100A')
+            ->assertSet('form.slug', 'rls1000-rls1100a-2')
+            ->set('form.name', 'AURORA D2-AI')
+            ->assertSet('form.slug', 'aurora-d2-ai')
+            ->set('form.slug', 'd2')
+            ->set('form.name', 'AURORA S2L-AI')
+            ->assertSet('form.slug', 'd2')
+            ->call('slugFromName')
+            ->assertSet('form.slug', 'aurora-s2l-ai');
+    }
+
+    public function test_published_model_keeps_its_address(): void
+    {
+        $model = $this->scaleModel(null, ['slug' => 'c1', 'name' => 'C1', 'is_published' => true]);
+
+        Livewire::test(Form::class, ['model' => $model])
+            ->assertSet('slugLocked', true)
+            ->set('form.name', 'C1 Pro')
+            ->assertSet('form.slug', 'c1')
+            ->set('form.slug', 'c1-pro')
+            ->call('slugFromName')
+            ->call('save')
+            ->assertHasNoErrors();
+
+        $this->assertSame(['C1 Pro', 'c1'], [$model->fresh()->name, $model->fresh()->slug]);
+
+        $draft = $this->scaleModel($model->family, ['slug' => 'c3', 'name' => 'C3', 'is_published' => false]);
+        Livewire::test(Form::class, ['model' => $draft])
+            ->assertSet('slugLocked', false)
+            ->set('form.name', 'C3 Plus')
+            ->assertSet('form.slug', 'c3')
+            ->call('slugFromName')
+            ->call('save')
+            ->assertHasNoErrors();
+
+        $this->assertSame('c3-plus', $draft->fresh()->slug);
+    }
+
     public function test_model_validation(): void
     {
         $this->scaleModel(null, ['slug' => 'c1']);

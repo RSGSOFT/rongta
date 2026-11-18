@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 /**
  * One scale model (table scale_models). "Model" is taken by Eloquent, hence the name.
@@ -38,6 +39,23 @@ class ScaleModel extends Model
             'is_aurora' => 'boolean',
             'is_published' => 'boolean',
         ];
+    }
+
+    /**
+     * A free page address made from a model name: "RLS1000/RLS1100A" → "rls1000-rls1100a".
+     * Taken addresses get "-2", "-3"… appended; $ignoreId is the model being edited.
+     */
+    public static function slugFrom(string $name, ?int $ignoreId = null): string
+    {
+        $base = Str::limit(Str::slug(str_replace(['/', '\\', '+', '.'], ' ', $name)), 72, '') ?: 'model';
+        $base = rtrim($base, '-');
+
+        $slug = $base;
+        for ($n = 2; static::where('slug', $slug)->when($ignoreId, fn (Builder $q) => $q->whereKeyNot($ignoreId))->exists(); $n++) {
+            $slug = "{$base}-{$n}";
+        }
+
+        return $slug;
     }
 
     public function getRouteKeyName(): string

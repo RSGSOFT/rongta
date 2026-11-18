@@ -48,6 +48,14 @@ class Form extends Component
     #[Locked]
     public array $removedFiles = [];
 
+    /** A published model keeps its page address: links and search results point to it. */
+    #[Locked]
+    public bool $slugLocked = false;
+
+    /** The address follows the name until staff type their own. */
+    #[Locked]
+    public bool $slugAuto = false;
+
     /** New main photo (temporary upload). */
     public $newImage = null;
 
@@ -85,6 +93,9 @@ class Form extends Component
             // A new model starts hidden: it has no specs yet.
             'is_published' => (bool) ($model->is_published ?? false),
         ];
+
+        $this->slugLocked = (bool) ($model->is_published ?? false);
+        $this->slugAuto = $model === null;
 
         $this->image = $model?->image ?: null;
         $this->gallery = array_values(array_filter($model?->gallery ?? [], 'is_string'));
@@ -169,6 +180,25 @@ class Form extends Component
     }
 
     /** Validate an upload as soon as it arrives, so a wrong file never waits for "Save". */
+    public function updatedForm(mixed $value, string $key): void
+    {
+        if ($key === 'name' && $this->slugAuto && ! $this->slugLocked && trim((string) $value) !== '') {
+            $this->form['slug'] = ScaleModel::slugFrom((string) $value, $this->modelId);
+        }
+        if ($key === 'slug') {
+            $this->slugAuto = false;
+        }
+    }
+
+    /** "From the name" button next to the address field. */
+    public function slugFromName(): void
+    {
+        if (! $this->slugLocked && trim((string) $this->form['name']) !== '') {
+            $this->form['slug'] = ScaleModel::slugFrom((string) $this->form['name'], $this->modelId);
+            $this->resetValidation('form.slug');
+        }
+    }
+
     public function updatedNewImage(): void
     {
         try {
@@ -254,6 +284,12 @@ class Form extends Component
 
     public function save()
     {
+        if ($this->slugLocked) {
+            $this->form['slug'] = ScaleModel::whereKey($this->modelId)->value('slug');
+        } elseif (trim((string) $this->form['slug']) === '' && trim((string) $this->form['name']) !== '') {
+            $this->form['slug'] = ScaleModel::slugFrom((string) $this->form['name'], $this->modelId);
+        }
+
         $this->validate();
 
         $disk = Storage::disk('public');
