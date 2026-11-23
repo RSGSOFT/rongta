@@ -26,7 +26,7 @@ class LocaleRoutingTest extends TestCase
     #[DataProvider('locales')]
     public function test_public_pages_return_200_in_each_locale(string $locale, string $prefix): void
     {
-        foreach (['', '/catalog', '/compare', '/model/c1', '/dealers', '/knowledge'] as $path) {
+        foreach (['', '/catalog', '/compare', '/model/c1', '/dealers', '/partners', '/knowledge'] as $path) {
             $url = ($prefix.$path) ?: '/';
             $this->get($url)
                 ->assertOk()

@@ -39,6 +39,7 @@ class Labels
         'App\Models\City' => 'Город',
         'App\Models\Partner' => 'Партнёр',
         'App\Models\PartnerUser' => 'Доступ партнёра',
+        'App\Models\PartnerPoint' => 'Пункт страницы «Партнёрам»',
         'App\Models\PartnerRequest' => 'Заявка на партнёрство',
         'App\Models\Lead' => 'Лид',
         'App\Models\UiString' => 'Текст интерфейса',

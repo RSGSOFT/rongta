@@ -118,6 +118,20 @@ textarea.pb-inp { resize: vertical; }
 @media (max-width: 860px) { .pb-form-two { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 560px) { .pb-form { grid-template-columns: minmax(0, 1fr); } }
 
+/* ---------- for partners ---------- */
+.pb-points { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 16px; }
+.pb-point { background: var(--color-label); border: 1px solid var(--color-line); border-top: 3px solid var(--accent); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.pb-wrap .pb-point h3, .pb-wrap .pb-terms h3 { font-size: 1.2rem; overflow-wrap: anywhere; }
+.pb-point p, .pb-terms p { font-size: 0.95rem; color: var(--color-steel); }
+.pb-terms { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-ink); counter-reset: pb-term; }
+.pb-terms li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: 12px; padding-block: 14px; border-bottom: 1px solid var(--color-line); counter-increment: pb-term; }
+.pb-terms li::before { content: counter(pb-term, decimal-leading-zero); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--accent-ink); line-height: 1.5; }
+.pb-terms li > div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.pb-partner-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; }
+.pb-partner-cta > div { min-width: 0; flex: 1 1 320px; }
+.pb-wrap .pb-partner-cta h2 { font-size: 1.5rem; }
+.pb-partner-cta .pb-lead { font-size: 1rem; margin-top: 6px; }
+
 /* ---------- knowledge base ---------- */
 .pb-kb-tools { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 14px; background: var(--color-label); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 18px; margin-bottom: 10px; }
 .pb-kb-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 8px; font-size: 0.9rem; }

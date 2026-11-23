@@ -47,7 +47,7 @@ class SeoFilesTest extends SiteTestCase
         $expected = [];
         $slugs = ScaleModel::published()->pluck('slug')->all();
         foreach (['', '/uz', '/en'] as $prefix) {
-            foreach (['', '/catalog', '/dealers', '/knowledge'] as $path) {
+            foreach (['', '/catalog', '/dealers', '/partners', '/knowledge'] as $path) {
                 $expected[] = url(($prefix.$path) ?: '/');
             }
             foreach ($slugs as $slug) {
@@ -103,6 +103,7 @@ class SeoFilesTest extends SiteTestCase
         $this->assertStringNotContainsString('/model/c3', $text);
 
         $this->assertStringContainsString('['.ui('cta.dealer', [], 'en').']('.url('/en/dealers').')', $text);
+        $this->assertStringContainsString('['.ui('nav.partner', [], 'en').']('.url('/en/partners').')', $text);
         $this->assertStringContainsString('('.url('/en/knowledge').')', $text);
         $this->assertStringContainsString(url('/llms-full.txt'), $text);
         $this->assertStringNotContainsString('/compare', $text);

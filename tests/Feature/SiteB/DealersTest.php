@@ -4,11 +4,9 @@ namespace Tests\Feature\SiteB;
 
 use App\Livewire\Pages\Dealers;
 use App\Models\Partner;
-use App\Models\PartnerRequest;
 use App\Models\Region;
 use Database\Seeders\SiteBStringSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\RateLimiter;
 use Livewire\Livewire;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
@@ -21,12 +19,6 @@ class DealersTest extends TestCase
     {
         $this->seed();
         $this->seed(SiteBStringSeeder::class);
-    }
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        RateLimiter::clear('partner-request:127.0.0.1');
     }
 
     public static function locales(): array
@@ -55,10 +47,10 @@ class DealersTest extends TestCase
             ->assertOk()
             ->assertSee(ui('dl.h', [], $locale))
             ->assertSee(ui('dl.official', [], $locale))
-            ->assertSee(ui('pf.h', [], $locale))
-            ->assertSee('id="partner-form"', false)
+            ->assertSee('href="'.lroute('partners', [], $locale).'" id="dl-partner"', false)
+            ->assertDontSee('id="partner-form"', false)
             ->assertDontSee('[dl.', false)
-            ->assertDontSee('[pf.', false);
+            ->assertDontSee('[ps.', false);
     }
 
     public function test_map_has_a_tile_for_each_of_the_14_regions(): void
@@ -161,116 +153,6 @@ class DealersTest extends TestCase
             ->call('setRegion', '')
             ->call('setTab', 'bogus')
             ->assertSet('tab', 'reseller');
-    }
-
-    public function test_partner_form_validates(): void
-    {
-        app()->setLocale('en');
-
-        Livewire::test(Dealers::class)
-            ->set('company', 'A')
-            ->set('contact_name', '1')
-            ->set('phone', '+998 90 123')
-            ->call('submitRequest')
-            ->assertHasErrors(['company', 'contact_name', 'phone'])
-            ->assertSee(ui('err.company'))
-            ->assertSee(ui('err.name'))
-            ->assertSee(ui('err.phone'))
-            ->assertSet('sent', false);
-
-        foreach (['+998901234567x', '998901234567', '+7 900 123 45 67', '+998 90 123 45 678'] as $bad) {
-            Livewire::test(Dealers::class)
-                ->set('company', 'Savdo MChJ')
-                ->set('contact_name', 'Aziz Karimov')
-                ->set('phone', $bad)
-                ->call('submitRequest')
-                ->assertHasErrors(['phone']);
-        }
-
-        $this->assertSame(0, PartnerRequest::count());
-    }
-
-    public function test_partner_form_saves_a_request_and_confirms(): void
-    {
-        app()->setLocale('en');
-
-        Livewire::test(Dealers::class)
-            ->set('company', '  Savdo MChJ ')
-            ->set('contact_name', 'Oʻgʻiloy Karimova-Aliyeva')
-            ->set('phone', '+998 (90) 123-45-67')
-            ->set('form_region', 'samarkand')
-            ->set('type', 'integrator')
-            ->set('message', 'We build POS software.')
-            ->call('submitRequest')
-            ->assertHasNoErrors()
-            ->assertSet('sent', true)
-            ->assertSee(ui('pf.sent.h'))
-            ->assertSee('Savdo MChJ')
-            ->call('again')
-            ->assertSet('sent', false)
-            ->assertSet('company', '');
-
-        $request = PartnerRequest::sole();
-        $this->assertSame('Savdo MChJ', $request->company);
-        $this->assertSame('Oʻgʻiloy Karimova-Aliyeva', $request->contact_name);
-        $this->assertSame('+998901234567', $request->phone);
-        $this->assertSame('integrator', $request->type);
-        $this->assertSame('new', $request->status);
-        $this->assertSame('samarkand', $request->region->slug);
-        $this->assertSame('We build POS software.', $request->message);
-    }
-
-    public function test_request_without_a_region_or_message_is_saved(): void
-    {
-        Livewire::test(Dealers::class)
-            ->set('company', 'Savdo MChJ')
-            ->set('contact_name', 'Aziz Karimov')
-            ->set('phone', '+998901234567')
-            ->call('submitRequest')
-            ->assertSet('sent', true);
-
-        $request = PartnerRequest::sole();
-        $this->assertNull($request->region_id);
-        $this->assertNull($request->message);
-        $this->assertSame('reseller', $request->type);
-    }
-
-    public function test_honeypot_stops_bots_without_saving(): void
-    {
-        Livewire::test(Dealers::class)
-            ->set('company', 'Savdo MChJ')
-            ->set('contact_name', 'Aziz Karimov')
-            ->set('phone', '+998901234567')
-            ->set('website', 'http://spam.example')
-            ->call('submitRequest')
-            ->assertSet('sent', true);
-
-        $this->assertSame(0, PartnerRequest::count());
-    }
-
-    public function test_partner_form_is_rate_limited(): void
-    {
-        app()->setLocale('en');
-
-        for ($i = 0; $i < Dealers::REQUESTS_PER_HOUR; $i++) {
-            Livewire::test(Dealers::class)
-                ->set('company', 'Savdo MChJ '.$i)
-                ->set('contact_name', 'Aziz Karimov')
-                ->set('phone', '+998901234567')
-                ->call('submitRequest')
-                ->assertSet('sent', true);
-        }
-
-        Livewire::test(Dealers::class)
-            ->set('company', 'Savdo MChJ')
-            ->set('contact_name', 'Aziz Karimov')
-            ->set('phone', '+998901234567')
-            ->call('submitRequest')
-            ->assertHasErrors(['form'])
-            ->assertSee(ui('pf.err.throttle'))
-            ->assertSet('sent', false);
-
-        $this->assertSame(Dealers::REQUESTS_PER_HOUR, PartnerRequest::count());
     }
 
     public function test_no_prices_on_the_page(): void

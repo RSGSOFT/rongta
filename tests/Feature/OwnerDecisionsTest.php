@@ -97,7 +97,7 @@ class OwnerDecisionsTest extends TestCase
 
     // 4. No partner area
 
-    public function test_partner_area_is_gone_and_links_point_at_the_partner_form(): void
+    public function test_partner_area_is_gone_and_links_point_at_the_partners_page(): void
     {
         $this->assertNull(config('auth.guards.partner'));
         $this->assertNull(config('auth.providers.partner_users'));
@@ -107,7 +107,7 @@ class OwnerDecisionsTest extends TestCase
         $this->assertFalse(Route::has('admin.partner-users.index'));
         $this->get('/admin/partner-users')->assertNotFound();
 
-        $form = lroute('dealers', [], 'en').'#partner-form';
+        $form = lroute('partners', [], 'en');
         $home = $this->get('/en')->assertOk()
             ->assertSee('href="'.$form.'" id="nav-partner"', false)
             ->assertSee('id="ps-form"', false)
@@ -122,7 +122,7 @@ class OwnerDecisionsTest extends TestCase
         $this->assertStringNotContainsString('/partner/', $dealers);
 
         foreach (['ru', 'uz', 'en'] as $locale) {
-            $this->assertStringNotContainsString('/partner', app(PromptBuilder::class)->system($locale));
+            $this->assertDoesNotMatchRegularExpression('#/partner(?!s\b)#', app(PromptBuilder::class)->system($locale));
         }
     }
 

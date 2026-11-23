@@ -117,7 +117,7 @@ class SeoHeadTest extends SiteTestCase
         $this->get('/compare')->assertOk()->assertSee('<meta name="robots" content="noindex, follow">', false);
         $this->get('/en/compare')->assertOk()->assertSee('<meta name="robots" content="noindex, follow">', false);
 
-        foreach (['/', '/catalog', '/model/c1', '/dealers', '/knowledge', '/uz/catalog'] as $path) {
+        foreach (['/', '/catalog', '/model/c1', '/dealers', '/partners', '/knowledge', '/uz/catalog'] as $path) {
             $this->get($path)->assertOk()->assertDontSee('name="robots"', false);
         }
     }
@@ -177,7 +177,7 @@ class SeoHeadTest extends SiteTestCase
     #[DataProvider('locales')]
     public function test_structured_data_never_carries_a_price_or_an_offer(string $locale, string $prefix): void
     {
-        $paths = ['', '/catalog', '/compare', '/dealers', '/knowledge'];
+        $paths = ['', '/catalog', '/compare', '/dealers', '/partners', '/knowledge'];
         foreach (ScaleModel::published()->pluck('slug') as $slug) {
             $paths[] = '/model/'.$slug;
         }

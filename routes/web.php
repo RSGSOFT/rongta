@@ -20,6 +20,7 @@ $pages = function () {
     Route::livewire('/compare', Pages\Compare::class)->name('compare');
     Route::livewire('/model/{slug}', Pages\ModelPage::class)->name('model');
     Route::livewire('/dealers', Pages\Dealers::class)->name('dealers');
+    Route::livewire('/partners', Pages\Partners::class)->name('partners');
     Route::livewire('/knowledge', Pages\Knowledge::class)->name('knowledge');
 };
 

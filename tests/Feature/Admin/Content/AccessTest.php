@@ -11,6 +11,7 @@ use App\Models\FaqTopic;
 use App\Models\GuideCheck;
 use App\Models\GuideEntry;
 use App\Models\Lead;
+use App\Models\PartnerPoint;
 use App\Models\PartnerRequest;
 use App\Models\UiString;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -32,6 +33,7 @@ class AccessTest extends TestCase
         $topic = FaqTopic::create(['slug' => 'setup', 'name' => $this->tr('Настройка'), 'sort' => 1]);
         $item = FaqItem::create(['faq_topic_id' => $topic->id, 'question' => $this->tr('Вопрос'), 'answer' => $this->tr('Ответ'), 'sort' => 1]);
         $entry = GuideEntry::create(['family_id' => $family->id, 'does' => $this->tr('a'), 'fits' => $this->tr('b'), 'limit' => $this->tr('c'), 'peak' => $this->tr('d'), 'sort' => 1]);
+        $point = PartnerPoint::factory()->create();
         $check = GuideCheck::create(['text' => $this->tr('Проверьте'), 'sort' => 1]);
         $option = ChooserOption::create(['key' => 'shop', 'family_id' => $family->id, 'why' => $this->tr('Потому что'), 'sort' => 1]);
         $string = UiString::create(['key' => 'hero.h1', 'ru' => 'Заголовок', 'uz' => 'Sarlavha', 'en' => 'Title']);
@@ -43,6 +45,7 @@ class AccessTest extends TestCase
                 '/admin/regions', '/admin/regions/create', "/admin/regions/{$region->id}/edit",
                 '/admin/cities', '/admin/cities/create', "/admin/cities/{$city->id}/edit",
                 '/admin/partners', '/admin/partners/create', "/admin/partners/{$partner->id}/edit",
+                '/admin/partner-points', '/admin/partner-points/create', "/admin/partner-points/{$point->id}/edit",
                 '/admin/partner-requests', "/admin/partner-requests/{$request->id}",
                 '/admin/strings', "/admin/strings/{$string->id}/edit",
                 '/admin/faq', '/admin/faq/topics/create', "/admin/faq/topics/{$topic->id}/edit",
@@ -114,6 +117,7 @@ class AccessTest extends TestCase
             ->assertOk()
             ->assertSee(route('admin.regions.index'))
             ->assertSee(route('admin.cities.index'))
+            ->assertSee(route('admin.partner-points.index'))
             ->assertSee(route('admin.partner-requests.index'))
             ->assertDontSee(route('admin.leads.index'))
             ->assertSee(route('admin.strings.index'))

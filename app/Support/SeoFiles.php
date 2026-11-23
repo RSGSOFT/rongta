@@ -16,7 +16,7 @@ use XMLWriter;
 class SeoFiles
 {
     /** Indexable public pages without parameters. Compare is left out: it is noindex. */
-    public const PAGES = ['home', 'catalog', 'dealers', 'knowledge'];
+    public const PAGES = ['home', 'catalog', 'dealers', 'partners', 'knowledge'];
 
     /** Language names used in llms.txt, which is written in English. */
     public const LANGUAGE_NAMES = ['ru' => 'Russian', 'uz' => 'Uzbek', 'en' => 'English'];
@@ -126,6 +126,7 @@ class SeoFiles
         $lines[] = '## Where to buy and get help';
         $lines[] = '';
         $lines[] = self::pageLine(ui('cta.dealer', [], $en), 'dealers', ui('dl.lead', [], $en));
+        $lines[] = self::pageLine(ui('nav.partner', [], $en), 'partners', ui('ps.lead', [], $en));
         $lines[] = self::pageLine(ui('nav.knowledge', [], $en), 'knowledge', ui('kb.lead', [], $en));
         $lines[] = self::pageLine(ui('nav.catalog', [], $en), 'catalog', 'All '.$models->count().' models, with filters and a side-by-side comparison.');
 

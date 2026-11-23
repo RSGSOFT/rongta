@@ -10,7 +10,7 @@ class ShellTest extends SiteTestCase
     #[DataProvider('locales')]
     public function test_shell_renders_on_every_page(string $locale, string $prefix): void
     {
-        foreach (['', '/catalog', '/compare', '/model/c1', '/dealers', '/knowledge'] as $path) {
+        foreach (['', '/catalog', '/compare', '/model/c1', '/dealers', '/partners', '/knowledge'] as $path) {
             $response = $this->get(($prefix.$path) ?: '/')->assertOk();
 
             $response->assertSee(ui('badge.dist', [], $locale))

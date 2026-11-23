@@ -144,7 +144,7 @@
                     <div class="wrap pstrip-in">
                         <div><h2>{{ ui('ps.h') }}</h2><p>{{ ui('ps.lead') }}</p></div>
                         <div class="btn-row">
-                            <a class="btn btn-s" href="{{ lroute('dealers') }}#partner-form" id="ps-form">{{ ui('ps.form') }}</a>
+                            <a class="btn btn-s" href="{{ lroute('partners') }}" id="ps-form">{{ ui('ps.form') }}</a>
                         </div>
                     </div>
                 </section>

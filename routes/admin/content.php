@@ -5,6 +5,7 @@ use App\Livewire\Admin\Cities;
 use App\Livewire\Admin\Faq;
 use App\Livewire\Admin\Guide;
 use App\Livewire\Admin\Leads;
+use App\Livewire\Admin\PartnerPoints;
 use App\Livewire\Admin\PartnerRequests;
 use App\Livewire\Admin\Partners;
 use App\Livewire\Admin\Regions;
@@ -29,6 +30,11 @@ Route::livewire('/cities/{city}/edit', Cities\Form::class)->name('cities.edit');
 Route::livewire('/partners', Partners\Index::class)->name('partners.index');
 Route::livewire('/partners/create', Partners\Form::class)->name('partners.create');
 Route::livewire('/partners/{partner}/edit', Partners\Form::class)->name('partners.edit');
+
+// Advantages and terms shown on the For partners page
+Route::livewire('/partner-points', PartnerPoints\Index::class)->name('partner-points.index');
+Route::livewire('/partner-points/create', PartnerPoints\Form::class)->name('partner-points.create');
+Route::livewire('/partner-points/{point}/edit', PartnerPoints\Form::class)->name('partner-points.edit');
 
 // Inbox
 Route::livewire('/partner-requests', PartnerRequests\Index::class)->name('partner-requests.index');

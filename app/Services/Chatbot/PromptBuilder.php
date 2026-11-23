@@ -60,7 +60,8 @@ class PromptBuilder
         $pages = [
             'Catalog' => lroute('catalog', [], $locale, false),
             'Compare models' => lroute('compare', [], $locale, false),
-            'Dealers (map by region, resellers and software integrators, "Become a partner" form)' => lroute('dealers', [], $locale, false),
+            'Dealers (map by region, resellers and software integrators)' => lroute('dealers', [], $locale, false),
+            'For partners (the "Become a partner" form for resellers and software integrators)' => lroute('partners', [], $locale, false),
             'Knowledge base (manuals, drivers and PC software, SDK, videos, FAQ, buying guide)' => lroute('knowledge', [], $locale, false),
         ];
         $lines = ['# Site pages you may link to'];

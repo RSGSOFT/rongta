@@ -51,6 +51,22 @@ class SiteBStringSeeder extends Seeder
             'uz' => 'Roʻyxatdan qiymat tanlang.',
             'en' => 'Choose a value from the list.',
         ],
+        // For partners page
+        'pp.h' => [
+            'ru' => 'Партнёрство с RSG',
+            'uz' => 'RSG bilan hamkorlik',
+            'en' => 'Partner with RSG',
+        ],
+        'pp.adv.h' => [
+            'ru' => 'Преимущества партнёрства',
+            'uz' => 'Hamkorlik afzalliklari',
+            'en' => 'Partner advantages',
+        ],
+        'pp.terms.h' => [
+            'ru' => 'Условия партнёрства',
+            'uz' => 'Hamkorlik shartlari',
+            'en' => 'Partnership terms',
+        ],
         // Knowledge base
         'kb.soon' => [
             'ru' => 'Скоро',

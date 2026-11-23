@@ -4,13 +4,14 @@
     $page = \App\Support\Locales::currentPage();
     $current = match (true) {
         in_array($page, ['model', 'compare'], true) => 'catalog',
+        $page === 'partners' => 'partner',
         default => $page,
     };
     $nav = [
         'catalog' => [lroute('catalog'), 'nav.catalog'],
         'dealers' => [lroute('dealers'), 'nav.dealers'],
         'knowledge' => [lroute('knowledge'), 'nav.knowledge'],
-        'partner' => [lroute('dealers').'#partner-form', 'nav.partner'],
+        'partner' => [lroute('partners'), 'nav.partner'],
     ];
 @endphp
 <div class="strip">

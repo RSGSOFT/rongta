@@ -35,6 +35,7 @@
             ['admin.regions', 'Регионы', false],
             ['admin.cities', 'Города', false],
             ['admin.partners', 'Партнёры', false],
+            ['admin.partner-points', 'Страница «Партнёрам»', false],
             ['admin.partner-requests', 'Заявки на партнёрство', false],
         ]],
         ['Контент', [
