@@ -1,4 +1,4 @@
-{{-- Top strip (distributor badge + contacts) and the sticky header (logo, nav, language switch, dealer button). --}}
+{{-- Top strip (distributor badge + contacts) and the sticky header (logo, nav, language switch). --}}
 @php
 
     $page = \App\Support\Locales::currentPage();
@@ -33,6 +33,5 @@
                     title="{{ ui('lang.name.'.$locale) }}" @if (app()->getLocale() === $locale) aria-current="true" @endif>{{ strtoupper($locale) }}</a>
             @endforeach
         </div>
-        <a class="btn btn-p btn-sm" href="{{ lroute('dealers') }}" id="hdr-cta">{{ ui('cta.dealer') }}</a>
     </div>
 </header>

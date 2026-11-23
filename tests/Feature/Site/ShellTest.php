@@ -15,8 +15,8 @@ class ShellTest extends SiteTestCase
 
             $response->assertSee(ui('badge.dist', [], $locale))
                 ->assertSee('class="hdr"', false)
-                ->assertSee('id="hdr-cta"', false)
-                ->assertSee(ui('cta.dealer', [], $locale))
+                ->assertSee('id="nav-dealers"', false)
+                ->assertDontSee('id="hdr-cta"', false)
                 ->assertSee('class="ftr"', false)
                 ->assertSee('class="bar"', false)
                 ->assertSee('id="bar-call"', false)
