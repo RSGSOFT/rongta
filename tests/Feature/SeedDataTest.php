@@ -106,4 +106,26 @@ class SeedDataTest extends TestCase
         }
         $this->assertNull(setting('partnerTerms'));
     }
+
+    public function test_committed_seed_files_carry_no_prices(): void
+    {
+        $read = fn (string $file): array => json_decode(file_get_contents(database_path('seeders/data/'.$file)), true, 512, JSON_THROW_ON_ERROR);
+
+        foreach ($read('models.json')['models'] as $model) {
+            $this->assertArrayNotHasKey('price', $model, $model['id']);
+        }
+
+        $sample = $read('sample-data.json');
+        $this->assertArrayNotHasKey('partnerTerms', $sample);
+        foreach ($sample['buyingGuide'] as $entry) {
+            $this->assertArrayNotHasKey('cost', $entry, $entry['fam']);
+        }
+
+        foreach ($read('ui-strings.json')['strings'] as $key => $text) {
+            $this->assertFalse(UiStringSeeder::isSkipped($key), $key);
+            foreach ($text as $locale => $value) {
+                $this->assertDoesNotMatchRegularExpression('/soʻm|\bсум\b|UZS/u', $value, "{$key}.{$locale}");
+            }
+        }
+    }
 }

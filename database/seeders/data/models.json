@@ -1,0 +1,3596 @@
+{
+  "_note": "Rongta commercial scales for the Rongta Uzbekistan site. Text values are objects with ru, uz, en. Specs were read from each model's page on rongtatech.com; a value of 'to be confirmed' means the source page did not state it.",
+  "source": "https://www.rongtatech.com/commercial-scale/",
+  "connectionNames": {
+    "eth": "Ethernet",
+    "rs232": "RS232",
+    "usb": "USB",
+    "wifi": "Wi-Fi",
+    "bt": "Bluetooth"
+  },
+  "toBeConfirmed": {
+    "ru": "уточняется",
+    "uz": "aniqlanmoqda",
+    "en": "to be confirmed"
+  },
+  "families": [
+    {
+      "id": "label",
+      "name": {
+        "ru": "Весы с печатью этикеток",
+        "uz": "Yorliq chop etuvchi tarozilar",
+        "en": "Label printing scales"
+      },
+      "line": {
+        "ru": "Взвешивают товар и сразу печатают этикетку со штрихкодом. Кассиру остаётся её отсканировать.",
+        "uz": "Mahsulotni tortadi va shtrix-kodli yorliqni darhol chop etadi. Kassir uni skanerlasa kifoya.",
+        "en": "Weigh the goods and print a barcode label on the spot. The cashier only has to scan it."
+      },
+      "pic": "pole"
+    },
+    {
+      "id": "ai",
+      "name": {
+        "ru": "Весы с ИИ на базе ПК",
+        "uz": "Sunʼiy intellektli kompyuter-tarozilar",
+        "en": "AI PC scales"
+      },
+      "line": {
+        "ru": "Камера узнаёт товар на платформе, сенсорный экран показывает варианты. Меньше поиска по кодам, меньше ошибок.",
+        "uz": "Kamera palladagi mahsulotni taniydi, sensorli ekran variantlarni koʻrsatadi. Kod qidirish va xatolar kamayadi.",
+        "en": "A camera recognises the item on the platter and the touchscreen offers the match. Less searching by code, fewer mistakes."
+      },
+      "pic": "aipc"
+    },
+    {
+      "id": "comm",
+      "name": {
+        "ru": "Весы с передачей данных",
+        "uz": "Maʼlumot uzatuvchi tarozilar",
+        "en": "Communication scales"
+      },
+      "line": {
+        "ru": "Простые весы, которые передают вес в кассовую программу. Подходят к уже работающей кассе.",
+        "uz": "Vaznni kassa dasturiga uzatadigan sodda tarozilar. Ishlab turgan kassaga mos keladi.",
+        "en": "Simple scales that send the weight to your POS software. They fit a checkout you already run."
+      },
+      "pic": "comm"
+    }
+  ],
+  "specGroups": [
+    {
+      "group": "weighing",
+      "keys": [
+        "maxCap",
+        "minCap",
+        "interval",
+        "accClass",
+        "platter",
+        "netWeight"
+      ]
+    },
+    {
+      "group": "display",
+      "keys": [
+        "display",
+        "custDisplay",
+        "keys",
+        "notif",
+        "camera"
+      ]
+    },
+    {
+      "group": "system",
+      "keys": [
+        "cpu",
+        "ram",
+        "storage",
+        "os",
+        "memory"
+      ]
+    },
+    {
+      "group": "printer",
+      "keys": [
+        "printType",
+        "printWidth",
+        "printSpeed",
+        "printRes",
+        "paperOut",
+        "paperStore",
+        "barcodes"
+      ]
+    },
+    {
+      "group": "conn",
+      "keys": [
+        "ethernet",
+        "serial",
+        "usb",
+        "hostLink",
+        "cashDrawer",
+        "wifi",
+        "bluetooth"
+      ]
+    },
+    {
+      "group": "power",
+      "keys": [
+        "powerSrc",
+        "input"
+      ]
+    },
+    {
+      "group": "physical",
+      "keys": [
+        "dims",
+        "protection",
+        "antiCheat",
+        "opTemp",
+        "opHum",
+        "stTemp",
+        "stHum"
+      ]
+    },
+    {
+      "group": "compliance",
+      "keys": [
+        "certs",
+        "standards",
+        "uzMetrology"
+      ]
+    },
+    {
+      "group": "box",
+      "keys": [
+        "inBox"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "rls1315",
+      "fam": "label",
+      "name": "RLS1315/RLS1330",
+      "kind": "hang",
+      "labelPrint": "yes",
+      "conn": {
+        "eth": "std",
+        "rs232": "std",
+        "wifi": "opt"
+      },
+      "type": {
+        "ru": "Подвесные весы с печатью этикеток",
+        "uz": "Osma yorliq tarozisi",
+        "en": "Hanging label scale"
+      },
+      "headline": {
+        "ru": "Прилавок свободен: весы висят над ним",
+        "uz": "Peshtaxta boʻsh qoladi: tarozi uning ustida osilib turadi",
+        "en": "The counter stays free: the scale hangs above it"
+      },
+      "intro": {
+        "ru": "Подвесные весы для рыбы, мяса и свежих продуктов. Чаша висит под корпусом с дисплеем, клавиатурой и принтером этикеток.",
+        "uz": "Baliq, goʻsht va yangi mahsulotlar uchun osma tarozi. Palla displey, klaviatura va yorliq printeri joylashgan korpus ostida osilib turadi.",
+        "en": "A hanging scale for fish, meat and fresh produce. The pan hangs below a body that holds the display, keypad and label printer."
+      },
+      "features": [
+        {
+          "icon": "hook",
+          "title": {
+            "ru": "Подвесная конструкция",
+            "uz": "Osma konstruksiya",
+            "en": "Hanging design"
+          },
+          "text": {
+            "ru": "Товар кладут в чашу под корпусом. Высота весов по данным производителя 985 мм, место на прилавке остаётся для товара.",
+            "uz": "Mahsulot korpus ostidagi pallaga qoʻyiladi. Ishlab chiqaruvchi maʼlumotiga koʻra tarozi balandligi 985 mm, peshtaxtada mahsulot uchun joy qoladi.",
+            "en": "Goods go into the pan below the body. The manufacturer lists a height of 985 mm, so the counter stays clear for goods."
+          }
+        },
+        {
+          "icon": "label",
+          "title": {
+            "ru": "Этикетка или чек",
+            "uz": "Yorliq yoki chek",
+            "en": "Label or receipt"
+          },
+          "text": {
+            "ru": "Термопринтер печатает и этикетки, и чеки шириной до 56 мм. Этикетка отделяется от подложки автоматически.",
+            "uz": "Termoprinter 56 mm gacha kenglikdagi yorliq va cheklarni chop etadi. Yorliq taglikdan avtomatik ajraladi.",
+            "en": "The thermal printer handles labels and receipts up to 56 mm wide. Labels peel off the backing automatically."
+          }
+        },
+        {
+          "icon": "printer",
+          "title": {
+            "ru": "Выдвижной модуль принтера",
+            "uz": "Tortma printer moduli",
+            "en": "Drawer-style printer module"
+          },
+          "text": {
+            "ru": "Рулон меняют, выдвинув модуль, как ящик. В принтере два мотора.",
+            "uz": "Rulon modulni tortma kabi chiqarib almashtiriladi. Printerda ikkita motor bor.",
+            "en": "You change the roll by pulling the module out like a drawer. The printer has two motors."
+          }
+        },
+        {
+          "icon": "drop",
+          "title": {
+            "ru": "Для влажных отделов",
+            "uz": "Nam boʻlimlar uchun",
+            "en": "Made for wet counters"
+          },
+          "text": {
+            "ru": "Производитель указывает защиту корпуса от воды, влаги и насекомых. Класс защиты уточняется.",
+            "uz": "Ishlab chiqaruvchi korpus suv, namlik va hasharotlardan himoyalanganini koʻrsatadi. Himoya klassi aniqlanmoqda.",
+            "en": "The manufacturer states the body resists water, moisture and insects. The protection rating is to be confirmed."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "COG LCD, 88 × 128",
+          "uz": "COG LCD, 88 × 128",
+          "en": "COG LCD, 88 × 128"
+        },
+        "keys": {
+          "ru": "Горячие клавиши: 56 × 2, предустановленные: 28",
+          "uz": "Tezkor tugmalar: 56 × 2, oldindan sozlangan: 28",
+          "en": "Hot keys: 56 × 2, preset keys: 28"
+        },
+        "notif": {
+          "ru": "Звуковой сигнал",
+          "uz": "Tovush signali",
+          "en": "Buzzer"
+        },
+        "memory": {
+          "ru": "SDRAM 8 МБ, Flash 16 МБ",
+          "uz": "SDRAM 8 MB, Flash 16 MB",
+          "en": "SDRAM 8 MB, Flash 16 MB"
+        },
+        "printType": {
+          "ru": "Термопечать",
+          "uz": "Termal chop etish",
+          "en": "Thermal"
+        },
+        "printWidth": {
+          "ru": "до 56 мм",
+          "uz": "56 mm gacha",
+          "en": "up to 56 mm"
+        },
+        "printSpeed": {
+          "ru": "90 мм/с",
+          "uz": "90 mm/s",
+          "en": "90 mm/s"
+        },
+        "printRes": {
+          "ru": "203 dpi",
+          "uz": "203 dpi",
+          "en": "203 dpi"
+        },
+        "paperOut": {
+          "ru": "Автоотделение этикетки",
+          "uz": "Yorliqni avtomatik ajratish",
+          "en": "Auto peel-off"
+        },
+        "barcodes": {
+          "ru": "ITF 2 of 5, Code 128, EAN-13, GS1-128",
+          "uz": "ITF 2 of 5, Code 128, EAN-13, GS1-128",
+          "en": "ITF 2 of 5, Code 128, EAN-13, GS1-128"
+        },
+        "ethernet": {
+          "ru": "1 × RJ45, TCP/IP 100M",
+          "uz": "1 × RJ45, TCP/IP 100M",
+          "en": "1 × RJ45, TCP/IP 100M"
+        },
+        "serial": {
+          "ru": "1 × RS232",
+          "uz": "1 × RS232",
+          "en": "1 × RS232"
+        },
+        "wifi": {
+          "ru": "IEEE 802.11 b/g/n, 2,4 ГГц (опция)",
+          "uz": "IEEE 802.11 b/g/n, 2,4 GHz (ixtiyoriy)",
+          "en": "IEEE 802.11 b/g/n, 2.4 GHz (optional)"
+        },
+        "powerSrc": {
+          "ru": "Разъём AC",
+          "uz": "AC uyasi",
+          "en": "AC jack"
+        },
+        "input": {
+          "ru": "AC 100–240 В, 50/60 Гц, 1 А",
+          "uz": "AC 100–240 V, 50/60 Hz, 1 A",
+          "en": "AC 100–240 V, 50/60 Hz, 1 A"
+        },
+        "dims": {
+          "ru": "388 × 343 × 985 мм",
+          "uz": "388 × 343 × 985 mm",
+          "en": "388 × 343 × 985 mm"
+        },
+        "certs": {
+          "ru": "Утверждение типа (по данным производителя)",
+          "uz": "Tur tasdigʻi (ishlab chiqaruvchi maʼlumoti)",
+          "en": "Type evaluation (as listed by the manufacturer)"
+        },
+        "standards": {
+          "ru": "GB/T 7722-2020",
+          "uz": "GB/T 7722-2020",
+          "en": "GB/T 7722-2020"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "20–85 %",
+          "uz": "20–85 %",
+          "en": "20–85 %"
+        },
+        "stTemp": {
+          "ru": "−20…+60 °C",
+          "uz": "−20…+60 °C",
+          "en": "−20…+60 °C"
+        },
+        "stHum": {
+          "ru": "5–95 %",
+          "uz": "5–95 %",
+          "en": "5–95 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "software",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/rls1315-rls1330-hanging-scale-digital-barcode-scale-15-30kg_p42.html"
+    },
+    {
+      "id": "rls1515",
+      "fam": "label",
+      "name": "RLS1515/RLS1530",
+      "kind": "pole",
+      "head": "box",
+      "labelPrint": "yes",
+      "conn": {
+        "eth": "std",
+        "rs232": "std",
+        "usb": "std"
+      },
+      "type": {
+        "ru": "Весы с печатью этикеток, дисплей на стойке",
+        "uz": "Ustunli displeyga ega yorliq tarozisi",
+        "en": "Label scale with pole display"
+      },
+      "headline": {
+        "ru": "Покупатель видит вес и цену на своём дисплее",
+        "uz": "Xaridor vazn va narxni oʻz displeyida koʻradi",
+        "en": "The buyer sees weight and price on their own display"
+      },
+      "intro": {
+        "ru": "Весы с печатью этикеток и двумя дисплеями: один для продавца, второй для покупателя.",
+        "uz": "Ikki displeyli yorliq tarozisi: biri sotuvchi uchun, ikkinchisi xaridor uchun.",
+        "en": "A label scale with two displays: one for the seller, one for the buyer."
+      },
+      "features": [
+        {
+          "icon": "display",
+          "title": {
+            "ru": "Два дисплея",
+            "uz": "Ikki displey",
+            "en": "Two displays"
+          },
+          "text": {
+            "ru": "Продавец и покупатель видят одни и те же цифры. На дисплее можно показать логотип магазина.",
+            "uz": "Sotuvchi va xaridor bir xil raqamlarni koʻradi. Displeyda doʻkon logotipini koʻrsatish mumkin.",
+            "en": "Seller and buyer see the same figures. The display can show the shop's logo."
+          }
+        },
+        {
+          "icon": "printer",
+          "title": {
+            "ru": "Принтер с двумя моторами",
+            "uz": "Ikki motorli printer",
+            "en": "Two-motor printer"
+          },
+          "text": {
+            "ru": "Модуль принтера выдвигается, рулон этикеток меняется быстро. Ширина печати до 56 мм, 203 dpi.",
+            "uz": "Printer moduli tortib chiqariladi, yorliq ruloni tez almashtiriladi. Chop etish kengligi 56 mm gacha, 203 dpi.",
+            "en": "The printer module slides out, so the label roll is quick to change. Print width up to 56 mm at 203 dpi."
+          }
+        },
+        {
+          "icon": "usb",
+          "title": {
+            "ru": "Ethernet, RS232, USB",
+            "uz": "Ethernet, RS232, USB",
+            "en": "Ethernet, RS232, USB"
+          },
+          "text": {
+            "ru": "Весы подключаются к сети магазина по Ethernet. Есть порт RS232, USB 2.0 и разъём RJ11 для денежного ящика.",
+            "uz": "Tarozi doʻkon tarmogʻiga Ethernet orqali ulanadi. RS232 porti, USB 2.0 va pul qutisi uchun RJ11 uyasi bor.",
+            "en": "The scale joins the shop network over Ethernet. It also has RS232, USB 2.0 and an RJ11 port for a cash drawer."
+          }
+        },
+        {
+          "icon": "keys",
+          "title": {
+            "ru": "Горячие клавиши",
+            "uz": "Tezkor tugmalar",
+            "en": "Hot keys"
+          },
+          "text": {
+            "ru": "40 клавиш в два уровня и 25 предустановленных: ходовые товары вызываются одним нажатием.",
+            "uz": "Ikki darajali 40 ta tugma va 25 ta oldindan sozlangan tugma: koʻp sotiladigan mahsulotlar bir bosishda chaqiriladi.",
+            "en": "40 keys on two levels plus 25 preset keys: best-sellers come up with one press."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "LCD, 88 × 128",
+          "uz": "LCD, 88 × 128",
+          "en": "LCD, 88 × 128"
+        },
+        "keys": {
+          "ru": "Горячие клавиши: 40 × 2, предустановленные: 25",
+          "uz": "Tezkor tugmalar: 40 × 2, oldindan sozlangan: 25",
+          "en": "Hot keys: 40 × 2, preset keys: 25"
+        },
+        "notif": {
+          "ru": "Звуковой сигнал",
+          "uz": "Tovush signali",
+          "en": "Buzzer"
+        },
+        "memory": {
+          "ru": "SDRAM 2 МБ, Flash 16 МБ",
+          "uz": "SDRAM 2 MB, Flash 16 MB",
+          "en": "SDRAM 2 MB, Flash 16 MB"
+        },
+        "printType": {
+          "ru": "Термопечать",
+          "uz": "Termal chop etish",
+          "en": "Thermal"
+        },
+        "printWidth": {
+          "ru": "до 56 мм",
+          "uz": "56 mm gacha",
+          "en": "up to 56 mm"
+        },
+        "printSpeed": {
+          "v": {
+            "ru": "90 мм/с",
+            "uz": "90 mm/s",
+            "en": "90 mm/s"
+          },
+          "note": {
+            "ru": "На странице производителя указано «90 m/s»; единица уточняется",
+            "uz": "Ishlab chiqaruvchi sahifasida «90 m/s» deb yozilgan; oʻlchov birligi aniqlanmoqda",
+            "en": "The manufacturer's page prints “90 m/s”; unit to be confirmed"
+          }
+        },
+        "printRes": {
+          "ru": "203 dpi",
+          "uz": "203 dpi",
+          "en": "203 dpi"
+        },
+        "paperOut": {
+          "ru": "Автоотделение этикетки",
+          "uz": "Yorliqni avtomatik ajratish",
+          "en": "Auto peel-off"
+        },
+        "barcodes": {
+          "ru": "ITF 2 of 5, Code 128, EAN-13, GS1-128",
+          "uz": "ITF 2 of 5, Code 128, EAN-13, GS1-128",
+          "en": "ITF 2 of 5, Code 128, EAN-13, GS1-128"
+        },
+        "ethernet": {
+          "ru": "1 × RJ45, TCP/IP 100M",
+          "uz": "1 × RJ45, TCP/IP 100M",
+          "en": "1 × RJ45, TCP/IP 100M"
+        },
+        "serial": {
+          "ru": "1 × RS232",
+          "uz": "1 × RS232",
+          "en": "1 × RS232"
+        },
+        "usb": {
+          "ru": "1 × USB 2.0",
+          "uz": "1 × USB 2.0",
+          "en": "1 × USB 2.0"
+        },
+        "cashDrawer": {
+          "ru": "1 × RJ11",
+          "uz": "1 × RJ11",
+          "en": "1 × RJ11"
+        },
+        "powerSrc": {
+          "ru": "Разъём AC",
+          "uz": "AC uyasi",
+          "en": "AC jack"
+        },
+        "input": {
+          "ru": "AC 100–240 В, 50/60 Гц, 1 А",
+          "uz": "AC 100–240 V, 50/60 Hz, 1 A",
+          "en": "AC 100–240 V, 50/60 Hz, 1 A"
+        },
+        "dims": {
+          "ru": "403 × 381 × 552 мм",
+          "uz": "403 × 381 × 552 mm",
+          "en": "403 × 381 × 552 mm"
+        },
+        "certs": {
+          "ru": "OIML (по данным производителя)",
+          "uz": "OIML (ishlab chiqaruvchi maʼlumoti)",
+          "en": "OIML (as listed by the manufacturer)"
+        },
+        "standards": {
+          "ru": "GB/T 7722-2020, OIML R 76-1 (2006), EN 45501:2015",
+          "uz": "GB/T 7722-2020, OIML R 76-1 (2006), EN 45501:2015",
+          "en": "GB/T 7722-2020, OIML R 76-1 (2006), EN 45501:2015"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель питания, платформа, гарантийный талон, сертификат, руководство",
+          "uz": "Quvvat kabeli, tarozi pallasi, kafolat taloni, sertifikat, qoʻllanma",
+          "en": "Power cable, scale pan, warranty card, certificate, user manual"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "20–85 %",
+          "uz": "20–85 %",
+          "en": "20–85 %"
+        },
+        "stTemp": {
+          "ru": "−20…+60 °C",
+          "uz": "−20…+60 °C",
+          "en": "−20…+60 °C"
+        },
+        "stHum": {
+          "ru": "5–95 %",
+          "uz": "5–95 %",
+          "en": "5–95 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "software",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/rls1515-digital-balance-scale-for-barcode-label-printing_p77.html"
+    },
+    {
+      "id": "rls1000a",
+      "fam": "label",
+      "name": "RLS1000/RLS1100A",
+      "kind": "pole",
+      "head": "wide",
+      "labelPrint": "yes",
+      "conn": {
+        "eth": "std",
+        "rs232": "std",
+        "wifi": "opt"
+      },
+      "type": {
+        "ru": "Весы с печатью этикеток, дисплей на стойке",
+        "uz": "Ustunli displeyga ega yorliq tarozisi",
+        "en": "Label scale with pole display"
+      },
+      "headline": {
+        "ru": "Взвесил, напечатал этикетку, отдал покупателю",
+        "uz": "Tortdi, yorliq chiqardi, xaridorga berdi",
+        "en": "Weigh it, print the label, hand it over"
+      },
+      "intro": {
+        "ru": "Основные весы для прилавка: дисплей на стойке, 224 горячие клавиши и принтер этикеток в одном корпусе.",
+        "uz": "Peshtaxta uchun asosiy tarozi: ustundagi displey, 224 ta tezkor tugma va yorliq printeri bitta korpusda.",
+        "en": "The main counter scale: a pole display, 224 hot keys and a label printer in one body."
+      },
+      "features": [
+        {
+          "icon": "keys",
+          "title": {
+            "ru": "224 горячие клавиши",
+            "uz": "224 ta tezkor tugma",
+            "en": "224 hot keys"
+          },
+          "text": {
+            "ru": "112 клавиш в два уровня. По данным производителя, в памяти помещается около 10 000 товаров.",
+            "uz": "Ikki darajali 112 ta tugma. Ishlab chiqaruvchi maʼlumotiga koʻra xotiraga 10 000 ga yaqin mahsulot sigʻadi.",
+            "en": "112 keys on two levels. The manufacturer states storage for about 10,000 items."
+          }
+        },
+        {
+          "icon": "label",
+          "title": {
+            "ru": "Этикетка со штрихкодом и QR",
+            "uz": "Shtrix-kod va QR-kodli yorliq",
+            "en": "Labels with barcode and QR"
+          },
+          "text": {
+            "ru": "Весы печатают этикетки и чеки, штрихкоды, QR-коды и коды прослеживаемости. Ширина печати до 56 мм.",
+            "uz": "Tarozi yorliq va cheklarni, shtrix-kod, QR-kod va kuzatuv kodlarini chop etadi. Chop etish kengligi 56 mm gacha.",
+            "en": "The scale prints labels and receipts, barcodes, QR codes and traceability codes. Print width up to 56 mm."
+          }
+        },
+        {
+          "icon": "net",
+          "title": {
+            "ru": "Товары загружаются с компьютера",
+            "uz": "Mahsulotlar kompyuterdan yuklanadi",
+            "en": "Products load from a PC"
+          },
+          "text": {
+            "ru": "Программа для ПК ведёт список товаров и цен и отправляет его на весы по Ethernet. Wi-Fi доступен как опция.",
+            "uz": "Kompyuter dasturi mahsulot va narxlar roʻyxatini yuritadi va uni Ethernet orqali taroziga yuboradi. Wi-Fi ixtiyoriy.",
+            "en": "PC software keeps the product and price list and sends it to the scale over Ethernet. Wi-Fi is optional."
+          }
+        },
+        {
+          "icon": "display",
+          "title": {
+            "ru": "Два дисплея",
+            "uz": "Ikki displey",
+            "en": "Two displays"
+          },
+          "text": {
+            "ru": "Покупатель видит вес и сумму на дисплее со своей стороны. На нём можно показать логотип магазина.",
+            "uz": "Xaridor vazn va summani oʻz tomonidagi displeyda koʻradi. Unda doʻkon logotipini koʻrsatish mumkin.",
+            "en": "The buyer sees weight and total on the display facing them. It can show the shop's logo."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "COG LCD, 256 × 32",
+          "uz": "COG LCD, 256 × 32",
+          "en": "COG LCD, 256 × 32"
+        },
+        "keys": {
+          "ru": "Горячие клавиши: 112 × 2, предустановленные: 28",
+          "uz": "Tezkor tugmalar: 112 × 2, oldindan sozlangan: 28",
+          "en": "Hot keys: 112 × 2, preset keys: 28"
+        },
+        "notif": {
+          "ru": "Звуковой сигнал",
+          "uz": "Tovush signali",
+          "en": "Buzzer"
+        },
+        "memory": {
+          "ru": "SDRAM 8 МБ, Flash 16 МБ",
+          "uz": "SDRAM 8 MB, Flash 16 MB",
+          "en": "SDRAM 8 MB, Flash 16 MB"
+        },
+        "printType": {
+          "ru": "Термопечать",
+          "uz": "Termal chop etish",
+          "en": "Thermal"
+        },
+        "printWidth": {
+          "ru": "до 56 мм",
+          "uz": "56 mm gacha",
+          "en": "up to 56 mm"
+        },
+        "printSpeed": {
+          "v": {
+            "ru": "90 мм/с",
+            "uz": "90 mm/s",
+            "en": "90 mm/s"
+          },
+          "note": {
+            "ru": "На странице производителя указано «90 m/s»; единица уточняется",
+            "uz": "Ishlab chiqaruvchi sahifasida «90 m/s» deb yozilgan; oʻlchov birligi aniqlanmoqda",
+            "en": "The manufacturer's page prints “90 m/s”; unit to be confirmed"
+          }
+        },
+        "printRes": {
+          "ru": "203 dpi",
+          "uz": "203 dpi",
+          "en": "203 dpi"
+        },
+        "paperOut": {
+          "ru": "Автоотделение этикетки",
+          "uz": "Yorliqni avtomatik ajratish",
+          "en": "Auto peel-off"
+        },
+        "barcodes": {
+          "ru": "ITF 2 of 5, Code 128, EAN-13, GS1-128",
+          "uz": "ITF 2 of 5, Code 128, EAN-13, GS1-128",
+          "en": "ITF 2 of 5, Code 128, EAN-13, GS1-128"
+        },
+        "ethernet": {
+          "ru": "1 × RJ45, TCP/IP 100M",
+          "uz": "1 × RJ45, TCP/IP 100M",
+          "en": "1 × RJ45, TCP/IP 100M"
+        },
+        "serial": {
+          "ru": "1 × RS232",
+          "uz": "1 × RS232",
+          "en": "1 × RS232"
+        },
+        "wifi": {
+          "ru": "IEEE 802.11 b/g/n, 2,4 ГГц (опция)",
+          "uz": "IEEE 802.11 b/g/n, 2,4 GHz (ixtiyoriy)",
+          "en": "IEEE 802.11 b/g/n, 2.4 GHz (optional)"
+        },
+        "powerSrc": {
+          "ru": "Разъём AC",
+          "uz": "AC uyasi",
+          "en": "AC jack"
+        },
+        "input": {
+          "ru": "AC 100–240 В, 50/60 Гц, 1,5 А",
+          "uz": "AC 100–240 V, 50/60 Hz, 1,5 A",
+          "en": "AC 100–240 V, 50/60 Hz, 1.5 A"
+        },
+        "dims": {
+          "ru": "433 × 372 × 506 мм",
+          "uz": "433 × 372 × 506 mm",
+          "en": "433 × 372 × 506 mm"
+        },
+        "certs": {
+          "ru": "OIML, CE, утверждение типа; NTEP: RLS1000 (RLS1200), по данным производителя",
+          "uz": "OIML, CE, tur tasdigʻi; NTEP: RLS1000 (RLS1200), ishlab chiqaruvchi maʼlumoti",
+          "en": "OIML, CE, type evaluation; NTEP: RLS1000 (RLS1200), as listed by the manufacturer"
+        },
+        "standards": {
+          "ru": "GB/T 7722-2020, OIML R 76-1 (2006), EN 45501:2015",
+          "uz": "GB/T 7722-2020, OIML R 76-1 (2006), EN 45501:2015",
+          "en": "GB/T 7722-2020, OIML R 76-1 (2006), EN 45501:2015"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель питания, платформа, гарантийный талон, сертификат, руководство",
+          "uz": "Quvvat kabeli, tarozi pallasi, kafolat taloni, sertifikat, qoʻllanma",
+          "en": "Power cable, scale pan, warranty card, certificate, user manual"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "20–85 %",
+          "uz": "20–85 %",
+          "en": "20–85 %"
+        },
+        "stTemp": {
+          "ru": "−20…+60 °C",
+          "uz": "−20…+60 °C",
+          "en": "−20…+60 °C"
+        },
+        "stHum": {
+          "ru": "5–95 %",
+          "uz": "5–95 %",
+          "en": "5–95 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "software",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/rls1000a-rls1100a-digital-weighing-scale-for-barcode-label-printing_p38.html"
+    },
+    {
+      "id": "rls1000b",
+      "fam": "label",
+      "name": "RLS1000/RLS1100B",
+      "kind": "flat",
+      "labelPrint": "yes",
+      "conn": {
+        "eth": "std",
+        "rs232": "std",
+        "usb": "std",
+        "wifi": "opt"
+      },
+      "type": {
+        "ru": "Настольные весы с печатью этикеток",
+        "uz": "Stol usti yorliq tarozisi",
+        "en": "Counter-top label scale"
+      },
+      "headline": {
+        "ru": "Низкие весы с печатью этикеток для тесного прилавка",
+        "uz": "Tor peshtaxta uchun past boʻyli yorliq tarozisi",
+        "en": "A low label scale for a tight counter"
+      },
+      "intro": {
+        "ru": "Та же печать этикеток без стойки: высота корпуса 167 мм. Товары загружаются с флешки или по сети.",
+        "uz": "Oʻsha yorliq chop etish, faqat ustunsiz: korpus balandligi 167 mm. Mahsulotlar fleshkadan yoki tarmoq orqali yuklanadi.",
+        "en": "The same label printing without the pole: the body is 167 mm high. Products load from a USB drive or over the network."
+      },
+      "features": [
+        {
+          "icon": "flat",
+          "title": {
+            "ru": "Высота 167 мм",
+            "uz": "Balandligi 167 mm",
+            "en": "167 mm high"
+          },
+          "text": {
+            "ru": "Дисплей и клавиатура встроены в корпус. Весы помещаются под витриной и в зоне фасовки.",
+            "uz": "Displey va klaviatura korpusga oʻrnatilgan. Tarozi vitrina ostiga va qadoqlash joyiga sigʻadi.",
+            "en": "Display and keypad are built into the body. The scale fits under a display case or in a packing area."
+          }
+        },
+        {
+          "icon": "usb",
+          "title": {
+            "ru": "Загрузка товаров через USB",
+            "uz": "Mahsulotlarni USB orqali yuklash",
+            "en": "Product import over USB"
+          },
+          "text": {
+            "ru": "Список товаров (PLU) загружается пакетом через USB. Есть Ethernet, RS232 и разъём RJ11 для денежного ящика.",
+            "uz": "Mahsulotlar roʻyxati (PLU) USB orqali toʻplam holida yuklanadi. Ethernet, RS232 va pul qutisi uchun RJ11 uyasi bor.",
+            "en": "The product list (PLU) imports in bulk over USB. There is also Ethernet, RS232 and an RJ11 port for a cash drawer."
+          }
+        },
+        {
+          "icon": "label",
+          "title": {
+            "ru": "Разные форматы бумаги",
+            "uz": "Turli qogʻoz oʻlchamlari",
+            "en": "Different paper sizes"
+          },
+          "text": {
+            "ru": "Принтер работает с чековой лентой и этикетками разных размеров при ширине печати до 56 мм.",
+            "uz": "Printer chek lentasi va turli oʻlchamdagi yorliqlar bilan ishlaydi, chop etish kengligi 56 mm gacha.",
+            "en": "The printer takes receipt paper and labels of different sizes, with a print width up to 56 mm."
+          }
+        },
+        {
+          "icon": "printer",
+          "title": {
+            "ru": "Съёмный модуль принтера",
+            "uz": "Yechiladigan printer moduli",
+            "en": "Removable printer module"
+          },
+          "text": {
+            "ru": "Модуль с двумя моторами вынимается для заправки и обслуживания. Производитель указывает защиту от влаги и насекомых.",
+            "uz": "Ikki motorli modul qogʻoz solish va xizmat koʻrsatish uchun chiqarib olinadi. Ishlab chiqaruvchi namlik va hasharotlardan himoyani koʻrsatadi.",
+            "en": "The two-motor module comes out for loading and servicing. The manufacturer states protection against moisture and insects."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "COG LCD, 88 × 128",
+          "uz": "COG LCD, 88 × 128",
+          "en": "COG LCD, 88 × 128"
+        },
+        "keys": {
+          "ru": "Горячие клавиши: 56 × 2, предустановленные: 28",
+          "uz": "Tezkor tugmalar: 56 × 2, oldindan sozlangan: 28",
+          "en": "Hot keys: 56 × 2, preset keys: 28"
+        },
+        "notif": {
+          "ru": "Звуковой сигнал",
+          "uz": "Tovush signali",
+          "en": "Buzzer"
+        },
+        "memory": {
+          "ru": "SDRAM 8 МБ, Flash 16 МБ",
+          "uz": "SDRAM 8 MB, Flash 16 MB",
+          "en": "SDRAM 8 MB, Flash 16 MB"
+        },
+        "printType": {
+          "ru": "Термопечать",
+          "uz": "Termal chop etish",
+          "en": "Thermal"
+        },
+        "printWidth": {
+          "ru": "до 56 мм",
+          "uz": "56 mm gacha",
+          "en": "up to 56 mm"
+        },
+        "printSpeed": {
+          "v": {
+            "ru": "90 мм/с",
+            "uz": "90 mm/s",
+            "en": "90 mm/s"
+          },
+          "note": {
+            "ru": "На странице производителя указано «90 m/s»; единица уточняется",
+            "uz": "Ishlab chiqaruvchi sahifasida «90 m/s» deb yozilgan; oʻlchov birligi aniqlanmoqda",
+            "en": "The manufacturer's page prints “90 m/s”; unit to be confirmed"
+          }
+        },
+        "printRes": {
+          "ru": "203 dpi",
+          "uz": "203 dpi",
+          "en": "203 dpi"
+        },
+        "paperOut": {
+          "ru": "Автоотделение этикетки",
+          "uz": "Yorliqni avtomatik ajratish",
+          "en": "Auto peel-off"
+        },
+        "barcodes": {
+          "ru": "ITF 2 of 5, Code 128, EAN-13, GS1-128",
+          "uz": "ITF 2 of 5, Code 128, EAN-13, GS1-128",
+          "en": "ITF 2 of 5, Code 128, EAN-13, GS1-128"
+        },
+        "ethernet": {
+          "ru": "1 × RJ45, TCP/IP 100M",
+          "uz": "1 × RJ45, TCP/IP 100M",
+          "en": "1 × RJ45, TCP/IP 100M"
+        },
+        "serial": {
+          "ru": "1 × RS232",
+          "uz": "1 × RS232",
+          "en": "1 × RS232"
+        },
+        "usb": {
+          "ru": "1 × USB 2.0",
+          "uz": "1 × USB 2.0",
+          "en": "1 × USB 2.0"
+        },
+        "cashDrawer": {
+          "ru": "1 × RJ11",
+          "uz": "1 × RJ11",
+          "en": "1 × RJ11"
+        },
+        "wifi": {
+          "ru": "IEEE 802.11 b/g/n, 2,4 ГГц (опция)",
+          "uz": "IEEE 802.11 b/g/n, 2,4 GHz (ixtiyoriy)",
+          "en": "IEEE 802.11 b/g/n, 2.4 GHz (optional)"
+        },
+        "powerSrc": {
+          "ru": "Разъём AC",
+          "uz": "AC uyasi",
+          "en": "AC jack"
+        },
+        "input": {
+          "ru": "AC 100–240 В, 50/60 Гц, 1,5 А",
+          "uz": "AC 100–240 V, 50/60 Hz, 1,5 A",
+          "en": "AC 100–240 V, 50/60 Hz, 1.5 A"
+        },
+        "dims": {
+          "ru": "404 × 373 × 167 мм",
+          "uz": "404 × 373 × 167 mm",
+          "en": "404 × 373 × 167 mm"
+        },
+        "certs": {
+          "ru": "OIML, CE, утверждение типа; NTEP: RLS1000 (RLS1200), по данным производителя",
+          "uz": "OIML, CE, tur tasdigʻi; NTEP: RLS1000 (RLS1200), ishlab chiqaruvchi maʼlumoti",
+          "en": "OIML, CE, type evaluation; NTEP: RLS1000 (RLS1200), as listed by the manufacturer"
+        },
+        "standards": {
+          "ru": "GB/T 7722-2020, OIML R 76-1 (2006), EN 45501:2015",
+          "uz": "GB/T 7722-2020, OIML R 76-1 (2006), EN 45501:2015",
+          "en": "GB/T 7722-2020, OIML R 76-1 (2006), EN 45501:2015"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель питания, платформа, гарантийный талон, сертификат, руководство",
+          "uz": "Quvvat kabeli, tarozi pallasi, kafolat taloni, sertifikat, qoʻllanma",
+          "en": "Power cable, scale pan, warranty card, certificate, user manual"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "20–85 %",
+          "uz": "20–85 %",
+          "en": "20–85 %"
+        },
+        "stTemp": {
+          "ru": "−20…+60 °C",
+          "uz": "−20…+60 °C",
+          "en": "−20…+60 °C"
+        },
+        "stHum": {
+          "ru": "5–95 %",
+          "uz": "5–95 %",
+          "en": "5–95 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "software",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/rls1000b-rls1100b-barcode-label-counter-scale-digital_p39.html"
+    },
+    {
+      "id": "c2-ai",
+      "fam": "ai",
+      "name": "C2-AI",
+      "kind": "c2ai",
+      "labelPrint": "no",
+      "conn": {
+        "rs232": "std",
+        "eth": "opt",
+        "usb": "opt",
+        "wifi": "opt",
+        "bt": "opt"
+      },
+      "type": {
+        "ru": "Весы с камерой распознавания товара",
+        "uz": "Mahsulotni taniydigan kamerali tarozi",
+        "en": "Scale with a product recognition camera"
+      },
+      "headline": {
+        "ru": "Камера узнаёт товар, покупателю остаётся подтвердить",
+        "uz": "Kamera mahsulotni taniydi, xaridor faqat tasdiqlaydi",
+        "en": "The camera recognises the item, the buyer only confirms"
+      },
+      "intro": {
+        "ru": "Весы с камерой на складной стойке. Подключаются к кассе или терминалу самообслуживания и подсказывают, какой товар лежит на платформе.",
+        "uz": "Buklanadigan ustundagi kamerali tarozi. Kassa yoki oʻz-oʻziga xizmat terminaliga ulanadi va pallada qaysi mahsulot turganini aytadi.",
+        "en": "A scale with a camera on a folding arm. It connects to a checkout or self-service terminal and suggests which item is on the platter."
+      },
+      "features": [
+        {
+          "icon": "camera",
+          "title": {
+            "ru": "Распознавание товара",
+            "uz": "Mahsulotni tanish",
+            "en": "Product recognition"
+          },
+          "text": {
+            "ru": "Камера 2 Мп смотрит на платформу сверху. По данным производителя, распознавание занимает 0,1 секунды при точности 99 %, в пакете и без него.",
+            "uz": "2 MP kamera pallaga tepadan qaraydi. Ishlab chiqaruvchi maʼlumotiga koʻra tanish 0,1 soniya davom etadi, aniqligi 99 %, paketda ham, paketsiz ham.",
+            "en": "A 2 MP camera looks down at the platter. The manufacturer states recognition in 0.1 seconds at 99% accuracy, bagged or unbagged."
+          }
+        },
+        {
+          "icon": "fold",
+          "title": {
+            "ru": "Складная камера",
+            "uz": "Buklanadigan kamera",
+            "en": "Folding camera"
+          },
+          "text": {
+            "ru": "В рабочем положении высота 407 мм, в сложенном 94 мм. Камера поворачивается.",
+            "uz": "Ish holatida balandligi 407 mm, buklanganda 94 mm. Kamera buriladi.",
+            "en": "407 mm high when working, 94 mm when folded. The camera rotates."
+          }
+        },
+        {
+          "icon": "pos",
+          "title": {
+            "ru": "Подключение к кассе",
+            "uz": "Kassaga ulash",
+            "en": "Connects to the checkout"
+          },
+          "text": {
+            "ru": "Стандартно RS232. Ethernet, USB, Wi-Fi и Bluetooth доступны как опции.",
+            "uz": "Standart holda RS232. Ethernet, USB, Wi-Fi va Bluetooth ixtiyoriy.",
+            "en": "RS232 as standard. Ethernet, USB, Wi-Fi and Bluetooth are options."
+          }
+        },
+        {
+          "icon": "drop",
+          "title": {
+            "ru": "Защита корпуса",
+            "uz": "Korpus himoyasi",
+            "en": "Protected body"
+          },
+          "text": {
+            "ru": "Производитель указывает защиту от воды и насекомых. Класс защиты уточняется.",
+            "uz": "Ishlab chiqaruvchi suv va hasharotlardan himoyani koʻrsatadi. Himoya klassi aniqlanmoqda.",
+            "en": "The manufacturer states protection against water and insects. The protection rating is to be confirmed."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "Светодиодный сегментный, 5 разрядов",
+          "uz": "LED segmentli, 5 xonali",
+          "en": "LED segment, 5 digits"
+        },
+        "keys": {
+          "ru": "Питание, Тара, Ноль, Сброс",
+          "uz": "Yoqish, Tara, Nol, Qayta oʻrnatish",
+          "en": "Power, Tare, Zero, Reset"
+        },
+        "camera": {
+          "ru": "2 Мп",
+          "uz": "2 MP",
+          "en": "2 MP"
+        },
+        "serial": {
+          "ru": "1 × RS232",
+          "uz": "1 × RS232",
+          "en": "1 × RS232"
+        },
+        "ethernet": {
+          "ru": "1 × RJ45 (опция), TCP/IP 100M",
+          "uz": "1 × RJ45 (ixtiyoriy), TCP/IP 100M",
+          "en": "1 × RJ45 (optional), TCP/IP 100M"
+        },
+        "usb": {
+          "ru": "2 × USB 2.0 (опция)",
+          "uz": "2 × USB 2.0 (ixtiyoriy)",
+          "en": "2 × USB 2.0 (optional)"
+        },
+        "wifi": {
+          "ru": "IEEE 802.11 b/g/n, 2,4 ГГц (опция)",
+          "uz": "IEEE 802.11 b/g/n, 2,4 GHz (ixtiyoriy)",
+          "en": "IEEE 802.11 b/g/n, 2.4 GHz (optional)"
+        },
+        "bluetooth": {
+          "ru": "BT 2.4 (опция)",
+          "uz": "BT 2.4 (ixtiyoriy)",
+          "en": "BT 2.4 (optional)"
+        },
+        "powerSrc": {
+          "ru": "Разъём AC",
+          "uz": "AC uyasi",
+          "en": "AC jack"
+        },
+        "input": {
+          "ru": "AC 100–240 В, 50/60 Гц, 1,5 А",
+          "uz": "AC 100–240 V, 50/60 Hz, 1,5 A",
+          "en": "AC 100–240 V, 50/60 Hz, 1.5 A"
+        },
+        "dims": {
+          "parts": [
+            [
+              {
+                "ru": "Сложены",
+                "uz": "Buklangan holda",
+                "en": "Folded"
+              },
+              {
+                "ru": "373 × 340 × 94 мм",
+                "uz": "373 × 340 × 94 mm",
+                "en": "373 × 340 × 94 mm"
+              }
+            ],
+            [
+              {
+                "ru": "Рабочее положение",
+                "uz": "Ish holatida",
+                "en": "Working position"
+              },
+              {
+                "ru": "373 × 340 × 407 мм",
+                "uz": "373 × 340 × 407 mm",
+                "en": "373 × 340 × 407 mm"
+              }
+            ]
+          ]
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель питания, платформа, гарантийный талон, сертификат, руководство, кабель RS232",
+          "uz": "Quvvat kabeli, tarozi pallasi, kafolat taloni, sertifikat, qoʻllanma, RS232 kabeli",
+          "en": "Power cable, scale pan, warranty card, certificate, user manual, serial cable"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "20–85 %",
+          "uz": "20–85 %",
+          "en": "20–85 %"
+        },
+        "stTemp": {
+          "ru": "−20…+60 °C",
+          "uz": "−20…+60 °C",
+          "en": "−20…+60 °C"
+        },
+        "stHum": {
+          "ru": "5–95 %",
+          "uz": "5–95 %",
+          "en": "5–95 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/c2-ai-image-recognition-scale_p94.html"
+    },
+    {
+      "id": "aurora-d2-ai",
+      "fam": "ai",
+      "name": "AURORA D2-AI",
+      "kind": "aipc",
+      "receipt": true,
+      "aurora": true,
+      "labelPrint": "receipt",
+      "conn": {
+        "eth": "std",
+        "usb": "std",
+        "wifi": "std",
+        "bt": "std"
+      },
+      "type": {
+        "ru": "Кассовые весы с ИИ и сенсорным экраном",
+        "uz": "Sunʼiy intellektli, sensor ekranli kassa tarozisi",
+        "en": "AI cashier scale with touchscreen"
+      },
+      "headline": {
+        "ru": "Касса и весы в одном терминале",
+        "uz": "Kassa va tarozi bitta terminalda",
+        "en": "Checkout and scale in one terminal"
+      },
+      "intro": {
+        "ru": "Кассир взвешивает товар и пробивает покупку на одном устройстве с экраном 15,6″. Доступны версии на Windows и на Android.",
+        "uz": "Kassir mahsulotni tortadi va xaridni 15,6″ ekranli bitta qurilmada rasmiylashtiradi. Windows va Android versiyalari mavjud.",
+        "en": "The cashier weighs and rings up the sale on one device with a 15.6″ screen. Windows and Android versions are available."
+      },
+      "features": [
+        {
+          "icon": "touch",
+          "title": {
+            "ru": "Сенсорный экран 15,6″",
+            "uz": "15,6″ sensorli ekran",
+            "en": "15.6″ touchscreen"
+          },
+          "text": {
+            "ru": "Мультитач-экран 1366 × 768. Второй экран 15,6″ для покупателя доступен как опция.",
+            "uz": "1366 × 768 multitach ekran. Xaridor uchun ikkinchi 15,6″ ekran ixtiyoriy.",
+            "en": "A 1366 × 768 multi-touch screen. A second 15.6″ screen for the customer is optional."
+          }
+        },
+        {
+          "icon": "camera",
+          "title": {
+            "ru": "Распознавание товара",
+            "uz": "Mahsulotni tanish",
+            "en": "Product recognition"
+          },
+          "text": {
+            "ru": "Функция распознавания встроена. Характеристики камеры на странице производителя не указаны и уточняются.",
+            "uz": "Tanish funksiyasi oʻrnatilgan. Kamera tavsiflari ishlab chiqaruvchi sahifasida koʻrsatilmagan, aniqlanmoqda.",
+            "en": "Recognition is built in. Camera details are not on the manufacturer's page and are to be confirmed."
+          }
+        },
+        {
+          "icon": "os",
+          "title": {
+            "ru": "Windows или Android",
+            "uz": "Windows yoki Android",
+            "en": "Windows or Android"
+          },
+          "text": {
+            "ru": "Версия Windows: Intel J6412, Windows 10/11. Версия Android: RK3568, Android 11. Интегратор выбирает платформу под свою кассовую программу.",
+            "uz": "Windows versiyasi: Intel J6412, Windows 10/11. Android versiyasi: RK3568, Android 11. Integrator platformani oʻz kassa dasturiga qarab tanlaydi.",
+            "en": "Windows version: Intel J6412, Windows 10/11. Android version: RK3568, Android 11. The integrator picks the platform that suits their POS software."
+          }
+        },
+        {
+          "icon": "drawer",
+          "title": {
+            "ru": "Чековый принтер и денежный ящик",
+            "uz": "Chek printeri va pul qutisi",
+            "en": "Receipt printer and cash drawer"
+          },
+          "text": {
+            "ru": "Встроенный термопринтер с шириной печати до 58 мм и разъём RJ11 для денежного ящика.",
+            "uz": "58 mm gacha kenglikda chop etuvchi termoprinter va pul qutisi uchun RJ11 uyasi.",
+            "en": "A built-in thermal printer with a print width up to 58 mm and an RJ11 port for a cash drawer."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "15.6″, 1366 × 768, мультитач",
+          "uz": "15.6″, 1366 × 768, multitach",
+          "en": "15.6″, 1366 × 768, multi-touch"
+        },
+        "custDisplay": {
+          "ru": "15.6″, 1366 × 768 (опция)",
+          "uz": "15.6″, 1366 × 768 (ixtiyoriy)",
+          "en": "15.6″, 1366 × 768 (optional)"
+        },
+        "keys": {
+          "ru": "Кнопка питания",
+          "uz": "Yoqish tugmasi",
+          "en": "Power button"
+        },
+        "notif": {
+          "ru": "Динамик, голосовые уведомления, индикаторы питания и принтера",
+          "uz": "Dinamik, ovozli bildirishnomalar, quvvat va printer indikatorlari",
+          "en": "Speaker, voice prompts, power and printer lights"
+        },
+        "camera": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "cpu": {
+          "parts": [
+            [
+              {
+                "ru": "Версия Windows",
+                "uz": "Windows versiyasi",
+                "en": "Windows version"
+              },
+              {
+                "ru": "Intel Elkhart Lake J6412, 2,0 ГГц",
+                "uz": "Intel Elkhart Lake J6412, 2,0 GHz",
+                "en": "Intel Elkhart Lake J6412, 2.0 GHz"
+              }
+            ],
+            [
+              {
+                "ru": "Версия Android",
+                "uz": "Android versiyasi",
+                "en": "Android version"
+              },
+              {
+                "ru": "RK3568, 4 ядра Cortex-A55, 2,0 ГГц",
+                "uz": "RK3568, 4 yadroli Cortex-A55, 2,0 GHz",
+                "en": "RK3568, quad-core Cortex-A55, 2.0 GHz"
+              }
+            ]
+          ]
+        },
+        "ram": {
+          "parts": [
+            [
+              {
+                "ru": "Версия Windows",
+                "uz": "Windows versiyasi",
+                "en": "Windows version"
+              },
+              {
+                "ru": "4 ГБ / 8 ГБ / 16 ГБ DDR4",
+                "uz": "4 GB / 8 GB / 16 GB DDR4",
+                "en": "4 GB / 8 GB / 16 GB DDR4"
+              }
+            ],
+            [
+              {
+                "ru": "Версия Android",
+                "uz": "Android versiyasi",
+                "en": "Android version"
+              },
+              {
+                "ru": "2 ГБ / 4 ГБ DDR4",
+                "uz": "2 GB / 4 GB DDR4",
+                "en": "2 GB / 4 GB DDR4"
+              }
+            ]
+          ]
+        },
+        "storage": {
+          "parts": [
+            [
+              {
+                "ru": "Версия Windows",
+                "uz": "Windows versiyasi",
+                "en": "Windows version"
+              },
+              {
+                "ru": "128 ГБ / 256 ГБ mSATA",
+                "uz": "128 GB / 256 GB mSATA",
+                "en": "128 GB / 256 GB mSATA"
+              }
+            ],
+            [
+              {
+                "ru": "Версия Android",
+                "uz": "Android versiyasi",
+                "en": "Android version"
+              },
+              {
+                "ru": "16 ГБ / 32 ГБ / 64 ГБ eMMC",
+                "uz": "16 GB / 32 GB / 64 GB eMMC",
+                "en": "16 GB / 32 GB / 64 GB eMMC"
+              }
+            ]
+          ]
+        },
+        "os": {
+          "parts": [
+            [
+              {
+                "ru": "Версия Windows",
+                "uz": "Windows versiyasi",
+                "en": "Windows version"
+              },
+              {
+                "ru": "Windows 10/11",
+                "uz": "Windows 10/11",
+                "en": "Windows 10/11"
+              }
+            ],
+            [
+              {
+                "ru": "Версия Android",
+                "uz": "Android versiyasi",
+                "en": "Android version"
+              },
+              {
+                "ru": "Android 11",
+                "uz": "Android 11",
+                "en": "Android 11"
+              }
+            ]
+          ]
+        },
+        "printType": {
+          "ru": "Термопечать",
+          "uz": "Termal chop etish",
+          "en": "Thermal"
+        },
+        "printWidth": {
+          "ru": "до 58 мм",
+          "uz": "58 mm gacha",
+          "en": "up to 58 mm"
+        },
+        "printSpeed": {
+          "v": {
+            "ru": "90 мм/с",
+            "uz": "90 mm/s",
+            "en": "90 mm/s"
+          },
+          "note": {
+            "ru": "На странице производителя указано «90 m/s»; единица уточняется",
+            "uz": "Ishlab chiqaruvchi sahifasida «90 m/s» deb yozilgan; oʻlchov birligi aniqlanmoqda",
+            "en": "The manufacturer's page prints “90 m/s”; unit to be confirmed"
+          }
+        },
+        "printRes": {
+          "ru": "203 dpi",
+          "uz": "203 dpi",
+          "en": "203 dpi"
+        },
+        "usb": {
+          "ru": "3 × USB 2.0 + 2 × USB 3.0",
+          "uz": "3 × USB 2.0 + 2 × USB 3.0",
+          "en": "3 × USB 2.0 + 2 × USB 3.0"
+        },
+        "ethernet": {
+          "ru": "1 × RJ45, TCP/IP 10/100/1000 Мбит/с",
+          "uz": "1 × RJ45, TCP/IP 10/100/1000 Mbps",
+          "en": "1 × RJ45, TCP/IP 10/100/1000 Mbps"
+        },
+        "cashDrawer": {
+          "ru": "1 × RJ11",
+          "uz": "1 × RJ11",
+          "en": "1 × RJ11"
+        },
+        "wifi": {
+          "ru": "IEEE 802.11 b/g/n, 2,4 ГГц",
+          "uz": "IEEE 802.11 b/g/n, 2,4 GHz",
+          "en": "IEEE 802.11 b/g/n, 2.4 GHz"
+        },
+        "bluetooth": {
+          "ru": "BT 2.4",
+          "uz": "BT 2.4",
+          "en": "BT 2.4"
+        },
+        "powerSrc": {
+          "ru": "Разъём DC",
+          "uz": "DC uyasi",
+          "en": "DC jack"
+        },
+        "input": {
+          "ru": "12 В, 5 А",
+          "uz": "12 V, 5 A",
+          "en": "12 V, 5 A"
+        },
+        "dims": {
+          "ru": "460 × 560 × 575 мм",
+          "uz": "460 × 560 × 575 mm",
+          "en": "460 × 560 × 575 mm"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель питания, платформа, гарантийный талон, сертификат, руководство",
+          "uz": "Quvvat kabeli, tarozi pallasi, kafolat taloni, sertifikat, qoʻllanma",
+          "en": "Power cable, scale pan, warranty card, certificate, user manual"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "20–85 %",
+          "uz": "20–85 %",
+          "en": "20–85 %"
+        },
+        "stTemp": {
+          "ru": "−20…+60 °C",
+          "uz": "−20…+60 °C",
+          "en": "−20…+60 °C"
+        },
+        "stHum": {
+          "ru": "5–95 %",
+          "uz": "5–95 %",
+          "en": "5–95 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/aurora-d2-ai-ai-smart-cashier-scale/"
+    },
+    {
+      "id": "aurora-s2l-ai",
+      "fam": "ai",
+      "name": "AURORA S2L-AI",
+      "kind": "aipc",
+      "cam": true,
+      "aurora": true,
+      "labelPrint": "yes",
+      "conn": {
+        "eth": "std",
+        "usb": "std",
+        "rs232": "std",
+        "wifi": "std"
+      },
+      "type": {
+        "ru": "Весы с ИИ и печатью этикеток",
+        "uz": "Sunʼiy intellektli yorliq tarozisi",
+        "en": "AI scale with label printing"
+      },
+      "headline": {
+        "ru": "Узнаёт товар и сам печатает этикетку",
+        "uz": "Mahsulotni taniydi va yorliqni oʻzi chop etadi",
+        "en": "Recognises the item and prints the label itself"
+      },
+      "intro": {
+        "ru": "Весы для зала самообслуживания и отдела фасовки. Положили товар, выбрали подсказку на экране, получили этикетку.",
+        "uz": "Oʻz-oʻziga xizmat zali va qadoqlash boʻlimi uchun tarozi. Mahsulot qoʻyiladi, ekrandagi taklif tanlanadi, yorliq chiqadi.",
+        "en": "A scale for the self-service floor and the packing area. Put the item down, tap the suggestion on screen, take the label."
+      },
+      "features": [
+        {
+          "icon": "camera",
+          "title": {
+            "ru": "Камера 2 Мп и распознавание",
+            "uz": "2 MP kamera va tanish",
+            "en": "2 MP camera and recognition"
+          },
+          "text": {
+            "ru": "Весы определяют товар на платформе автоматически. Новому сотруднику не нужно учить коды товаров.",
+            "uz": "Tarozi palladagi mahsulotni avtomatik aniqlaydi. Yangi xodim mahsulot kodlarini yodlashi shart emas.",
+            "en": "The scale identifies the item on the platter automatically. New staff do not need to learn product codes."
+          }
+        },
+        {
+          "icon": "label",
+          "title": {
+            "ru": "Встроенный принтер этикеток",
+            "uz": "Oʻrnatilgan yorliq printeri",
+            "en": "Built-in label printer"
+          },
+          "text": {
+            "ru": "Термопечать шириной до 56 мм с разрешением 203 dpi.",
+            "uz": "56 mm gacha kenglikda, 203 dpi aniqlikda termal chop etish.",
+            "en": "Thermal printing up to 56 mm wide at 203 dpi."
+          }
+        },
+        {
+          "icon": "touch",
+          "title": {
+            "ru": "Экран 15,6″, второй по желанию",
+            "uz": "15,6″ ekran, ikkinchisi ixtiyoriy",
+            "en": "15.6″ screen, second one optional"
+          },
+          "text": {
+            "ru": "Мультитач-экран 1366 × 768 для оператора. Экран 15,6″ для покупателя доступен как опция.",
+            "uz": "Operator uchun 1366 × 768 multitach ekran. Xaridor uchun 15,6″ ekran ixtiyoriy.",
+            "en": "A 1366 × 768 multi-touch screen for the operator. A 15.6″ customer screen is optional."
+          }
+        },
+        {
+          "icon": "os",
+          "title": {
+            "ru": "ПК на Windows",
+            "uz": "Windows asosidagi kompyuter",
+            "en": "A Windows PC inside"
+          },
+          "text": {
+            "ru": "Intel J6412, Windows 10/11, до 16 ГБ памяти. Порты USB, RS232, Ethernet и RJ11 для денежного ящика.",
+            "uz": "Intel J6412, Windows 10/11, 16 GB gacha xotira. USB, RS232, Ethernet portlari va pul qutisi uchun RJ11.",
+            "en": "Intel J6412, Windows 10/11, up to 16 GB of memory. USB, RS232, Ethernet and an RJ11 cash drawer port."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "15.6″, 1366 × 768, мультитач",
+          "uz": "15.6″, 1366 × 768, multitach",
+          "en": "15.6″, 1366 × 768, multi-touch"
+        },
+        "custDisplay": {
+          "ru": "15.6″, 1366 × 768 (опция)",
+          "uz": "15.6″, 1366 × 768 (ixtiyoriy)",
+          "en": "15.6″, 1366 × 768 (optional)"
+        },
+        "keys": {
+          "ru": "Кнопка питания",
+          "uz": "Yoqish tugmasi",
+          "en": "Power button"
+        },
+        "notif": {
+          "ru": "Динамик, голосовые уведомления, индикатор питания",
+          "uz": "Dinamik, ovozli bildirishnomalar, quvvat indikatori",
+          "en": "Speaker, voice prompts, power light"
+        },
+        "camera": {
+          "ru": "2 Мп",
+          "uz": "2 MP",
+          "en": "2 MP"
+        },
+        "cpu": {
+          "ru": "Intel Elkhart Lake J6412, 2,0 ГГц",
+          "uz": "Intel Elkhart Lake J6412, 2,0 GHz",
+          "en": "Intel Elkhart Lake J6412, 2.0 GHz"
+        },
+        "ram": {
+          "ru": "4 ГБ / 8 ГБ / 16 ГБ DDR4",
+          "uz": "4 GB / 8 GB / 16 GB DDR4",
+          "en": "4 GB / 8 GB / 16 GB DDR4"
+        },
+        "storage": {
+          "ru": "128 ГБ / 256 ГБ M.2",
+          "uz": "128 GB / 256 GB M.2",
+          "en": "128 GB / 256 GB M.2"
+        },
+        "os": {
+          "ru": "Windows 10/11",
+          "uz": "Windows 10/11",
+          "en": "Windows 10/11"
+        },
+        "printType": {
+          "ru": "Термопечать",
+          "uz": "Termal chop etish",
+          "en": "Thermal"
+        },
+        "printWidth": {
+          "ru": "до 56 мм",
+          "uz": "56 mm gacha",
+          "en": "up to 56 mm"
+        },
+        "printSpeed": {
+          "v": {
+            "ru": "90 мм/с",
+            "uz": "90 mm/s",
+            "en": "90 mm/s"
+          },
+          "note": {
+            "ru": "На странице производителя указано «90 m/s»; единица уточняется",
+            "uz": "Ishlab chiqaruvchi sahifasida «90 m/s» deb yozilgan; oʻlchov birligi aniqlanmoqda",
+            "en": "The manufacturer's page prints “90 m/s”; unit to be confirmed"
+          }
+        },
+        "printRes": {
+          "ru": "203 dpi",
+          "uz": "203 dpi",
+          "en": "203 dpi"
+        },
+        "usb": {
+          "ru": "2 × USB 2.0 + 2 × USB 3.0",
+          "uz": "2 × USB 2.0 + 2 × USB 3.0",
+          "en": "2 × USB 2.0 + 2 × USB 3.0"
+        },
+        "ethernet": {
+          "ru": "1 × RJ45, TCP/IP 10/100/1000M",
+          "uz": "1 × RJ45, TCP/IP 10/100/1000M",
+          "en": "1 × RJ45, TCP/IP 10/100/1000M"
+        },
+        "serial": {
+          "ru": "1 × RS232",
+          "uz": "1 × RS232",
+          "en": "1 × RS232"
+        },
+        "cashDrawer": {
+          "ru": "1 × RJ11",
+          "uz": "1 × RJ11",
+          "en": "1 × RJ11"
+        },
+        "wifi": {
+          "ru": "IEEE 802.11 b/g/n, 2,4 ГГц",
+          "uz": "IEEE 802.11 b/g/n, 2,4 GHz",
+          "en": "IEEE 802.11 b/g/n, 2.4 GHz"
+        },
+        "powerSrc": {
+          "ru": "Разъём DC",
+          "uz": "DC uyasi",
+          "en": "DC jack"
+        },
+        "input": {
+          "ru": "24 В, 2,5 А",
+          "uz": "24 V, 2,5 A",
+          "en": "24 V, 2.5 A"
+        },
+        "dims": {
+          "ru": "460 × 560 × 575 мм",
+          "uz": "460 × 560 × 575 mm",
+          "en": "460 × 560 × 575 mm"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель питания, платформа, гарантийный талон, сертификат, руководство",
+          "uz": "Quvvat kabeli, tarozi pallasi, kafolat taloni, sertifikat, qoʻllanma",
+          "en": "Power cable, scale pan, warranty card, certificate, user manual"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "20–85 %",
+          "uz": "20–85 %",
+          "en": "20–85 %"
+        },
+        "stTemp": {
+          "ru": "−20…+60 °C",
+          "uz": "−20…+60 °C",
+          "en": "−20…+60 °C"
+        },
+        "stHum": {
+          "ru": "5–95 %",
+          "uz": "5–95 %",
+          "en": "5–95 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/aurora-s2l-ai-scale_p111.html"
+    },
+    {
+      "id": "aurora-y2l-ai",
+      "fam": "ai",
+      "name": "AURORA Y2L-AI",
+      "kind": "y2l",
+      "aurora": true,
+      "labelPrint": "yes",
+      "conn": {
+        "eth": "std",
+        "usb": "std"
+      },
+      "type": {
+        "ru": "Весы с ИИ и печатью этикеток, экран Full HD",
+        "uz": "Sunʼiy intellektli yorliq tarozisi, Full HD ekran",
+        "en": "AI label scale with Full HD screen"
+      },
+      "headline": {
+        "ru": "Весы с ИИ, которые печатают ценник и чек",
+        "uz": "Narx yorligʻi va chek chop etadigan sunʼiy intellektli tarozi",
+        "en": "An AI scale that prints the price label and the receipt"
+      },
+      "intro": {
+        "ru": "Моноблок с экраном 15,6″ Full HD: взвешивает, распознаёт товар и печатает этикетку или чек.",
+        "uz": "15,6″ Full HD ekranli monoblok: tortadi, mahsulotni taniydi va yorliq yoki chek chop etadi.",
+        "en": "An all-in-one with a 15.6″ Full HD screen: it weighs, recognises the item and prints a label or a receipt."
+      },
+      "features": [
+        {
+          "icon": "touch",
+          "title": {
+            "ru": "Экран 15,6″ Full HD",
+            "uz": "15,6″ Full HD ekran",
+            "en": "15.6″ Full HD screen"
+          },
+          "text": {
+            "ru": "Разрешение 1920 × 1080, мультитач. Экран 10,1″ для покупателя доступен как опция.",
+            "uz": "Aniqligi 1920 × 1080, multitach. Xaridor uchun 10,1″ ekran ixtiyoriy.",
+            "en": "1920 × 1080 resolution, multi-touch. A 10.1″ customer screen is optional."
+          }
+        },
+        {
+          "icon": "camera",
+          "title": {
+            "ru": "Распознавание товара",
+            "uz": "Mahsulotni tanish",
+            "en": "Product recognition"
+          },
+          "text": {
+            "ru": "Камера определяет товар, когда его кладут на платформу. Характеристики камеры уточняются.",
+            "uz": "Kamera mahsulot pallaga qoʻyilganda uni aniqlaydi. Kamera tavsiflari aniqlanmoqda.",
+            "en": "The camera identifies the item as it is placed on the platter. Camera details are to be confirmed."
+          }
+        },
+        {
+          "icon": "label",
+          "title": {
+            "ru": "Этикетки и чеки",
+            "uz": "Yorliq va cheklar",
+            "en": "Labels and receipts"
+          },
+          "text": {
+            "ru": "Прямая термопечать шириной 56 мм, до 90 мм/с. Отсек для бумаги до 100 мм.",
+            "uz": "56 mm kenglikda toʻgʻridan-toʻgʻri termal chop etish, 90 mm/s gacha. Qogʻoz boʻlimi 100 mm gacha.",
+            "en": "Direct thermal printing 56 mm wide at up to 90 mm/s. Paper storage up to 100 mm."
+          }
+        },
+        {
+          "icon": "os",
+          "title": {
+            "ru": "Windows или Android",
+            "uz": "Windows yoki Android",
+            "en": "Windows or Android"
+          },
+          "text": {
+            "ru": "Две версии с разным объёмом памяти и числом портов USB. Версии операционных систем уточняются.",
+            "uz": "Xotira hajmi va USB portlari soni turlicha boʻlgan ikki versiya. Operatsion tizim versiyalari aniqlanmoqda.",
+            "en": "Two versions with different memory and USB port counts. Operating system versions are to be confirmed."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "15 кг",
+                "uz": "15 kg",
+                "en": "15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "30 кг",
+                "uz": "30 kg",
+                "en": "30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "15.6″, 1920 × 1080",
+          "uz": "15.6″, 1920 × 1080",
+          "en": "15.6″, 1920 × 1080"
+        },
+        "custDisplay": {
+          "ru": "10.1″, 1024 × 600 (опция)",
+          "uz": "10.1″, 1024 × 600 (ixtiyoriy)",
+          "en": "10.1″, 1024 × 600 (optional)"
+        },
+        "camera": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "cpu": {
+          "ru": "RK3288, 4 ядра, 1,8 ГГц",
+          "uz": "RK3288, 4 yadroli, 1,8 GHz",
+          "en": "RK3288, quad-core, 1.8 GHz"
+        },
+        "ram": {
+          "parts": [
+            [
+              {
+                "ru": "Версия Windows",
+                "uz": "Windows versiyasi",
+                "en": "Windows version"
+              },
+              {
+                "ru": "4 ГБ DDR3",
+                "uz": "4 GB DDR3",
+                "en": "4 GB DDR3"
+              }
+            ],
+            [
+              {
+                "ru": "Версия Android",
+                "uz": "Android versiyasi",
+                "en": "Android version"
+              },
+              {
+                "ru": "2 ГБ DDR3",
+                "uz": "2 GB DDR3",
+                "en": "2 GB DDR3"
+              }
+            ]
+          ]
+        },
+        "storage": {
+          "parts": [
+            [
+              {
+                "ru": "Версия Windows",
+                "uz": "Windows versiyasi",
+                "en": "Windows version"
+              },
+              {
+                "ru": "64 ГБ SSD",
+                "uz": "64 GB SSD",
+                "en": "64 GB SSD"
+              }
+            ],
+            [
+              {
+                "ru": "Версия Android",
+                "uz": "Android versiyasi",
+                "en": "Android version"
+              },
+              {
+                "ru": "16 ГБ eMMC",
+                "uz": "16 GB eMMC",
+                "en": "16 GB eMMC"
+              }
+            ]
+          ]
+        },
+        "os": {
+          "ru": "Windows или Android; версии уточняются",
+          "uz": "Windows yoki Android; versiyalari aniqlanmoqda",
+          "en": "Windows or Android; versions to be confirmed"
+        },
+        "printType": {
+          "ru": "Прямая термопечать",
+          "uz": "Toʻgʻridan-toʻgʻri termal chop etish",
+          "en": "Direct thermal"
+        },
+        "printWidth": {
+          "ru": "56 мм",
+          "uz": "56 mm",
+          "en": "56 mm"
+        },
+        "printSpeed": {
+          "ru": "до 90 мм/с",
+          "uz": "90 mm/s gacha",
+          "en": "up to 90 mm/s"
+        },
+        "printRes": {
+          "ru": "203 dpi",
+          "uz": "203 dpi",
+          "en": "203 dpi"
+        },
+        "paperStore": {
+          "ru": "до 100 мм",
+          "uz": "100 mm gacha",
+          "en": "up to 100 mm"
+        },
+        "usb": {
+          "parts": [
+            [
+              {
+                "ru": "Версия Windows",
+                "uz": "Windows versiyasi",
+                "en": "Windows version"
+              },
+              {
+                "ru": "5 × USB",
+                "uz": "5 × USB",
+                "en": "5 × USB"
+              }
+            ],
+            [
+              {
+                "ru": "Версия Android",
+                "uz": "Android versiyasi",
+                "en": "Android version"
+              },
+              {
+                "ru": "3 × USB",
+                "uz": "3 × USB",
+                "en": "3 × USB"
+              }
+            ]
+          ]
+        },
+        "ethernet": {
+          "ru": "1 × Ethernet",
+          "uz": "1 × Ethernet",
+          "en": "1 × Ethernet"
+        },
+        "cashDrawer": {
+          "ru": "1 × RJ11",
+          "uz": "1 × RJ11",
+          "en": "1 × RJ11"
+        },
+        "wifi": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "input": {
+          "ru": "12 В, 5 А",
+          "uz": "12 V, 5 A",
+          "en": "12 V, 5 A"
+        },
+        "dims": {
+          "ru": "450 × 380 × 515 мм",
+          "uz": "450 × 380 × 515 mm",
+          "en": "450 × 380 × 515 mm"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель питания, адаптер, краткое руководство по установке",
+          "uz": "Quvvat kabeli, adapter, qisqa oʻrnatish qoʻllanmasi",
+          "en": "Power cord, adapter, quick installation guide"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "5–85 %",
+          "uz": "5–85 %",
+          "en": "5–85 %"
+        },
+        "stTemp": {
+          "ru": "−10…+60 °C",
+          "uz": "−10…+60 °C",
+          "en": "−10…+60 °C"
+        },
+        "stHum": {
+          "ru": "10–90 %",
+          "uz": "10–90 %",
+          "en": "10–90 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/aurora-y2l-ai-smart-scale/"
+    },
+    {
+      "id": "c1",
+      "fam": "comm",
+      "name": "C1",
+      "kind": "comm",
+      "dual": true,
+      "labelPrint": "no",
+      "conn": {
+        "rs232": "std",
+        "eth": "opt",
+        "usb": "opt",
+        "wifi": "opt",
+        "bt": "opt"
+      },
+      "type": {
+        "ru": "POS-весы с двумя экранами",
+        "uz": "Ikki ekranli POS-tarozi",
+        "en": "POS scale with dual screens"
+      },
+      "headline": {
+        "ru": "Передаёт вес прямо в кассовую программу",
+        "uz": "Vaznni toʻgʻridan-toʻgʻri kassa dasturiga uzatadi",
+        "en": "Sends the weight straight to your POS software"
+      },
+      "intro": {
+        "ru": "Компактные весы для кассы. Кассир кладёт товар, вес появляется в чеке. Продавец и покупатель видят показания на своих экранах.",
+        "uz": "Kassa uchun ixcham tarozi. Kassir mahsulotni qoʻyadi, vazn chekda paydo boʻladi. Sotuvchi va xaridor koʻrsatkichni oʻz ekranida koʻradi.",
+        "en": "A compact checkout scale. The cashier puts the item down and the weight appears on the receipt. Seller and buyer each read it on their own screen."
+      },
+      "features": [
+        {
+          "icon": "pos",
+          "title": {
+            "ru": "Подключение к кассе",
+            "uz": "Kassaga ulash",
+            "en": "Connects to the checkout"
+          },
+          "text": {
+            "ru": "Стандартно RS232. Ethernet, USB, Wi-Fi и Bluetooth доступны как опции.",
+            "uz": "Standart holda RS232. Ethernet, USB, Wi-Fi va Bluetooth ixtiyoriy.",
+            "en": "RS232 as standard. Ethernet, USB, Wi-Fi and Bluetooth are options."
+          }
+        },
+        {
+          "icon": "display",
+          "title": {
+            "ru": "Два экрана",
+            "uz": "Ikki ekran",
+            "en": "Two screens"
+          },
+          "text": {
+            "ru": "Светодиодные сегментные индикаторы на 5 разрядов читаются на расстоянии.",
+            "uz": "5 xonali LED segmentli indikatorlar uzoqdan oʻqiladi.",
+            "en": "Five-digit LED segment displays read clearly from a distance."
+          }
+        },
+        {
+          "icon": "flat",
+          "title": {
+            "ru": "Высота 75 мм",
+            "uz": "Balandligi 75 mm",
+            "en": "75 mm high"
+          },
+          "text": {
+            "ru": "Корпус 356 × 276 × 75 мм помещается рядом с кассой или встраивается в кассовый стол.",
+            "uz": "356 × 276 × 75 mm korpus kassa yoniga sigʻadi yoki kassa stoliga oʻrnatiladi.",
+            "en": "The 356 × 276 × 75 mm body sits beside the till or drops into the checkout desk."
+          }
+        },
+        {
+          "icon": "drop",
+          "title": {
+            "ru": "Защита корпуса",
+            "uz": "Korpus himoyasi",
+            "en": "Protected body"
+          },
+          "text": {
+            "ru": "Производитель указывает защиту от воды, влаги и насекомых. Класс защиты уточняется.",
+            "uz": "Ishlab chiqaruvchi suv, namlik va hasharotlardan himoyani koʻrsatadi. Himoya klassi aniqlanmoqda.",
+            "en": "The manufacturer states protection against water, moisture and insects. The protection rating is to be confirmed."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "Светодиодный сегментный, 5 разрядов",
+          "uz": "LED segmentli, 5 xonali",
+          "en": "LED segment, 5 digits"
+        },
+        "keys": {
+          "ru": "Питание, Тара, Ноль, Сброс",
+          "uz": "Yoqish, Tara, Nol, Qayta oʻrnatish",
+          "en": "Power, Tare, Zero, Reset"
+        },
+        "serial": {
+          "ru": "1 × RS232",
+          "uz": "1 × RS232",
+          "en": "1 × RS232"
+        },
+        "ethernet": {
+          "ru": "1 × RJ45 (опция), TCP/IP 100M",
+          "uz": "1 × RJ45 (ixtiyoriy), TCP/IP 100M",
+          "en": "1 × RJ45 (optional), TCP/IP 100M"
+        },
+        "usb": {
+          "ru": "2 × USB 2.0 (опция)",
+          "uz": "2 × USB 2.0 (ixtiyoriy)",
+          "en": "2 × USB 2.0 (optional)"
+        },
+        "wifi": {
+          "ru": "IEEE 802.11 b/g/n, 2,4 ГГц (опция)",
+          "uz": "IEEE 802.11 b/g/n, 2,4 GHz (ixtiyoriy)",
+          "en": "IEEE 802.11 b/g/n, 2.4 GHz (optional)"
+        },
+        "bluetooth": {
+          "ru": "BT 2.4 (опция)",
+          "uz": "BT 2.4 (ixtiyoriy)",
+          "en": "BT 2.4 (optional)"
+        },
+        "powerSrc": {
+          "ru": "Разъём AC",
+          "uz": "AC uyasi",
+          "en": "AC jack"
+        },
+        "input": {
+          "ru": "AC 100–240 В, 50/60 Гц, 0,8 А",
+          "uz": "AC 100–240 V, 50/60 Hz, 0,8 A",
+          "en": "AC 100–240 V, 50/60 Hz, 0.8 A"
+        },
+        "dims": {
+          "ru": "356 × 276 × 75 мм",
+          "uz": "356 × 276 × 75 mm",
+          "en": "356 × 276 × 75 mm"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель питания, платформа, гарантийный талон, сертификат, руководство, кабель RS232",
+          "uz": "Quvvat kabeli, tarozi pallasi, kafolat taloni, sertifikat, qoʻllanma, RS232 kabeli",
+          "en": "Power cable, scale pan, warranty card, certificate, user manual, serial cable"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "20–85 %",
+          "uz": "20–85 %",
+          "en": "20–85 %"
+        },
+        "stTemp": {
+          "ru": "−20…+60 °C",
+          "uz": "−20…+60 °C",
+          "en": "−20…+60 °C"
+        },
+        "stHum": {
+          "ru": "5–95 %",
+          "uz": "5–95 %",
+          "en": "5–95 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/c1-pos-scale-with-dual-screens_p121.html"
+    },
+    {
+      "id": "c11",
+      "fam": "comm",
+      "name": "C11",
+      "kind": "comm",
+      "labelPrint": "no",
+      "conn": {
+        "rs232": "std"
+      },
+      "type": {
+        "ru": "Торговые весы для розницы",
+        "uz": "Chakana savdo uchun tarozi",
+        "en": "Price computing scale for retail"
+      },
+      "headline": {
+        "ru": "Простые весы для прилавка и кассы",
+        "uz": "Peshtaxta va kassa uchun sodda tarozi",
+        "en": "A simple scale for the counter and the till"
+      },
+      "intro": {
+        "ru": "Базовая модель: платформа, крупный индикатор и порт RS232 для кассовой программы.",
+        "uz": "Asosiy model: palla, yirik indikator va kassa dasturi uchun RS232 porti.",
+        "en": "The basic model: a platter, a large display and an RS232 port for POS software."
+      },
+      "features": [
+        {
+          "icon": "display",
+          "title": {
+            "ru": "Крупный индикатор",
+            "uz": "Yirik indikator",
+            "en": "Large display"
+          },
+          "text": {
+            "ru": "Светодиодный сегментный индикатор на 5 разрядов.",
+            "uz": "5 xonali LED segmentli indikator.",
+            "en": "A five-digit LED segment display."
+          }
+        },
+        {
+          "icon": "pos",
+          "title": {
+            "ru": "RS232 для кассы",
+            "uz": "Kassa uchun RS232",
+            "en": "RS232 for the till"
+          },
+          "text": {
+            "ru": "Вес передаётся в кассовую программу по RS232. Кабель входит в комплект.",
+            "uz": "Vazn kassa dasturiga RS232 orqali uzatiladi. Kabel toʻplamga kiradi.",
+            "en": "The weight goes to the POS software over RS232. The cable is in the box."
+          }
+        },
+        {
+          "icon": "flat",
+          "title": {
+            "ru": "Компактный корпус",
+            "uz": "Ixcham korpus",
+            "en": "Compact body"
+          },
+          "text": {
+            "ru": "356 × 276 × 75 мм: весы занимают мало места на прилавке.",
+            "uz": "356 × 276 × 75 mm: tarozi peshtaxtada kam joy egallaydi.",
+            "en": "356 × 276 × 75 mm: the scale takes little counter space."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "Светодиодный сегментный, 5 разрядов",
+          "uz": "LED segmentli, 5 xonali",
+          "en": "LED segment, 5 digits"
+        },
+        "keys": {
+          "ru": "Питание, Тара, Ноль, Сброс",
+          "uz": "Yoqish, Tara, Nol, Qayta oʻrnatish",
+          "en": "Power, Tare, Zero, Reset"
+        },
+        "serial": {
+          "ru": "1 × RS232",
+          "uz": "1 × RS232",
+          "en": "1 × RS232"
+        },
+        "input": {
+          "v": {
+            "ru": "5 В, 0,5 мА (как указано производителем)",
+            "uz": "5 V, 0,5 mA (ishlab chiqaruvchi koʻrsatganidek)",
+            "en": "5 V, 0.5 mA (as listed by the manufacturer)"
+          },
+          "note": {
+            "ru": "Значение тока уточняется",
+            "uz": "Tok qiymati aniqlanmoqda",
+            "en": "Current value to be confirmed"
+          }
+        },
+        "dims": {
+          "ru": "356 × 276 × 75 мм",
+          "uz": "356 × 276 × 75 mm",
+          "en": "356 × 276 × 75 mm"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель питания, платформа, гарантийный талон, сертификат, руководство, кабель RS232",
+          "uz": "Quvvat kabeli, tarozi pallasi, kafolat taloni, sertifikat, qoʻllanma, RS232 kabeli",
+          "en": "Power cable, scale pan, warranty card, certificate, user manual, serial cable"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "20–85 %",
+          "uz": "20–85 %",
+          "en": "20–85 %"
+        },
+        "stTemp": {
+          "ru": "−20…+60 °C",
+          "uz": "−20…+60 °C",
+          "en": "−20…+60 °C"
+        },
+        "stHum": {
+          "ru": "5–95 %",
+          "uz": "5–95 %",
+          "en": "5–95 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/c11-price-computing-scale-for-retail_p139.html"
+    },
+    {
+      "id": "c3",
+      "fam": "comm",
+      "name": "C3",
+      "kind": "c3",
+      "labelPrint": "no",
+      "conn": {
+        "rs232": "std",
+        "usb": "std"
+      },
+      "type": {
+        "ru": "Весовая платформа для кассы",
+        "uz": "Kassa uchun tarozi platformasi",
+        "en": "Weighing scale for the checkout"
+      },
+      "headline": {
+        "ru": "Весы для влажного прилавка, которые встраиваются в кассу",
+        "uz": "Nam peshtaxta uchun, kassaga ulanadigan tarozi",
+        "en": "A scale for wet counters that plugs into your checkout"
+      },
+      "intro": {
+        "ru": "Весовая платформа с защитой от воды. Подключается к COM-порту и USB кассового компьютера и работает как его часть.",
+        "uz": "Suvdan himoyalangan tarozi platformasi. Kassa kompyuterining COM-porti va USB uyasiga ulanadi va uning bir qismi sifatida ishlaydi.",
+        "en": "A water-protected weighing platform. It connects to the COM port and USB of the POS computer and works as part of it."
+      },
+      "features": [
+        {
+          "icon": "drop",
+          "title": {
+            "ru": "Защита от воды",
+            "uz": "Suvdan himoya",
+            "en": "Water protection"
+          },
+          "text": {
+            "ru": "В таблице производителя указан класс IPX6, в описании IP66. Точный класс уточняется.",
+            "uz": "Ishlab chiqaruvchi jadvalida IPX6 klassi, tavsifda IP66 koʻrsatilgan. Aniq klass aniqlanmoqda.",
+            "en": "The manufacturer's table lists IPX6 and the description says IP66. The exact rating is to be confirmed."
+          }
+        },
+        {
+          "icon": "pos",
+          "title": {
+            "ru": "Часть кассового места",
+            "uz": "Kassa joyining bir qismi",
+            "en": "Part of the checkout"
+          },
+          "text": {
+            "ru": "Авиационный разъём соединяет весы с COM-портом и USB кассового компьютера. Питание 5 В.",
+            "uz": "Aviatsiya razyomi tarozini kassa kompyuterining COM-porti va USB uyasiga ulaydi. Taʼminot 5 V.",
+            "en": "An aviation connector links the scale to the COM port and USB of the POS computer. It runs on 5 V."
+          }
+        },
+        {
+          "icon": "shield",
+          "title": {
+            "ru": "Защита от обвеса",
+            "uz": "Tarozida aldashdan himoya",
+            "en": "Anti-cheating protection"
+          },
+          "text": {
+            "ru": "Производитель указывает защиту от вмешательства во взвешивание и от вскрытия корпуса.",
+            "uz": "Ishlab chiqaruvchi tortish jarayoniga aralashuvdan va korpusni ochishdan himoyani koʻrsatadi.",
+            "en": "The manufacturer lists protection against tampering with weighing and against opening the body."
+          }
+        }
+      ],
+      "specs": {
+        "maxCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "6 / 15 кг",
+                "uz": "6 / 15 kg",
+                "en": "6 / 15 kg"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "15 / 30 кг",
+                "uz": "15 / 30 kg",
+                "en": "15 / 30 kg"
+              }
+            ]
+          ]
+        },
+        "minCap": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "40 г",
+                "uz": "40 g",
+                "en": "40 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "100 г",
+                "uz": "100 g",
+                "en": "100 g"
+              }
+            ]
+          ]
+        },
+        "interval": {
+          "parts": [
+            [
+              {
+                "ru": "Версия 15 кг",
+                "uz": "15 kg li versiya",
+                "en": "15 kg version"
+              },
+              {
+                "ru": "2 / 5 г",
+                "uz": "2 / 5 g",
+                "en": "2 / 5 g"
+              }
+            ],
+            [
+              {
+                "ru": "Версия 30 кг",
+                "uz": "30 kg li versiya",
+                "en": "30 kg version"
+              },
+              {
+                "ru": "5 / 10 г",
+                "uz": "5 / 10 g",
+                "en": "5 / 10 g"
+              }
+            ]
+          ]
+        },
+        "accClass": {
+          "ru": "III",
+          "uz": "III",
+          "en": "III"
+        },
+        "platter": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "netWeight": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "display": {
+          "ru": "Цифровой LCD",
+          "uz": "Raqamli LCD",
+          "en": "Digital LCD"
+        },
+        "keys": {
+          "ru": "Питание, Ноль, Тара",
+          "uz": "Yoqish, Nol, Tara",
+          "en": "Power, Zero, Tare"
+        },
+        "hostLink": {
+          "ru": "Авиационный разъём к COM-порту и USB кассового компьютера",
+          "uz": "Kassa kompyuterining COM-porti va USB uyasiga aviatsiya razyomi",
+          "en": "Aviation connector to the COM port and USB of the POS computer"
+        },
+        "input": {
+          "ru": "DC 5 В, 0,5 А",
+          "uz": "DC 5 V, 0,5 A",
+          "en": "DC 5 V, 0.5 A"
+        },
+        "dims": {
+          "ru": "373 × 340 × 96 мм",
+          "uz": "373 × 340 × 96 mm",
+          "en": "373 × 340 × 96 mm"
+        },
+        "protection": {
+          "v": {
+            "ru": "IPX6",
+            "uz": "IPX6",
+            "en": "IPX6"
+          },
+          "note": {
+            "ru": "В описании производителя указано IP66; уточняется",
+            "uz": "Ishlab chiqaruvchi tavsifida IP66 koʻrsatilgan; aniqlanmoqda",
+            "en": "The manufacturer's description says IP66; to be confirmed"
+          }
+        },
+        "antiCheat": {
+          "ru": "Защита от вмешательства во взвешивание и от вскрытия корпуса",
+          "uz": "Tortishga aralashuvdan va korpusni ochishdan himoya",
+          "en": "Weighing and disassembly anti-cheating"
+        },
+        "uzMetrology": {
+          "ru": "уточняется",
+          "uz": "aniqlanmoqda",
+          "en": "to be confirmed"
+        },
+        "inBox": {
+          "ru": "Кабель связи, гарантийный талон, сертификат соответствия, руководство",
+          "uz": "Aloqa kabeli, kafolat taloni, muvofiqlik sertifikati, qoʻllanma",
+          "en": "Serial cable, warranty card, certificate of conformity, manual"
+        },
+        "opTemp": {
+          "ru": "0…+40 °C",
+          "uz": "0…+40 °C",
+          "en": "0…+40 °C"
+        },
+        "opHum": {
+          "ru": "5–85 %",
+          "uz": "5–85 %",
+          "en": "5–85 %"
+        },
+        "stTemp": {
+          "ru": "−10…+60 °C",
+          "uz": "−10…+60 °C",
+          "en": "−10…+60 °C"
+        },
+        "stHum": {
+          "ru": "10–90 %",
+          "uz": "10–90 %",
+          "en": "10–90 %"
+        }
+      },
+      "docs": [
+        "manual",
+        "sdk"
+      ],
+      "url": "https://www.rongtatech.com/c3-weighing-scale_p151.html"
+    }
+  ]
+}

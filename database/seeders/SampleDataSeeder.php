@@ -21,8 +21,7 @@ use Illuminate\Database\Seeder;
  * sample-data.json. Regions, FAQ, buying guide and chooser are real content.
  * Documents and videos are placeholders (is_placeholder = true). The sample dealers and
  * integrators are not imported (owner decision): only their regions link cities to regions.
- * The buying guide's "cost" row is not imported either.
- * "partnerTerms" (prices and the 10 + 1 offer) is never read.
+ * The file carries no buying guide "cost" row and no partner terms (prices, the 10 + 1 offer).
  */
 class SampleDataSeeder extends Seeder
 {

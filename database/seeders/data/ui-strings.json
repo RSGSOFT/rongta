@@ -1,0 +1,1490 @@
+{
+  "_note": "All interface strings from the prototype, keyed as in the prototype source. Ready to split into Laravel lang files (lang/ru, lang/uz, lang/en). Russian and Uzbek have not had a native-speaker review.",
+  "strings": {
+    "a11y.close": {
+      "ru": "Закрыть",
+      "uz": "Yopish",
+      "en": "Close"
+    },
+    "lang.label": {
+      "ru": "Язык сайта",
+      "uz": "Sayt tili",
+      "en": "Site language"
+    },
+    "lang.name.ru": {
+      "ru": "Русский",
+      "uz": "Ruscha",
+      "en": "Russian"
+    },
+    "lang.name.uz": {
+      "ru": "Узбекский",
+      "uz": "Oʻzbekcha",
+      "en": "Uzbek"
+    },
+    "lang.name.en": {
+      "ru": "Английский",
+      "uz": "Inglizcha",
+      "en": "English"
+    },
+    "badge.dist": {
+      "ru": "Официальный дистрибьютор в Узбекистане: RSG",
+      "uz": "Oʻzbekistondagi rasmiy distribyutor: RSG",
+      "en": "Official distributor in Uzbekistan: RSG"
+    },
+    "nav.label": {
+      "ru": "Основная навигация",
+      "uz": "Asosiy navigatsiya",
+      "en": "Main navigation"
+    },
+    "nav.home": {
+      "ru": "Главная",
+      "uz": "Bosh sahifa",
+      "en": "Home"
+    },
+    "nav.catalog": {
+      "ru": "Каталог",
+      "uz": "Katalog",
+      "en": "Catalog"
+    },
+    "nav.compare": {
+      "ru": "Сравнение",
+      "uz": "Taqqoslash",
+      "en": "Compare"
+    },
+    "nav.dealers": {
+      "ru": "Дилеры",
+      "uz": "Dilerlar",
+      "en": "Dealers"
+    },
+    "nav.knowledge": {
+      "ru": "База знаний",
+      "uz": "Bilimlar bazasi",
+      "en": "Knowledge base"
+    },
+    "nav.partner": {
+      "ru": "Партнёрам",
+      "uz": "Hamkorlarga",
+      "en": "For partners"
+    },
+    "bar.label": {
+      "ru": "Быстрая навигация",
+      "uz": "Tezkor navigatsiya",
+      "en": "Quick navigation"
+    },
+    "bar.support": {
+      "ru": "Поддержка",
+      "uz": "Yordam",
+      "en": "Support"
+    },
+    "bar.call": {
+      "ru": "Позвонить",
+      "uz": "Qoʻngʻiroq",
+      "en": "Call"
+    },
+    "call.title": {
+      "ru": "Официальный дистрибьютор RSG",
+      "uz": "Rasmiy distribyutor RSG",
+      "en": "RSG, official distributor"
+    },
+    "call.btn": {
+      "ru": "Позвонить: {phone}",
+      "uz": "Qoʻngʻiroq qilish: {phone}",
+      "en": "Call {phone}"
+    },
+    "cta.dealer": {
+      "ru": "Найти дилера рядом",
+      "uz": "Yaqin atrofdagi dilerni topish",
+      "en": "Find a dealer near you"
+    },
+    "cta.catalog": {
+      "ru": "Все весы",
+      "uz": "Barcha tarozilar",
+      "en": "See all scales"
+    },
+    "ph.tag": {
+      "ru": "место для материала",
+      "uz": "material uchun joy",
+      "en": "placeholder"
+    },
+    "ph.photo": {
+      "ru": "Здесь будет фото из магазина партнёра",
+      "uz": "Bu yerda hamkor doʻkonidan surat boʻladi",
+      "en": "Photo from a partner shop goes here"
+    },
+    "ph.poslogo": {
+      "ru": "Логотип кассовой программы",
+      "uz": "Kassa dasturi logotipi",
+      "en": "POS software logo"
+    },
+    "ph.video": {
+      "ru": "Здесь будет видео",
+      "uz": "Bu yerda video boʻladi",
+      "en": "Video goes here"
+    },
+    "ftr.about": {
+      "ru": "Сайт о торговых весах Rongta в Узбекистане: модели, дилеры, инструкции и программы.",
+      "uz": "Oʻzbekistondagi Rongta savdo tarozilari haqidagi sayt: modellar, dilerlar, qoʻllanmalar va dasturlar.",
+      "en": "A site about Rongta commercial scales in Uzbekistan: models, dealers, manuals and software."
+    },
+    "ftr.site": {
+      "ru": "Разделы",
+      "uz": "Boʻlimlar",
+      "en": "Sections"
+    },
+    "ftr.contact": {
+      "ru": "Контакты",
+      "uz": "Aloqa",
+      "en": "Contact"
+    },
+    "ftr.city": {
+      "ru": "Ташкент, Узбекистан",
+      "uz": "Toshkent, Oʻzbekiston",
+      "en": "Tashkent, Uzbekistan"
+    },
+    "hero.h1": {
+      "ru": "Взвесьте, напечатайте этикетку, продавайте быстрее",
+      "uz": "Torting, yorliq chiqaring, tezroq soting",
+      "en": "Weigh, print the label, sell faster"
+    },
+    "hero.lead": {
+      "ru": "Торговые весы Rongta для магазинов, супермаркетов и рынков Узбекистана. Подберите модель и найдите дилера в своём регионе.",
+      "uz": "Oʻzbekistondagi doʻkonlar, supermarketlar va bozorlar uchun Rongta savdo tarozilari. Modelni tanlang va oʻz hududingizdagi dilerni toping.",
+      "en": "Rongta commercial scales for shops, supermarkets and markets in Uzbekistan. Pick a model and find a dealer in your region."
+    },
+    "hero.contact": {
+      "ru": "Вопросы по телефону:",
+      "uz": "Savollar uchun telefon:",
+      "en": "Questions by phone:"
+    },
+    "hero.readout.alt": {
+      "ru": "Табло весов: вес 1,250 кг, цена за килограмм и итоговая сумма",
+      "uz": "Tarozi tablosi: vazn 1,250 kg, 1 kg narxi va jami summa",
+      "en": "Scale display: weight 1.250 kg, price per kilogram and total"
+    },
+    "ro.weight": {
+      "ru": "Вес, кг",
+      "uz": "Vazn, kg",
+      "en": "Weight, kg"
+    },
+    "ro.unit": {
+      "ru": "Цена за кг",
+      "uz": "1 kg narxi",
+      "en": "Price per kg"
+    },
+    "ro.total": {
+      "ru": "Сумма",
+      "uz": "Summa",
+      "en": "Total"
+    },
+    "lbl.product": {
+      "ru": "Апельсины",
+      "uz": "Apelsin",
+      "en": "Oranges"
+    },
+    "lbl.weight": {
+      "ru": "Вес, кг",
+      "uz": "Vazn, kg",
+      "en": "Weight, kg"
+    },
+    "lbl.unit": {
+      "ru": "Цена за кг",
+      "uz": "1 kg narxi",
+      "en": "Price per kg"
+    },
+    "lbl.sample": {
+      "ru": "Образец этикетки",
+      "uz": "Yorliq namunasi",
+      "en": "Sample label"
+    },
+    "ch.h": {
+      "ru": "Какие весы вам нужны?",
+      "uz": "Sizga qaysi tarozi kerak?",
+      "en": "Which scale do you need?"
+    },
+    "ch.shop": {
+      "ru": "Магазин",
+      "uz": "Doʻkon",
+      "en": "Shop"
+    },
+    "ch.supermarket": {
+      "ru": "Супермаркет",
+      "uz": "Supermarket",
+      "en": "Supermarket"
+    },
+    "ch.market": {
+      "ru": "Место на рынке",
+      "uz": "Bozor rastasi",
+      "en": "Market stall"
+    },
+    "ch.rec": {
+      "ru": "Рекомендуем",
+      "uz": "Tavsiya qilamiz",
+      "en": "We recommend"
+    },
+    "ch.all": {
+      "ru": "Все модели этого типа",
+      "uz": "Shu turdagi barcha modellar",
+      "en": "All models of this type"
+    },
+    "fam.h": {
+      "ru": "Три типа весов",
+      "uz": "Uch turdagi tarozi",
+      "en": "Three types of scale"
+    },
+    "fam.lead": {
+      "ru": "Каждый тип решает свою задачу. Различия подробно разобраны в базе знаний.",
+      "uz": "Har bir tur oʻz vazifasini bajaradi. Farqlari bilimlar bazasida batafsil yoritilgan.",
+      "en": "Each type does a different job. The knowledge base explains the differences in detail."
+    },
+    "fam.go": {
+      "ru": "Смотреть модели: {n}",
+      "uz": "Modellarni koʻrish: {n}",
+      "en": "See {n} models"
+    },
+    "au.h": {
+      "ru": "AURORA: весы, которые узнают товар",
+      "uz": "AURORA: mahsulotni taniydigan tarozilar",
+      "en": "AURORA: scales that recognise the product"
+    },
+    "au.lead": {
+      "ru": "Сенсорный экран, компьютер и распознавание товара в одном корпусе. Для супермаркетов, где много наименований и важна скорость.",
+      "uz": "Sensorli ekran, kompyuter va mahsulotni tanish bitta korpusda. Mahsulot turlari koʻp va tezlik muhim boʻlgan supermarketlar uchun.",
+      "en": "A touchscreen, a computer and product recognition in one body. For supermarkets with many items, where speed matters."
+    },
+    "au.all": {
+      "ru": "Все весы с ИИ",
+      "uz": "Barcha sunʼiy intellektli tarozilar",
+      "en": "All AI scales"
+    },
+    "tr.h": {
+      "ru": "Официальная поставка и сервис в Узбекистане",
+      "uz": "Oʻzbekistonda rasmiy yetkazib berish va servis",
+      "en": "Official supply and service in Uzbekistan"
+    },
+    "tr.lead": {
+      "ru": "Документы и сведения, которые подтверждают официальную поставку и сервис.",
+      "uz": "Rasmiy yetkazib berish va servisni tasdiqlovchi hujjatlar va maʼlumotlar.",
+      "en": "Documents and details that confirm official supply and service."
+    },
+    "tr.h.compact": {
+      "ru": "Поставка, гарантия и документы",
+      "uz": "Yetkazib berish, kafolat va hujjatlar",
+      "en": "Supply, warranty and documents"
+    },
+    "tr.cert": {
+      "ru": "Сертификат официального дистрибьютора",
+      "uz": "Rasmiy distribyutor sertifikati",
+      "en": "Official distributor certificate"
+    },
+    "tr.cert.d": {
+      "ru": "Скан сертификата Rongta на имя RSG",
+      "uz": "RSG nomiga berilgan Rongta sertifikati nusxasi",
+      "en": "Scan of the Rongta certificate issued to RSG"
+    },
+    "tr.service": {
+      "ru": "Гарантия и сервисный центр",
+      "uz": "Kafolat va servis markazi",
+      "en": "Warranty and service centre"
+    },
+    "tr.service.d": {
+      "ru": "Условия гарантии и адрес сервиса от RSG",
+      "uz": "RSG dan kafolat shartlari va servis manzili",
+      "en": "Warranty terms and service address from RSG"
+    },
+    "tr.clients": {
+      "ru": "Логотипы клиентов",
+      "uz": "Mijozlar logotiplari",
+      "en": "Client logos"
+    },
+    "tr.clients.d": {
+      "ru": "Магазины и сети, которые работают на весах Rongta",
+      "uz": "Rongta tarozilarida ishlaydigan doʻkon va tarmoqlar",
+      "en": "Shops and chains that run Rongta scales"
+    },
+    "tr.pos": {
+      "ru": "Совместимые кассовые программы",
+      "uz": "Mos kassa dasturlari",
+      "en": "Compatible POS software"
+    },
+    "tr.pos.d": {
+      "ru": "Логотипы программ после подтверждения интеграторами",
+      "uz": "Integratorlar tasdiqlaganidan keyin dastur logotiplari",
+      "en": "Software logos once integrators confirm them"
+    },
+    "tr.metro": {
+      "ru": "Метрология и сертификация в Узбекистане",
+      "uz": "Oʻzbekistonda metrologiya va sertifikatlash",
+      "en": "Metrology and certification in Uzbekistan"
+    },
+    "tr.metro.d": {
+      "ru": "Документы для применения весов в торговле",
+      "uz": "Tarozilarni savdoda qoʻllash uchun hujjatlar",
+      "en": "Documents for using the scales in trade"
+    },
+    "tr.photos": {
+      "ru": "Фото из магазинов Узбекистана",
+      "uz": "Oʻzbekiston doʻkonlaridan suratlar",
+      "en": "Photos from shops in Uzbekistan"
+    },
+    "tr.maker": {
+      "ru": "О производителе",
+      "uz": "Ishlab chiqaruvchi haqida",
+      "en": "About the manufacturer"
+    },
+    "tr.f.founded": {
+      "ru": "Год основания",
+      "uz": "Tashkil etilgan yili",
+      "en": "Founded"
+    },
+    "tr.f.hq": {
+      "ru": "Штаб-квартира",
+      "uz": "Bosh qarorgoh",
+      "en": "Headquarters"
+    },
+    "tr.f.hq.v": {
+      "ru": "Сямынь, Китай",
+      "uz": "Syamen, Xitoy",
+      "en": "Xiamen, China"
+    },
+    "tr.f.stock": {
+      "ru": "Биржа",
+      "uz": "Birja",
+      "en": "Stock exchange"
+    },
+    "tr.f.stock.v": {
+      "ru": "Гонконг, 9881.HK",
+      "uz": "Gonkong, 9881.HK",
+      "en": "Hong Kong, 9881.HK"
+    },
+    "tr.f.patents": {
+      "ru": "Зарегистрированные патенты",
+      "uz": "Roʻyxatga olingan patentlar",
+      "en": "Registered patents"
+    },
+    "tr.f.customers": {
+      "ru": "Клиенты",
+      "uz": "Mijozlar",
+      "en": "Customers"
+    },
+    "tr.f.rd": {
+      "ru": "Сотрудники R&D",
+      "uz": "R&D xodimlari",
+      "en": "R&D staff"
+    },
+    "tr.source": {
+      "ru": "Данные с сайта rongtatech.com.",
+      "uz": "Maʼlumotlar rongtatech.com saytidan olingan.",
+      "en": "Figures from rongtatech.com."
+    },
+    "kt.h": {
+      "ru": "Инструкции, драйверы и ответы",
+      "uz": "Qoʻllanmalar, drayverlar va javoblar",
+      "en": "Manuals, drivers and answers"
+    },
+    "kt.lead": {
+      "ru": "Всё для владельца весов и для интегратора собрано в базе знаний. Выберите модель и получите её файлы.",
+      "uz": "Tarozi egasi va integrator uchun hamma narsa bilimlar bazasida jamlangan. Modelni tanlang va uning fayllarini oling.",
+      "en": "Everything for scale owners and integrators is in the knowledge base. Pick your model to get its files."
+    },
+    "kt.open": {
+      "ru": "Открыть базу знаний",
+      "uz": "Bilimlar bazasini ochish",
+      "en": "Open the knowledge base"
+    },
+    "kt.n.manuals": {
+      "ru": "по каждой модели",
+      "uz": "har bir model uchun",
+      "en": "for every model"
+    },
+    "kt.n.software": {
+      "ru": "товары, цены, этикетки",
+      "uz": "mahsulotlar, narxlar, yorliqlar",
+      "en": "products, prices, labels"
+    },
+    "kt.n.faq": {
+      "ru": "выбор, печать, подключение, сервис",
+      "uz": "tanlash, chop etish, ulash, servis",
+      "en": "choosing, printing, connecting, service"
+    },
+    "kt.n.guide": {
+      "ru": "этикетки, ИИ или передача данных",
+      "uz": "yorliq, sunʼiy intellekt yoki maʼlumot uzatish",
+      "en": "label, AI or communication"
+    },
+    "ps.h": {
+      "ru": "Продаёте оборудование или пишете кассовые программы?",
+      "uz": "Uskunalar sotasizmi yoki kassa dasturlari yaratasizmi?",
+      "en": "Do you sell equipment or build POS software?"
+    },
+    "ps.lead": {
+      "ru": "RSG работает с реселлерами в регионах и с интеграторами программ.",
+      "uz": "RSG hududlardagi resellerlar va dastur integratorlari bilan ishlaydi.",
+      "en": "RSG works with regional resellers and software integrators."
+    },
+    "ps.form": {
+      "ru": "Стать партнёром",
+      "uz": "Hamkor boʻlish",
+      "en": "Become a partner"
+    },
+    "cat.h": {
+      "ru": "Каталог весов Rongta",
+      "uz": "Rongta tarozilari katalogi",
+      "en": "Rongta scales catalog"
+    },
+    "cat.lead": {
+      "ru": "11 моделей трёх типов. Отметьте «Сравнить» на нескольких карточках, чтобы сопоставить характеристики.",
+      "uz": "Uch turdagi 11 ta model. Tavsiflarini solishtirish uchun bir nechta kartochkada «Taqqoslash»ni belgilang.",
+      "en": "11 models in three types. Tick “Compare” on a few cards to put their specs side by side."
+    },
+    "cat.count": {
+      "ru": "Показано моделей: {n} из {all}",
+      "uz": "Koʻrsatilgan modellar: {all} tadan {n} tasi",
+      "en": "Showing {n} of {all} models"
+    },
+    "cat.reset": {
+      "ru": "Сбросить фильтры",
+      "uz": "Filtrlarni tozalash",
+      "en": "Reset filters"
+    },
+    "cat.empty": {
+      "ru": "Под эти условия не подходит ни одна модель. Снимите один из фильтров.",
+      "uz": "Bu shartlarga hech bir model mos kelmadi. Filtrlardan birini olib tashlang.",
+      "en": "No model matches these filters. Remove one of them."
+    },
+    "cat.capnote": {
+      "ru": "Каждая модель выпускается в версиях 15 кг и 30 кг, поэтому фильтр по нагрузке не скрывает модели. В карточках показана выбранная версия.",
+      "uz": "Har bir model 15 kg va 30 kg li versiyalarda chiqariladi, shuning uchun yuk boʻyicha filtr modellarni yashirmaydi. Kartochkalarda tanlangan versiya koʻrsatilgan.",
+      "en": "Every model comes in 15 kg and 30 kg versions, so the capacity filter does not hide any model. Cards show the version you picked."
+    },
+    "f.label": {
+      "ru": "Фильтры каталога",
+      "uz": "Katalog filtrlari",
+      "en": "Catalog filters"
+    },
+    "f.all": {
+      "ru": "Все",
+      "uz": "Barchasi",
+      "en": "All"
+    },
+    "f.any": {
+      "ru": "Не важно",
+      "uz": "Farqi yoʻq",
+      "en": "Any"
+    },
+    "f.family": {
+      "ru": "Тип весов",
+      "uz": "Tarozi turi",
+      "en": "Family"
+    },
+    "f.cap": {
+      "ru": "Наибольшая нагрузка",
+      "uz": "Eng katta yuk",
+      "en": "Max capacity"
+    },
+    "f.print": {
+      "ru": "Печать этикеток",
+      "uz": "Yorliq chop etish",
+      "en": "Label printing"
+    },
+    "f.print.yes": {
+      "ru": "Есть",
+      "uz": "Bor",
+      "en": "Yes"
+    },
+    "f.print.no": {
+      "ru": "Нет",
+      "uz": "Yoʻq",
+      "en": "No"
+    },
+    "f.conn": {
+      "ru": "Подключение",
+      "uz": "Ulanish",
+      "en": "Connection"
+    },
+    "f.connnote": {
+      "ru": "Фильтр подключения учитывает и стандартные, и опциональные интерфейсы.",
+      "uz": "Ulanish filtri standart va ixtiyoriy interfeyslarni hisobga oladi.",
+      "en": "The connection filter counts both standard and optional interfaces."
+    },
+    "fact.max": {
+      "ru": "Наибольшая нагрузка",
+      "uz": "Eng katta yuk",
+      "en": "Max weight"
+    },
+    "fact.label": {
+      "ru": "Печать этикеток",
+      "uz": "Yorliq chop etish",
+      "en": "Label printing"
+    },
+    "fact.conn": {
+      "ru": "Подключение",
+      "uz": "Ulanish",
+      "en": "Connection"
+    },
+    "fact.family": {
+      "ru": "Тип весов",
+      "uz": "Tarozi turi",
+      "en": "Family"
+    },
+    "val.cap.both": {
+      "ru": "15 или 30 кг",
+      "uz": "15 yoki 30 kg",
+      "en": "15 or 30 kg"
+    },
+    "val.plusopt": {
+      "ru": "+ опции",
+      "uz": "+ ixtiyoriy",
+      "en": "+ options"
+    },
+    "val.yes": {
+      "ru": "есть",
+      "uz": "bor",
+      "en": "yes"
+    },
+    "val.no": {
+      "ru": "нет",
+      "uz": "yoʻq",
+      "en": "no"
+    },
+    "val.receipt": {
+      "ru": "чеки; этикетки уточняются",
+      "uz": "cheklar; yorliq aniqlanmoqda",
+      "en": "receipts; labels to be confirmed"
+    },
+    "card.more": {
+      "ru": "Подробнее",
+      "uz": "Batafsil",
+      "en": "Details"
+    },
+    "cmp.add": {
+      "ru": "Сравнить",
+      "uz": "Taqqoslash",
+      "en": "Compare"
+    },
+    "cmp.tray": {
+      "ru": "Список сравнения",
+      "uz": "Taqqoslash roʻyxati",
+      "en": "Compare list"
+    },
+    "cmp.remove": {
+      "ru": "Убрать",
+      "uz": "Olib tashlash",
+      "en": "Remove"
+    },
+    "cmp.clear": {
+      "ru": "Очистить",
+      "uz": "Tozalash",
+      "en": "Clear"
+    },
+    "cmp.go": {
+      "ru": "Сравнить ({n})",
+      "uz": "Taqqoslash ({n})",
+      "en": "Compare ({n})"
+    },
+    "cmp.h": {
+      "ru": "Сравнение моделей",
+      "uz": "Modellarni taqqoslash",
+      "en": "Compare models"
+    },
+    "cmp.lead": {
+      "ru": "По одной колонке на модель. Строки с различиями выделены. Одновременно можно сравнить до {n} моделей.",
+      "uz": "Har bir model uchun bitta ustun. Farq qiladigan qatorlar ajratib koʻrsatilgan. Bir vaqtda {n} tagacha modelni taqqoslash mumkin.",
+      "en": "One column per model. Rows that differ are highlighted. You can compare up to {n} models at a time."
+    },
+    "cmp.empty": {
+      "ru": "В сравнении пока нет моделей. Отметьте «Сравнить» на карточках в каталоге.",
+      "uz": "Taqqoslashda hali model yoʻq. Katalogdagi kartochkalarda «Taqqoslash»ni belgilang.",
+      "en": "No models to compare yet. Tick “Compare” on cards in the catalog."
+    },
+    "cmp.limit": {
+      "ru": "Можно сравнить не больше {n} моделей. Уберите одну, чтобы добавить другую.",
+      "uz": "{n} tadan ortiq modelni taqqoslab boʻlmaydi. Boshqasini qoʻshish uchun bittasini olib tashlang.",
+      "en": "You can compare up to {n} models. Remove one to add another."
+    },
+    "cmp.onlydiff": {
+      "ru": "Только различия",
+      "uz": "Faqat farqlar",
+      "en": "Only differences"
+    },
+    "cmp.addmore": {
+      "ru": "Добавить модели из каталога",
+      "uz": "Katalogdan model qoʻshish",
+      "en": "Add models from the catalog"
+    },
+    "cmp.param": {
+      "ru": "Параметр",
+      "uz": "Parametr",
+      "en": "Parameter"
+    },
+    "cmp.legend.diff": {
+      "ru": "значения различаются",
+      "uz": "qiymatlar farq qiladi",
+      "en": "values differ"
+    },
+    "cmp.legend.dash": {
+      "ru": "Прочерк: на странице производителя для этой модели значение не указано.",
+      "uz": "Chiziqcha: ishlab chiqaruvchi sahifasida bu model uchun qiymat koʻrsatilmagan.",
+      "en": "A dash means the manufacturer's page lists no value for this model."
+    },
+    "cmp.legend.tbc": {
+      "ru": "«Уточняется»: значение будет добавлено после подтверждения.",
+      "uz": "«Aniqlanmoqda»: qiymat tasdiqlangach qoʻshiladi.",
+      "en": "“To be confirmed”: the value will be added once verified."
+    },
+    "buy.h": {
+      "ru": "Где купить",
+      "uz": "Qayerdan sotib olish mumkin",
+      "en": "Where to buy"
+    },
+    "m.features": {
+      "ru": "Возможности",
+      "uz": "Imkoniyatlar",
+      "en": "Features"
+    },
+    "m.specs": {
+      "ru": "Характеристики",
+      "uz": "Texnik tavsiflar",
+      "en": "Specifications"
+    },
+    "m.src": {
+      "ru": "Источник характеристик: страница производителя",
+      "uz": "Tavsiflar manbasi: ishlab chiqaruvchi sahifasi",
+      "en": "Spec source: the manufacturer's page"
+    },
+    "m.downloads": {
+      "ru": "Файлы для этой модели",
+      "uz": "Shu model uchun fayllar",
+      "en": "Downloads for this model"
+    },
+    "m.allfiles": {
+      "ru": "Все файлы в базе знаний",
+      "uz": "Barcha fayllar bilimlar bazasida",
+      "en": "All files in the knowledge base"
+    },
+    "m.works": {
+      "ru": "Работает с программами",
+      "uz": "Dasturlar bilan ishlaydi",
+      "en": "Works with"
+    },
+    "m.works.note": {
+      "ru": "Кассовые программы, с которыми работают весы Rongta.",
+      "uz": "Rongta tarozilari ishlaydigan kassa dasturlari.",
+      "en": "POS software that works with Rongta scales."
+    },
+    "m.integrators": {
+      "ru": "Интеграторы ПО в вашем регионе",
+      "uz": "Hududingizdagi dastur integratorlari",
+      "en": "Software integrators in your region"
+    },
+    "m.similar": {
+      "ru": "Похожие модели",
+      "uz": "Oʻxshash modellar",
+      "en": "Similar models"
+    },
+    "m.buy.h": {
+      "ru": "Где купить {name}",
+      "uz": "{name}: qayerdan sotib olish mumkin",
+      "en": "Where to buy {name}"
+    },
+    "view.label": {
+      "ru": "Виды изделия",
+      "uz": "Mahsulot koʻrinishlari",
+      "en": "Product views"
+    },
+    "view.general": {
+      "ru": "Общий вид",
+      "uz": "Umumiy koʻrinish",
+      "en": "General view"
+    },
+    "view.display": {
+      "ru": "Дисплей и клавиши",
+      "uz": "Displey va tugmalar",
+      "en": "Display and keys"
+    },
+    "view.printer": {
+      "ru": "Принтер",
+      "uz": "Printer",
+      "en": "Printer"
+    },
+    "view.platter": {
+      "ru": "Платформа",
+      "uz": "Palla",
+      "en": "Platter"
+    },
+    "view.pan": {
+      "ru": "Чаша",
+      "uz": "Osma palla",
+      "en": "Pan"
+    },
+    "view.cable": {
+      "ru": "Кабель подключения",
+      "uz": "Ulash kabeli",
+      "en": "Connection cable"
+    },
+    "view.camera": {
+      "ru": "Камера",
+      "uz": "Kamera",
+      "en": "Camera"
+    },
+    "view.screen": {
+      "ru": "Экран",
+      "uz": "Ekran",
+      "en": "Screen"
+    },
+    "view.note": {
+      "ru": "Схематичная иллюстрация, позже её заменит фото.",
+      "uz": "Sxematik rasm, keyinroq oʻrniga surat qoʻyiladi.",
+      "en": "Schematic illustration; a photo will replace it."
+    },
+    "ill.alt": {
+      "ru": "Схематичная иллюстрация: {name}",
+      "uz": "Sxematik rasm: {name}",
+      "en": "Schematic illustration: {name}"
+    },
+    "grp.general": {
+      "ru": "Общее",
+      "uz": "Umumiy",
+      "en": "General"
+    },
+    "grp.weighing": {
+      "ru": "Взвешивание",
+      "uz": "Tortish",
+      "en": "Weighing"
+    },
+    "grp.display": {
+      "ru": "Дисплей и управление",
+      "uz": "Displey va boshqaruv",
+      "en": "Display and controls"
+    },
+    "grp.system": {
+      "ru": "Система",
+      "uz": "Tizim",
+      "en": "System"
+    },
+    "grp.printer": {
+      "ru": "Принтер",
+      "uz": "Printer",
+      "en": "Printer"
+    },
+    "grp.conn": {
+      "ru": "Подключение",
+      "uz": "Ulanish",
+      "en": "Connectivity"
+    },
+    "grp.power": {
+      "ru": "Питание",
+      "uz": "Taʼminot",
+      "en": "Power"
+    },
+    "grp.physical": {
+      "ru": "Корпус и условия работы",
+      "uz": "Korpus va ish sharoiti",
+      "en": "Body and environment"
+    },
+    "grp.compliance": {
+      "ru": "Сертификация",
+      "uz": "Sertifikatlash",
+      "en": "Certification"
+    },
+    "grp.box": {
+      "ru": "Комплект поставки",
+      "uz": "Yetkazib berish toʻplami",
+      "en": "In the box"
+    },
+    "spec.maxCap": {
+      "ru": "Наибольшая нагрузка (Max)",
+      "uz": "Eng katta yuk (Max)",
+      "en": "Max capacity"
+    },
+    "spec.minCap": {
+      "ru": "Наименьшая нагрузка (Min)",
+      "uz": "Eng kichik yuk (Min)",
+      "en": "Min capacity"
+    },
+    "spec.interval": {
+      "ru": "Цена деления",
+      "uz": "Boʻlim qiymati",
+      "en": "Division"
+    },
+    "spec.accClass": {
+      "ru": "Класс точности",
+      "uz": "Aniqlik klassi",
+      "en": "Accuracy class"
+    },
+    "spec.platter": {
+      "ru": "Размер платформы",
+      "uz": "Palla oʻlchami",
+      "en": "Platter size"
+    },
+    "spec.netWeight": {
+      "ru": "Масса весов",
+      "uz": "Tarozi massasi",
+      "en": "Net weight"
+    },
+    "spec.display": {
+      "ru": "Дисплей",
+      "uz": "Displey",
+      "en": "Display"
+    },
+    "spec.custDisplay": {
+      "ru": "Дисплей покупателя",
+      "uz": "Xaridor displeyi",
+      "en": "Customer display"
+    },
+    "spec.keys": {
+      "ru": "Клавиши",
+      "uz": "Tugmalar",
+      "en": "Keys"
+    },
+    "spec.notif": {
+      "ru": "Оповещение",
+      "uz": "Bildirishnoma",
+      "en": "Notification"
+    },
+    "spec.camera": {
+      "ru": "Камера",
+      "uz": "Kamera",
+      "en": "Camera"
+    },
+    "spec.cpu": {
+      "ru": "Процессор",
+      "uz": "Protsessor",
+      "en": "CPU"
+    },
+    "spec.ram": {
+      "ru": "Оперативная память",
+      "uz": "Tezkor xotira",
+      "en": "Memory"
+    },
+    "spec.storage": {
+      "ru": "Накопитель",
+      "uz": "Xotira qurilmasi",
+      "en": "Storage"
+    },
+    "spec.os": {
+      "ru": "Операционная система",
+      "uz": "Operatsion tizim",
+      "en": "Operating system"
+    },
+    "spec.memory": {
+      "ru": "Память (SDRAM / Flash)",
+      "uz": "Xotira (SDRAM / Flash)",
+      "en": "Memory (SDRAM / Flash)"
+    },
+    "spec.printType": {
+      "ru": "Способ печати",
+      "uz": "Chop etish usuli",
+      "en": "Printing method"
+    },
+    "spec.printWidth": {
+      "ru": "Ширина печати",
+      "uz": "Chop etish kengligi",
+      "en": "Print width"
+    },
+    "spec.printSpeed": {
+      "ru": "Скорость печати",
+      "uz": "Chop etish tezligi",
+      "en": "Print speed"
+    },
+    "spec.printRes": {
+      "ru": "Разрешение печати",
+      "uz": "Chop etish aniqligi",
+      "en": "Print resolution"
+    },
+    "spec.paperOut": {
+      "ru": "Выдача этикетки",
+      "uz": "Yorliqni chiqarish",
+      "en": "Label output"
+    },
+    "spec.paperStore": {
+      "ru": "Отсек для бумаги",
+      "uz": "Qogʻoz boʻlimi",
+      "en": "Paper storage"
+    },
+    "spec.barcodes": {
+      "ru": "Штрихкоды",
+      "uz": "Shtrix-kodlar",
+      "en": "Barcodes"
+    },
+    "spec.ethernet": {
+      "ru": "Ethernet",
+      "uz": "Ethernet",
+      "en": "Ethernet"
+    },
+    "spec.serial": {
+      "ru": "Последовательный порт",
+      "uz": "Ketma-ket port",
+      "en": "Serial port"
+    },
+    "spec.usb": {
+      "ru": "USB",
+      "uz": "USB",
+      "en": "USB"
+    },
+    "spec.hostLink": {
+      "ru": "Подключение к кассе",
+      "uz": "Kassaga ulanish",
+      "en": "Host connection"
+    },
+    "spec.cashDrawer": {
+      "ru": "Денежный ящик",
+      "uz": "Pul qutisi",
+      "en": "Cash drawer"
+    },
+    "spec.wifi": {
+      "ru": "Wi-Fi",
+      "uz": "Wi-Fi",
+      "en": "Wi-Fi"
+    },
+    "spec.bluetooth": {
+      "ru": "Bluetooth",
+      "uz": "Bluetooth",
+      "en": "Bluetooth"
+    },
+    "spec.powerSrc": {
+      "ru": "Разъём питания",
+      "uz": "Taʼminot uyasi",
+      "en": "Power connector"
+    },
+    "spec.input": {
+      "ru": "Питание",
+      "uz": "Taʼminot",
+      "en": "Power input"
+    },
+    "spec.dims": {
+      "ru": "Габариты (Д × Ш × В)",
+      "uz": "Oʻlchamlari (U × E × B)",
+      "en": "Dimensions (L × W × H)"
+    },
+    "spec.protection": {
+      "ru": "Защита от воды",
+      "uz": "Suvdan himoya",
+      "en": "Water protection"
+    },
+    "spec.antiCheat": {
+      "ru": "Защита от обвеса",
+      "uz": "Aldashdan himoya",
+      "en": "Anti-cheating"
+    },
+    "spec.opTemp": {
+      "ru": "Рабочая температура",
+      "uz": "Ish harorati",
+      "en": "Operating temperature"
+    },
+    "spec.opHum": {
+      "ru": "Рабочая влажность",
+      "uz": "Ish namligi",
+      "en": "Operating humidity"
+    },
+    "spec.stTemp": {
+      "ru": "Температура хранения",
+      "uz": "Saqlash harorati",
+      "en": "Storage temperature"
+    },
+    "spec.stHum": {
+      "ru": "Влажность хранения",
+      "uz": "Saqlash namligi",
+      "en": "Storage humidity"
+    },
+    "spec.certs": {
+      "ru": "Сертификаты производителя",
+      "uz": "Ishlab chiqaruvchi sertifikatlari",
+      "en": "Manufacturer certifications"
+    },
+    "spec.standards": {
+      "ru": "Стандарты",
+      "uz": "Standartlar",
+      "en": "Standards"
+    },
+    "spec.uzMetrology": {
+      "ru": "Метрологические документы Узбекистана",
+      "uz": "Oʻzbekiston metrologiya hujjatlari",
+      "en": "Uzbekistan metrology documents"
+    },
+    "spec.inBox": {
+      "ru": "Комплект",
+      "uz": "Toʻplam",
+      "en": "Package contents"
+    },
+    "file.get": {
+      "ru": "Скачать",
+      "uz": "Yuklab olish",
+      "en": "Download"
+    },
+    "file.meta": {
+      "ru": "Версия {ver}, от {date}, {size}",
+      "uz": "Versiya {ver}, {date}, {size}",
+      "en": "Version {ver}, {date}, {size}"
+    },
+    "dl.h": {
+      "ru": "Дилеры и интеграторы",
+      "uz": "Dilerlar va integratorlar",
+      "en": "Dealers and integrators"
+    },
+    "dl.lead": {
+      "ru": "Выберите регион на карте или в списке. Реселлеры продают и устанавливают весы, интеграторы подключают их к кассовым программам.",
+      "uz": "Hududni xaritadan yoki roʻyxatdan tanlang. Resellerlar tarozilarni sotadi va oʻrnatadi, integratorlar ularni kassa dasturlariga ulaydi.",
+      "en": "Pick a region on the map or in the list. Resellers sell and install the scales; integrators connect them to POS software."
+    },
+    "dl.tabs": {
+      "ru": "Тип партнёра",
+      "uz": "Hamkor turi",
+      "en": "Partner type"
+    },
+    "dl.tab.res": {
+      "ru": "Реселлеры",
+      "uz": "Resellerlar",
+      "en": "Resellers"
+    },
+    "dl.tab.int": {
+      "ru": "Интеграторы ПО",
+      "uz": "Dastur integratorlari",
+      "en": "Software integrators"
+    },
+    "dl.map": {
+      "ru": "Карта регионов Узбекистана",
+      "uz": "Oʻzbekiston hududlari xaritasi",
+      "en": "Map of Uzbekistan's regions"
+    },
+    "dl.maphint": {
+      "ru": "Схематичная карта: каждая плитка обозначает регион.",
+      "uz": "Sxematik xarita: har bir katak bitta hududni bildiradi.",
+      "en": "Schematic map: each tile stands for one region."
+    },
+    "dl.allregions": {
+      "ru": "Все регионы",
+      "uz": "Barcha hududlar",
+      "en": "All regions"
+    },
+    "dl.region": {
+      "ru": "Регион",
+      "uz": "Hudud",
+      "en": "Region"
+    },
+    "dl.count": {
+      "ru": "партнёров: {n}",
+      "uz": "hamkorlar: {n}",
+      "en": "partners: {n}"
+    },
+    "dl.n.res": {
+      "ru": "реселлеров: {n}",
+      "uz": "resellerlar: {n}",
+      "en": "resellers: {n}"
+    },
+    "dl.n.int": {
+      "ru": "интеграторов: {n}",
+      "uz": "integratorlar: {n}",
+      "en": "integrators: {n}"
+    },
+    "dl.official": {
+      "ru": "Официальный дистрибьютор",
+      "uz": "Rasmiy distribyutor",
+      "en": "Official distributor"
+    },
+    "dl.rsg.where": {
+      "ru": "город Ташкент, Узбекистан",
+      "uz": "Toshkent shahri, Oʻzbekiston",
+      "en": "Tashkent city, Uzbekistan"
+    },
+    "dl.sample": {
+      "ru": "пример записи",
+      "uz": "namuna yozuv",
+      "en": "sample entry"
+    },
+    "dl.empty": {
+      "ru": "В этом регионе партнёров пока нет. Обратитесь к официальному дистрибьютору RSG.",
+      "uz": "Bu hududda hali hamkorlar yoʻq. Rasmiy distribyutor RSG ga murojaat qiling.",
+      "en": "No partners in this region yet. Contact RSG, the official distributor."
+    },
+    "offer.sales": {
+      "ru": "продажа",
+      "uz": "sotuv",
+      "en": "sales"
+    },
+    "offer.install": {
+      "ru": "установка",
+      "uz": "oʻrnatish",
+      "en": "installation"
+    },
+    "offer.service": {
+      "ru": "сервис",
+      "uz": "servis",
+      "en": "service"
+    },
+    "offer.integration": {
+      "ru": "интеграция с ПО",
+      "uz": "dastur bilan integratsiya",
+      "en": "software integration"
+    },
+    "offer.support": {
+      "ru": "техподдержка",
+      "uz": "texnik yordam",
+      "en": "technical support"
+    },
+    "pf.h": {
+      "ru": "Стать партнёром",
+      "uz": "Hamkor boʻlish",
+      "en": "Become a partner"
+    },
+    "pf.lead": {
+      "ru": "Оставьте заявку, если продаёте торговое оборудование или подключаете весы к кассовым программам. RSG свяжется с вами и расскажет об условиях.",
+      "uz": "Savdo uskunalari sotsangiz yoki tarozilarni kassa dasturlariga ulasangiz, ariza qoldiring. RSG siz bilan bogʻlanib, shartlar haqida aytib beradi.",
+      "en": "Leave a request if you sell retail equipment or connect scales to POS software. RSG will contact you about the terms."
+    },
+    "pf.company": {
+      "ru": "Компания",
+      "uz": "Kompaniya",
+      "en": "Company"
+    },
+    "pf.name": {
+      "ru": "Контактное лицо",
+      "uz": "Aloqa uchun shaxs",
+      "en": "Contact name"
+    },
+    "pf.phone": {
+      "ru": "Телефон",
+      "uz": "Telefon",
+      "en": "Phone"
+    },
+    "pf.region.any": {
+      "ru": "Несколько регионов",
+      "uz": "Bir nechta hudud",
+      "en": "Several regions"
+    },
+    "pf.type": {
+      "ru": "Тип партнёра",
+      "uz": "Hamkor turi",
+      "en": "Partner type"
+    },
+    "pf.type.res": {
+      "ru": "Реселлер",
+      "uz": "Reseller",
+      "en": "Reseller"
+    },
+    "pf.type.int": {
+      "ru": "Интегратор ПО",
+      "uz": "Dastur integratori",
+      "en": "Software integrator"
+    },
+    "pf.msg": {
+      "ru": "Сообщение",
+      "uz": "Xabar",
+      "en": "Message"
+    },
+    "pf.submit": {
+      "ru": "Отправить заявку",
+      "uz": "Ariza yuborish",
+      "en": "Send request"
+    },
+    "pf.done.h": {
+      "ru": "Заявка заполнена",
+      "uz": "Ariza toʻldirildi",
+      "en": "Request filled in"
+    },
+    "pf.done.sum": {
+      "ru": "Компания: {company}. Тип: {type}. Регион: {region}.",
+      "uz": "Kompaniya: {company}. Turi: {type}. Hudud: {region}.",
+      "en": "Company: {company}. Type: {type}. Region: {region}."
+    },
+    "pf.again": {
+      "ru": "Заполнить заново",
+      "uz": "Qaytadan toʻldirish",
+      "en": "Fill in again"
+    },
+    "err.company": {
+      "ru": "Укажите название компании",
+      "uz": "Kompaniya nomini kiriting",
+      "en": "Enter the company name"
+    },
+    "err.name": {
+      "ru": "Укажите имя: только буквы, не меньше двух",
+      "uz": "Ismni kiriting: faqat harflar, kamida ikkita",
+      "en": "Enter a name: letters only, at least two"
+    },
+    "err.first": {
+      "ru": "Укажите имя: только буквы, не меньше двух",
+      "uz": "Ismingizni kiriting: faqat harflar, kamida ikkita",
+      "en": "Enter your first name: letters only, at least two"
+    },
+    "err.last": {
+      "ru": "Укажите фамилию: только буквы, не меньше двух",
+      "uz": "Familiyangizni kiriting: faqat harflar, kamida ikkita",
+      "en": "Enter your surname: letters only, at least two"
+    },
+    "err.phone": {
+      "ru": "Введите номер в формате +998 и 9 цифр, например +998 90 123 45 67",
+      "uz": "Raqamni +998 va 9 ta raqam shaklida kiriting, masalan +998 90 123 45 67",
+      "en": "Use +998 followed by 9 digits, for example +998 90 123 45 67"
+    },
+    "kb.h": {
+      "ru": "База знаний",
+      "uz": "Bilimlar bazasi",
+      "en": "Knowledge base"
+    },
+    "kb.lead": {
+      "ru": "Найдите руководство, программу или ответ. Начните с поиска или выберите свои весы.",
+      "uz": "Qoʻllanma, dastur yoki javobni toping. Qidiruvdan boshlang yoki oʻz tarozingizni tanlang.",
+      "en": "Find a manual, software or an answer. Start with the search or pick your scale."
+    },
+    "kb.search": {
+      "ru": "Поиск по базе знаний",
+      "uz": "Bilimlar bazasidan qidirish",
+      "en": "Search the knowledge base"
+    },
+    "kb.search.ph": {
+      "ru": "Например: этикетка, RS232, гарантия",
+      "uz": "Masalan: yorliq, RS232, kafolat",
+      "en": "For example: label, RS232, warranty"
+    },
+    "kb.pick": {
+      "ru": "Ваши весы",
+      "uz": "Sizning tarozingiz",
+      "en": "Pick your scale"
+    },
+    "kb.pick.all": {
+      "ru": "Все модели",
+      "uz": "Barcha modellar",
+      "en": "All models"
+    },
+    "kb.nav": {
+      "ru": "Разделы базы знаний",
+      "uz": "Bilimlar bazasi boʻlimlari",
+      "en": "Knowledge base sections"
+    },
+    "kb.manuals": {
+      "ru": "Руководства",
+      "uz": "Qoʻllanmalar",
+      "en": "Manuals"
+    },
+    "kb.manuals.d": {
+      "ru": "Руководства пользователя по каждой модели.",
+      "uz": "Har bir model uchun foydalanuvchi qoʻllanmalari.",
+      "en": "User manuals for each model."
+    },
+    "kb.software": {
+      "ru": "Драйверы и программы для ПК",
+      "uz": "Drayverlar va kompyuter dasturlari",
+      "en": "Drivers and PC software"
+    },
+    "kb.software.d": {
+      "ru": "Программа для ПК ведёт список товаров и цен, шаблоны этикеток и отправляет данные на весы.",
+      "uz": "Kompyuter dasturi mahsulot va narxlar roʻyxatini, yorliq shablonlarini yuritadi va maʼlumotlarni taroziga yuboradi.",
+      "en": "The PC software keeps the product and price list and the label templates, and sends the data to the scale."
+    },
+    "kb.sdk": {
+      "ru": "SDK для интеграторов",
+      "uz": "Integratorlar uchun SDK",
+      "en": "SDK for integrators"
+    },
+    "kb.sdk.d": {
+      "ru": "Библиотеки и описание протокола обмена для подключения весов к кассовым и учётным программам.",
+      "uz": "Tarozilarni kassa va hisob dasturlariga ulash uchun kutubxonalar va almashinuv protokoli tavsifi.",
+      "en": "Libraries and the communication protocol description for connecting scales to POS and accounting software."
+    },
+    "kb.videos": {
+      "ru": "Видео",
+      "uz": "Videolar",
+      "en": "Videos"
+    },
+    "kb.faq": {
+      "ru": "Вопросы и ответы",
+      "uz": "Savol-javoblar",
+      "en": "FAQ"
+    },
+    "kb.guide": {
+      "ru": "Весы с печатью этикеток, с ИИ или с передачей данных: что выбрать",
+      "uz": "Yorliq tarozisi, sunʼiy intellektli yoki maʼlumot uzatuvchi tarozi: qaysi birini tanlash kerak",
+      "en": "Label scale, AI scale or communication scale: which to choose"
+    },
+    "kb.guide.short": {
+      "ru": "Как выбрать тип весов",
+      "uz": "Tarozi turini qanday tanlash",
+      "en": "Buying guide"
+    },
+    "kb.guide.lead": {
+      "ru": "Три типа весов различаются тем, что происходит после взвешивания.",
+      "uz": "Uch turdagi tarozi tortishdan keyin nima sodir boʻlishi bilan farq qiladi.",
+      "en": "The three types differ in what happens after the weighing."
+    },
+    "kb.none": {
+      "ru": "По этому запросу ничего не найдено. Измените запрос или выберите «Все модели».",
+      "uz": "Bu soʻrov boʻyicha hech narsa topilmadi. Soʻrovni oʻzgartiring yoki «Barcha modellar»ni tanlang.",
+      "en": "Nothing matches this search. Change the query or choose “All models”."
+    },
+    "kb.found": {
+      "ru": "Найдено материалов: {n}",
+      "uz": "Topilgan materiallar: {n}",
+      "en": "Materials found: {n}"
+    },
+    "g.does": {
+      "ru": "Что делают",
+      "uz": "Nima qiladi",
+      "en": "What they do"
+    },
+    "g.fits": {
+      "ru": "Кому подходят",
+      "uz": "Kimga mos",
+      "en": "Who they suit"
+    },
+    "g.limit": {
+      "ru": "Ограничения",
+      "uz": "Cheklovlari",
+      "en": "Limits"
+    },
+    "g.peak": {
+      "ru": "Поток покупателей",
+      "uz": "Xaridorlar oqimi",
+      "en": "Customer flow"
+    },
+    "g.see": {
+      "ru": "Модели в каталоге",
+      "uz": "Katalogdagi modellar",
+      "en": "Models in the catalog"
+    },
+    "g.check": {
+      "ru": "Что проверить перед покупкой",
+      "uz": "Xariddan oldin nimalarni tekshirish kerak",
+      "en": "What to check before you buy"
+    },
+    "chat.open": {
+      "ru": "Открыть чат с помощником",
+      "uz": "Yordamchi bilan chatni ochish",
+      "en": "Open the assistant chat"
+    },
+    "chat.hint": {
+      "ru": "Задать вопрос",
+      "uz": "Savol berish",
+      "en": "Ask a question"
+    },
+    "chat.title": {
+      "ru": "Чат с помощником Rongta Uzbekistan",
+      "uz": "Rongta Uzbekistan yordamchisi bilan chat",
+      "en": "Rongta Uzbekistan assistant chat"
+    },
+    "chat.close": {
+      "ru": "Закрыть чат",
+      "uz": "Chatni yopish",
+      "en": "Close chat"
+    },
+    "chat.log": {
+      "ru": "Сообщения",
+      "uz": "Xabarlar",
+      "en": "Messages"
+    },
+    "chat.input": {
+      "ru": "Ваш вопрос",
+      "uz": "Savolingiz",
+      "en": "Your question"
+    },
+    "chat.ph": {
+      "ru": "Напишите вопрос",
+      "uz": "Savolingizni yozing",
+      "en": "Type your question"
+    },
+    "chat.ph.locked": {
+      "ru": "Сначала заполните форму выше",
+      "uz": "Avval yuqoridagi shaklni toʻldiring",
+      "en": "Fill in the form above first"
+    },
+    "chat.send": {
+      "ru": "Отправить",
+      "uz": "Yuborish",
+      "en": "Send"
+    },
+    "chat.typing": {
+      "ru": "Помощник печатает",
+      "uz": "Yordamchi yozmoqda",
+      "en": "The assistant is typing"
+    },
+    "chat.chips": {
+      "ru": "Быстрые вопросы",
+      "uz": "Tezkor savollar",
+      "en": "Quick questions"
+    },
+    "chat.gate.hello": {
+      "ru": "Здравствуйте! Я демо-помощник Rongta Uzbekistan. Прежде чем отвечать, прошу оставить имя, фамилию и мобильный номер: по ним менеджер RSG сможет связаться с вами и довести вопрос до конца.",
+      "uz": "Assalomu alaykum! Men Rongta Uzbekistan demo yordamchisiman. Javob berishdan oldin ism, familiya va mobil raqamingizni qoldirishingizni soʻrayman: shu maʼlumotlar orqali RSG menejeri siz bilan bogʻlanib, savolingizni oxirigacha hal qiladi.",
+      "en": "Hello! I am the Rongta Uzbekistan demo assistant. Before I answer, please leave your first name, surname and mobile number, so an RSG manager can contact you and see your question through."
+    },
+    "chat.gate.label": {
+      "ru": "Ваши контактные данные",
+      "uz": "Aloqa maʼlumotlaringiz",
+      "en": "Your contact details"
+    },
+    "chat.first": {
+      "ru": "Имя",
+      "uz": "Ism",
+      "en": "First name"
+    },
+    "chat.last": {
+      "ru": "Фамилия",
+      "uz": "Familiya",
+      "en": "Surname"
+    },
+    "chat.phone": {
+      "ru": "Мобильный номер",
+      "uz": "Mobil raqam",
+      "en": "Mobile number"
+    },
+    "chat.gate.submit": {
+      "ru": "Начать чат",
+      "uz": "Chatni boshlash",
+      "en": "Start chat"
+    },
+    "chat.hello.name": {
+      "ru": "Спасибо, {name}! Чем помочь? Выберите тему ниже или напишите вопрос.",
+      "uz": "Rahmat, {name}! Qanday yordam bera olaman? Quyidagi mavzulardan birini tanlang yoki savolingizni yozing.",
+      "en": "Thank you, {name}! How can I help? Pick a topic below or type your question."
+    },
+    "chat.chip.choose": {
+      "ru": "Какие весы выбрать",
+      "uz": "Qaysi tarozini tanlash",
+      "en": "Which scale to choose"
+    },
+    "chat.chip.dealers": {
+      "ru": "Где купить",
+      "uz": "Qayerdan sotib olish",
+      "en": "Where to buy"
+    },
+    "chat.chip.docs": {
+      "ru": "Драйверы и инструкции",
+      "uz": "Drayver va qoʻllanmalar",
+      "en": "Drivers and manuals"
+    },
+    "chat.chip.warranty": {
+      "ru": "Гарантия и сервис",
+      "uz": "Kafolat va servis",
+      "en": "Warranty and service"
+    },
+    "chat.chip.pos": {
+      "ru": "Подключение к кассе и 1С",
+      "uz": "Kassa va 1C ga ulash",
+      "en": "Connecting to POS and 1C"
+    },
+    "chat.chip.partner": {
+      "ru": "Стать партнёром",
+      "uz": "Hamkor boʻlish",
+      "en": "Become a partner"
+    },
+    "chat.chip.human": {
+      "ru": "Связаться с человеком",
+      "uz": "Xodim bilan bogʻlanish",
+      "en": "Talk to a person"
+    },
+    "chat.chip.shop": {
+      "ru": "Магазин",
+      "uz": "Doʻkon",
+      "en": "Shop"
+    },
+    "chat.chip.supermarket": {
+      "ru": "Супермаркет",
+      "uz": "Supermarket",
+      "en": "Supermarket"
+    },
+    "chat.chip.market": {
+      "ru": "Место на рынке",
+      "uz": "Bozor rastasi",
+      "en": "Market stall"
+    }
+  }
+}

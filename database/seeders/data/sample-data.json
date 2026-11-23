@@ -1,0 +1,1393 @@
+{
+  "_note": "SAMPLE DATA from the prototype. Dealers, integrators, phone, Telegram, file versions/dates/sizes and videos are placeholders, not real. Regions, FAQ, buying guide and chooser texts are real content written for the site.",
+  "contacts": {
+    "phone": "+998 (00) 000-00-00",
+    "telegram": "@rongta_uz",
+    "placeholder": true
+  },
+  "regions": [
+    {
+      "id": "karakalpakstan",
+      "pos": [
+        1,
+        1
+      ],
+      "name": {
+        "ru": "Республика Каракалпакстан",
+        "uz": "Qoraqalpogʻiston Respublikasi",
+        "en": "Republic of Karakalpakstan"
+      },
+      "short": {
+        "ru": "Каракалпакстан",
+        "uz": "Qoraqalpogʻiston",
+        "en": "Karakalpakstan"
+      }
+    },
+    {
+      "id": "khorezm",
+      "pos": [
+        1,
+        2
+      ],
+      "name": {
+        "ru": "Хорезмская область",
+        "uz": "Xorazm viloyati",
+        "en": "Khorezm region"
+      },
+      "short": {
+        "ru": "Хорезм",
+        "uz": "Xorazm",
+        "en": "Khorezm"
+      }
+    },
+    {
+      "id": "navoi",
+      "pos": [
+        2,
+        1
+      ],
+      "name": {
+        "ru": "Навоийская область",
+        "uz": "Navoiy viloyati",
+        "en": "Navoi region"
+      },
+      "short": {
+        "ru": "Навои",
+        "uz": "Navoiy",
+        "en": "Navoi"
+      }
+    },
+    {
+      "id": "bukhara",
+      "pos": [
+        2,
+        2
+      ],
+      "name": {
+        "ru": "Бухарская область",
+        "uz": "Buxoro viloyati",
+        "en": "Bukhara region"
+      },
+      "short": {
+        "ru": "Бухара",
+        "uz": "Buxoro",
+        "en": "Bukhara"
+      }
+    },
+    {
+      "id": "samarkand",
+      "pos": [
+        3,
+        2
+      ],
+      "name": {
+        "ru": "Самаркандская область",
+        "uz": "Samarqand viloyati",
+        "en": "Samarkand region"
+      },
+      "short": {
+        "ru": "Самарканд",
+        "uz": "Samarqand",
+        "en": "Samarkand"
+      }
+    },
+    {
+      "id": "kashkadarya",
+      "pos": [
+        3,
+        3
+      ],
+      "name": {
+        "ru": "Кашкадарьинская область",
+        "uz": "Qashqadaryo viloyati",
+        "en": "Kashkadarya region"
+      },
+      "short": {
+        "ru": "Кашкадарья",
+        "uz": "Qashqadaryo",
+        "en": "Kashkadarya"
+      }
+    },
+    {
+      "id": "surkhandarya",
+      "pos": [
+        4,
+        3
+      ],
+      "name": {
+        "ru": "Сурхандарьинская область",
+        "uz": "Surxondaryo viloyati",
+        "en": "Surkhandarya region"
+      },
+      "short": {
+        "ru": "Сурхандарья",
+        "uz": "Surxondaryo",
+        "en": "Surkhandarya"
+      }
+    },
+    {
+      "id": "jizzakh",
+      "pos": [
+        4,
+        2
+      ],
+      "name": {
+        "ru": "Джизакская область",
+        "uz": "Jizzax viloyati",
+        "en": "Jizzakh region"
+      },
+      "short": {
+        "ru": "Джизак",
+        "uz": "Jizzax",
+        "en": "Jizzakh"
+      }
+    },
+    {
+      "id": "syrdarya",
+      "pos": [
+        5,
+        2
+      ],
+      "name": {
+        "ru": "Сырдарьинская область",
+        "uz": "Sirdaryo viloyati",
+        "en": "Syrdarya region"
+      },
+      "short": {
+        "ru": "Сырдарья",
+        "uz": "Sirdaryo",
+        "en": "Syrdarya"
+      }
+    },
+    {
+      "id": "tashkent-region",
+      "pos": [
+        5,
+        1
+      ],
+      "name": {
+        "ru": "Ташкентская область",
+        "uz": "Toshkent viloyati",
+        "en": "Tashkent region"
+      },
+      "short": {
+        "ru": "Ташкентская обл.",
+        "uz": "Toshkent vil.",
+        "en": "Tashkent region"
+      }
+    },
+    {
+      "id": "tashkent-city",
+      "pos": [
+        6,
+        1
+      ],
+      "name": {
+        "ru": "город Ташкент",
+        "uz": "Toshkent shahri",
+        "en": "Tashkent city"
+      },
+      "short": {
+        "ru": "г. Ташкент",
+        "uz": "Toshkent sh.",
+        "en": "Tashkent city"
+      }
+    },
+    {
+      "id": "namangan",
+      "pos": [
+        7,
+        1
+      ],
+      "name": {
+        "ru": "Наманганская область",
+        "uz": "Namangan viloyati",
+        "en": "Namangan region"
+      },
+      "short": {
+        "ru": "Наманган",
+        "uz": "Namangan",
+        "en": "Namangan"
+      }
+    },
+    {
+      "id": "andijan",
+      "pos": [
+        8,
+        1
+      ],
+      "name": {
+        "ru": "Андижанская область",
+        "uz": "Andijon viloyati",
+        "en": "Andijan region"
+      },
+      "short": {
+        "ru": "Андижан",
+        "uz": "Andijon",
+        "en": "Andijan"
+      }
+    },
+    {
+      "id": "fergana",
+      "pos": [
+        7,
+        2
+      ],
+      "name": {
+        "ru": "Ферганская область",
+        "uz": "Fargʻona viloyati",
+        "en": "Fergana region"
+      },
+      "short": {
+        "ru": "Фергана",
+        "uz": "Fargʻona",
+        "en": "Fergana"
+      }
+    }
+  ],
+  "cities": {
+    "tashkent": {
+      "ru": "Ташкент",
+      "uz": "Toshkent",
+      "en": "Tashkent"
+    },
+    "samarkand": {
+      "ru": "Самарканд",
+      "uz": "Samarqand",
+      "en": "Samarkand"
+    },
+    "fergana": {
+      "ru": "Фергана",
+      "uz": "Fargʻona",
+      "en": "Fergana"
+    },
+    "andijan": {
+      "ru": "Андижан",
+      "uz": "Andijon",
+      "en": "Andijan"
+    },
+    "namangan": {
+      "ru": "Наманган",
+      "uz": "Namangan",
+      "en": "Namangan"
+    },
+    "bukhara": {
+      "ru": "Бухара",
+      "uz": "Buxoro",
+      "en": "Bukhara"
+    },
+    "karshi": {
+      "ru": "Карши",
+      "uz": "Qarshi",
+      "en": "Karshi"
+    },
+    "urgench": {
+      "ru": "Ургенч",
+      "uz": "Urganch",
+      "en": "Urgench"
+    },
+    "nukus": {
+      "ru": "Нукус",
+      "uz": "Nukus",
+      "en": "Nukus"
+    },
+    "chirchiq": {
+      "ru": "Чирчик",
+      "uz": "Chirchiq",
+      "en": "Chirchiq"
+    },
+    "navoi": {
+      "ru": "Навои",
+      "uz": "Navoiy",
+      "en": "Navoi"
+    },
+    "termez": {
+      "ru": "Термез",
+      "uz": "Termiz",
+      "en": "Termez"
+    }
+  },
+  "resellers": [
+    {
+      "id": "reseller1",
+      "kind": "reseller",
+      "region": "tashkent-city",
+      "city": {
+        "ru": "Ташкент",
+        "uz": "Toshkent",
+        "en": "Tashkent"
+      },
+      "offers": [
+        "sales",
+        "install",
+        "service"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 1)",
+        "uz": "Reseller nomi (namuna 1)",
+        "en": "Reseller name (example 1)"
+      }
+    },
+    {
+      "id": "reseller2",
+      "kind": "reseller",
+      "region": "tashkent-city",
+      "city": {
+        "ru": "Ташкент",
+        "uz": "Toshkent",
+        "en": "Tashkent"
+      },
+      "offers": [
+        "sales",
+        "install"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 2)",
+        "uz": "Reseller nomi (namuna 2)",
+        "en": "Reseller name (example 2)"
+      }
+    },
+    {
+      "id": "reseller3",
+      "kind": "reseller",
+      "region": "tashkent-region",
+      "city": {
+        "ru": "Чирчик",
+        "uz": "Chirchiq",
+        "en": "Chirchiq"
+      },
+      "offers": [
+        "sales"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 3)",
+        "uz": "Reseller nomi (namuna 3)",
+        "en": "Reseller name (example 3)"
+      }
+    },
+    {
+      "id": "reseller4",
+      "kind": "reseller",
+      "region": "samarkand",
+      "city": {
+        "ru": "Самарканд",
+        "uz": "Samarqand",
+        "en": "Samarkand"
+      },
+      "offers": [
+        "sales",
+        "install",
+        "service"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 4)",
+        "uz": "Reseller nomi (namuna 4)",
+        "en": "Reseller name (example 4)"
+      }
+    },
+    {
+      "id": "reseller5",
+      "kind": "reseller",
+      "region": "fergana",
+      "city": {
+        "ru": "Фергана",
+        "uz": "Fargʻona",
+        "en": "Fergana"
+      },
+      "offers": [
+        "sales",
+        "install"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 5)",
+        "uz": "Reseller nomi (namuna 5)",
+        "en": "Reseller name (example 5)"
+      }
+    },
+    {
+      "id": "reseller6",
+      "kind": "reseller",
+      "region": "andijan",
+      "city": {
+        "ru": "Андижан",
+        "uz": "Andijon",
+        "en": "Andijan"
+      },
+      "offers": [
+        "sales",
+        "service"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 6)",
+        "uz": "Reseller nomi (namuna 6)",
+        "en": "Reseller name (example 6)"
+      }
+    },
+    {
+      "id": "reseller7",
+      "kind": "reseller",
+      "region": "namangan",
+      "city": {
+        "ru": "Наманган",
+        "uz": "Namangan",
+        "en": "Namangan"
+      },
+      "offers": [
+        "sales"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 7)",
+        "uz": "Reseller nomi (namuna 7)",
+        "en": "Reseller name (example 7)"
+      }
+    },
+    {
+      "id": "reseller8",
+      "kind": "reseller",
+      "region": "bukhara",
+      "city": {
+        "ru": "Бухара",
+        "uz": "Buxoro",
+        "en": "Bukhara"
+      },
+      "offers": [
+        "sales",
+        "install"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 8)",
+        "uz": "Reseller nomi (namuna 8)",
+        "en": "Reseller name (example 8)"
+      }
+    },
+    {
+      "id": "reseller9",
+      "kind": "reseller",
+      "region": "kashkadarya",
+      "city": {
+        "ru": "Карши",
+        "uz": "Qarshi",
+        "en": "Karshi"
+      },
+      "offers": [
+        "sales"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 9)",
+        "uz": "Reseller nomi (namuna 9)",
+        "en": "Reseller name (example 9)"
+      }
+    },
+    {
+      "id": "reseller10",
+      "kind": "reseller",
+      "region": "khorezm",
+      "city": {
+        "ru": "Ургенч",
+        "uz": "Urganch",
+        "en": "Urgench"
+      },
+      "offers": [
+        "sales",
+        "install"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 10)",
+        "uz": "Reseller nomi (namuna 10)",
+        "en": "Reseller name (example 10)"
+      }
+    },
+    {
+      "id": "reseller11",
+      "kind": "reseller",
+      "region": "karakalpakstan",
+      "city": {
+        "ru": "Нукус",
+        "uz": "Nukus",
+        "en": "Nukus"
+      },
+      "offers": [
+        "sales"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 11)",
+        "uz": "Reseller nomi (namuna 11)",
+        "en": "Reseller name (example 11)"
+      }
+    },
+    {
+      "id": "reseller12",
+      "kind": "reseller",
+      "region": "navoi",
+      "city": {
+        "ru": "Навои",
+        "uz": "Navoiy",
+        "en": "Navoi"
+      },
+      "offers": [
+        "sales"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 12)",
+        "uz": "Reseller nomi (namuna 12)",
+        "en": "Reseller name (example 12)"
+      }
+    },
+    {
+      "id": "reseller13",
+      "kind": "reseller",
+      "region": "surkhandarya",
+      "city": {
+        "ru": "Термез",
+        "uz": "Termiz",
+        "en": "Termez"
+      },
+      "offers": [
+        "sales"
+      ],
+      "name": {
+        "ru": "Название реселлера (пример 13)",
+        "uz": "Reseller nomi (namuna 13)",
+        "en": "Reseller name (example 13)"
+      }
+    }
+  ],
+  "integrators": [
+    {
+      "id": "integrator1",
+      "kind": "integrator",
+      "region": "tashkent-city",
+      "city": {
+        "ru": "Ташкент",
+        "uz": "Toshkent",
+        "en": "Tashkent"
+      },
+      "offers": [
+        "integration",
+        "support"
+      ],
+      "name": {
+        "ru": "Название интегратора (пример 1)",
+        "uz": "Integrator nomi (namuna 1)",
+        "en": "Integrator name (example 1)"
+      }
+    },
+    {
+      "id": "integrator2",
+      "kind": "integrator",
+      "region": "tashkent-city",
+      "city": {
+        "ru": "Ташкент",
+        "uz": "Toshkent",
+        "en": "Tashkent"
+      },
+      "offers": [
+        "integration",
+        "install",
+        "support"
+      ],
+      "name": {
+        "ru": "Название интегратора (пример 2)",
+        "uz": "Integrator nomi (namuna 2)",
+        "en": "Integrator name (example 2)"
+      }
+    },
+    {
+      "id": "integrator3",
+      "kind": "integrator",
+      "region": "samarkand",
+      "city": {
+        "ru": "Самарканд",
+        "uz": "Samarqand",
+        "en": "Samarkand"
+      },
+      "offers": [
+        "integration"
+      ],
+      "name": {
+        "ru": "Название интегратора (пример 3)",
+        "uz": "Integrator nomi (namuna 3)",
+        "en": "Integrator name (example 3)"
+      }
+    },
+    {
+      "id": "integrator4",
+      "kind": "integrator",
+      "region": "fergana",
+      "city": {
+        "ru": "Фергана",
+        "uz": "Fargʻona",
+        "en": "Fergana"
+      },
+      "offers": [
+        "integration",
+        "support"
+      ],
+      "name": {
+        "ru": "Название интегратора (пример 4)",
+        "uz": "Integrator nomi (namuna 4)",
+        "en": "Integrator name (example 4)"
+      }
+    }
+  ],
+  "documentTypes": {
+    "manual": {
+      "fmt": "PDF",
+      "title": {
+        "ru": "Руководство пользователя",
+        "uz": "Foydalanuvchi qoʻllanmasi",
+        "en": "User manual"
+      }
+    },
+    "software": {
+      "fmt": "ZIP",
+      "title": {
+        "ru": "Программа для ПК: товары, цены, шаблоны этикеток",
+        "uz": "Kompyuter dasturi: mahsulotlar, narxlar, yorliq shablonlari",
+        "en": "PC software: products, prices, label templates"
+      }
+    },
+    "sdk": {
+      "fmt": "ZIP",
+      "title": {
+        "ru": "SDK и описание протокола обмена",
+        "uz": "SDK va almashinuv protokoli tavsifi",
+        "en": "SDK and communication protocol description"
+      }
+    }
+  },
+  "documents": [
+    {
+      "id": "doc-rls1315-manual",
+      "model": "rls1315",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.1",
+      "date": "03.02.2026",
+      "size": {
+        "ru": "3,1 МБ",
+        "uz": "3,1 MB",
+        "en": "3.1 MB"
+      }
+    },
+    {
+      "id": "doc-rls1315-software",
+      "model": "rls1315",
+      "type": "software",
+      "fmt": "ZIP",
+      "ver": "1.2",
+      "date": "20.03.2026",
+      "size": {
+        "ru": "20,2 МБ",
+        "uz": "20,2 MB",
+        "en": "20.2 MB"
+      }
+    },
+    {
+      "id": "doc-rls1315-sdk",
+      "model": "rls1315",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.3",
+      "date": "08.04.2026",
+      "size": {
+        "ru": "8,3 МБ",
+        "uz": "8,3 MB",
+        "en": "8.3 MB"
+      }
+    },
+    {
+      "id": "doc-rls1515-manual",
+      "model": "rls1515",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.0",
+      "date": "12.05.2026",
+      "size": {
+        "ru": "6,4 МБ",
+        "uz": "6,4 MB",
+        "en": "6.4 MB"
+      }
+    },
+    {
+      "id": "doc-rls1515-software",
+      "model": "rls1515",
+      "type": "software",
+      "fmt": "ZIP",
+      "ver": "1.1",
+      "date": "15.01.2026",
+      "size": {
+        "ru": "23,5 МБ",
+        "uz": "23,5 MB",
+        "en": "23.5 MB"
+      }
+    },
+    {
+      "id": "doc-rls1515-sdk",
+      "model": "rls1515",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.2",
+      "date": "03.02.2026",
+      "size": {
+        "ru": "11,6 МБ",
+        "uz": "11,6 MB",
+        "en": "11.6 MB"
+      }
+    },
+    {
+      "id": "doc-rls1000a-manual",
+      "model": "rls1000a",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.3",
+      "date": "20.03.2026",
+      "size": {
+        "ru": "4,7 МБ",
+        "uz": "4,7 MB",
+        "en": "4.7 MB"
+      }
+    },
+    {
+      "id": "doc-rls1000a-software",
+      "model": "rls1000a",
+      "type": "software",
+      "fmt": "ZIP",
+      "ver": "1.0",
+      "date": "08.04.2026",
+      "size": {
+        "ru": "26,8 МБ",
+        "uz": "26,8 MB",
+        "en": "26.8 MB"
+      }
+    },
+    {
+      "id": "doc-rls1000a-sdk",
+      "model": "rls1000a",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.1",
+      "date": "12.05.2026",
+      "size": {
+        "ru": "7,0 МБ",
+        "uz": "7,0 MB",
+        "en": "7.0 MB"
+      }
+    },
+    {
+      "id": "doc-rls1000b-manual",
+      "model": "rls1000b",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.2",
+      "date": "15.01.2026",
+      "size": {
+        "ru": "2,1 МБ",
+        "uz": "2,1 MB",
+        "en": "2.1 MB"
+      }
+    },
+    {
+      "id": "doc-rls1000b-software",
+      "model": "rls1000b",
+      "type": "software",
+      "fmt": "ZIP",
+      "ver": "1.3",
+      "date": "03.02.2026",
+      "size": {
+        "ru": "29,2 МБ",
+        "uz": "29,2 MB",
+        "en": "29.2 MB"
+      }
+    },
+    {
+      "id": "doc-rls1000b-sdk",
+      "model": "rls1000b",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.0",
+      "date": "20.03.2026",
+      "size": {
+        "ru": "10,3 МБ",
+        "uz": "10,3 MB",
+        "en": "10.3 MB"
+      }
+    },
+    {
+      "id": "doc-c2-ai-manual",
+      "model": "c2-ai",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.1",
+      "date": "08.04.2026",
+      "size": {
+        "ru": "5,4 МБ",
+        "uz": "5,4 MB",
+        "en": "5.4 MB"
+      }
+    },
+    {
+      "id": "doc-c2-ai-sdk",
+      "model": "c2-ai",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.2",
+      "date": "12.05.2026",
+      "size": {
+        "ru": "5,5 МБ",
+        "uz": "5,5 MB",
+        "en": "5.5 MB"
+      }
+    },
+    {
+      "id": "doc-aurora-d2-ai-manual",
+      "model": "aurora-d2-ai",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.3",
+      "date": "15.01.2026",
+      "size": {
+        "ru": "2,6 МБ",
+        "uz": "2,6 MB",
+        "en": "2.6 MB"
+      }
+    },
+    {
+      "id": "doc-aurora-d2-ai-sdk",
+      "model": "aurora-d2-ai",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.0",
+      "date": "03.02.2026",
+      "size": {
+        "ru": "7,7 МБ",
+        "uz": "7,7 MB",
+        "en": "7.7 MB"
+      }
+    },
+    {
+      "id": "doc-aurora-s2l-ai-manual",
+      "model": "aurora-s2l-ai",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.1",
+      "date": "20.03.2026",
+      "size": {
+        "ru": "4,8 МБ",
+        "uz": "4,8 MB",
+        "en": "4.8 MB"
+      }
+    },
+    {
+      "id": "doc-aurora-s2l-ai-sdk",
+      "model": "aurora-s2l-ai",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.2",
+      "date": "08.04.2026",
+      "size": {
+        "ru": "9,0 МБ",
+        "uz": "9,0 MB",
+        "en": "9.0 MB"
+      }
+    },
+    {
+      "id": "doc-aurora-y2l-ai-manual",
+      "model": "aurora-y2l-ai",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.3",
+      "date": "12.05.2026",
+      "size": {
+        "ru": "6,1 МБ",
+        "uz": "6,1 MB",
+        "en": "6.1 MB"
+      }
+    },
+    {
+      "id": "doc-aurora-y2l-ai-sdk",
+      "model": "aurora-y2l-ai",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.0",
+      "date": "15.01.2026",
+      "size": {
+        "ru": "11,2 МБ",
+        "uz": "11,2 MB",
+        "en": "11.2 MB"
+      }
+    },
+    {
+      "id": "doc-c1-manual",
+      "model": "c1",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.1",
+      "date": "03.02.2026",
+      "size": {
+        "ru": "3,3 МБ",
+        "uz": "3,3 MB",
+        "en": "3.3 MB"
+      }
+    },
+    {
+      "id": "doc-c1-sdk",
+      "model": "c1",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.2",
+      "date": "20.03.2026",
+      "size": {
+        "ru": "6,4 МБ",
+        "uz": "6,4 MB",
+        "en": "6.4 MB"
+      }
+    },
+    {
+      "id": "doc-c11-manual",
+      "model": "c11",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.3",
+      "date": "08.04.2026",
+      "size": {
+        "ru": "5,5 МБ",
+        "uz": "5,5 MB",
+        "en": "5.5 MB"
+      }
+    },
+    {
+      "id": "doc-c11-sdk",
+      "model": "c11",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.0",
+      "date": "12.05.2026",
+      "size": {
+        "ru": "8,6 МБ",
+        "uz": "8,6 MB",
+        "en": "8.6 MB"
+      }
+    },
+    {
+      "id": "doc-c3-manual",
+      "model": "c3",
+      "type": "manual",
+      "fmt": "PDF",
+      "ver": "1.1",
+      "date": "15.01.2026",
+      "size": {
+        "ru": "2,7 МБ",
+        "uz": "2,7 MB",
+        "en": "2.7 MB"
+      }
+    },
+    {
+      "id": "doc-c3-sdk",
+      "model": "c3",
+      "type": "sdk",
+      "fmt": "ZIP",
+      "ver": "1.2",
+      "date": "03.02.2026",
+      "size": {
+        "ru": "10,8 МБ",
+        "uz": "10,8 MB",
+        "en": "10.8 MB"
+      }
+    }
+  ],
+  "videos": [
+    {
+      "id": "v1",
+      "fam": "label",
+      "title": {
+        "ru": "Как заправить рулон этикеток",
+        "uz": "Yorliq rulonini qanday solish kerak",
+        "en": "How to load a label roll"
+      }
+    },
+    {
+      "id": "v2",
+      "fam": "label",
+      "title": {
+        "ru": "Загрузка товаров и цен с компьютера",
+        "uz": "Mahsulot va narxlarni kompyuterdan yuklash",
+        "en": "Loading products and prices from a PC"
+      }
+    },
+    {
+      "id": "v3",
+      "fam": "comm",
+      "title": {
+        "ru": "Подключение весов к кассе по RS232",
+        "uz": "Tarozini kassaga RS232 orqali ulash",
+        "en": "Connecting a scale to the till over RS232"
+      }
+    },
+    {
+      "id": "v4",
+      "fam": "ai",
+      "title": {
+        "ru": "Первый запуск весов AURORA",
+        "uz": "AURORA tarozisini birinchi marta ishga tushirish",
+        "en": "First start of an AURORA scale"
+      }
+    }
+  ],
+  "faq": [
+    {
+      "id": "choose",
+      "topic": {
+        "ru": "Выбор весов",
+        "uz": "Tarozi tanlash",
+        "en": "Choosing a scale"
+      },
+      "items": [
+        {
+          "q": {
+            "ru": "Какие весы подойдут небольшому магазину?",
+            "uz": "Kichik doʻkonga qaysi tarozi mos keladi?",
+            "en": "Which scale suits a small shop?"
+          },
+          "a": {
+            "ru": "Если товар взвешивают у прилавка, а оплачивают на кассе, берите весы с печатью этикеток: RLS1000/RLS1100A со стойкой или RLS1000/RLS1100B без стойки. Если вес нужен только в кассовой программе, достаточно весов с передачей данных.",
+            "uz": "Agar mahsulot peshtaxtada tortilib, toʻlov kassada qilinsa, yorliq chop etuvchi tarozi oling: ustunli RLS1000/RLS1100A yoki ustunsiz RLS1000/RLS1100B. Vazn faqat kassa dasturida kerak boʻlsa, maʼlumot uzatuvchi tarozi yetarli.",
+            "en": "If goods are weighed at the counter and paid for at the till, take a label printing scale: RLS1000/RLS1100A with a pole or RLS1000/RLS1100B without one. If the weight is only needed in the POS software, a communication scale is enough."
+          }
+        },
+        {
+          "q": {
+            "ru": "Что означают 6/15 кг и 2/5 г в характеристиках?",
+            "uz": "Tavsiflardagi 6/15 kg va 2/5 g nimani anglatadi?",
+            "en": "What do 6/15 kg and 2/5 g mean in the specs?"
+          },
+          "a": {
+            "ru": "Это двухдиапазонные весы. В общепринятой записи это читается так: до 6 кг цена деления 2 г, от 6 до 15 кг цена деления 5 г. У версии 30 кг: до 15 кг деление 5 г, далее 10 г. Точные метрологические данные вашей партии подтвердит дилер.",
+            "uz": "Bu ikki diapazonli tarozi. Umumqabul qilingan yozuvda bu shunday oʻqiladi: 6 kg gacha boʻlim qiymati 2 g, 6 dan 15 kg gacha 5 g. 30 kg li versiyada: 15 kg gacha 5 g, undan keyin 10 g. Partiyangizning aniq metrologik maʼlumotlarini diler tasdiqlaydi.",
+            "en": "These are dual-range scales. In the usual notation it reads: up to 6 kg the division is 2 g, from 6 to 15 kg it is 5 g. On the 30 kg version: 5 g up to 15 kg, then 10 g. Your dealer confirms the exact metrology data for your batch."
+          }
+        },
+        {
+          "q": {
+            "ru": "Чем версия 15 кг отличается от версии 30 кг?",
+            "uz": "15 kg li versiya 30 kg li versiyadan nimasi bilan farq qiladi?",
+            "en": "How does the 15 kg version differ from the 30 kg version?"
+          },
+          "a": {
+            "ru": "Наибольшей нагрузкой, наименьшей нагрузкой (40 г и 100 г) и ценой деления. Корпус, принтер и интерфейсы на страницах производителя указаны одинаковыми.",
+            "uz": "Eng katta yuk, eng kichik yuk (40 g va 100 g) va boʻlim qiymati bilan. Korpus, printer va interfeyslar ishlab chiqaruvchi sahifalarida bir xil koʻrsatilgan.",
+            "en": "In maximum load, minimum load (40 g and 100 g) and division. The manufacturer's pages list the same body, printer and interfaces for both."
+          }
+        }
+      ]
+    },
+    {
+      "id": "labels",
+      "topic": {
+        "ru": "Этикетки и печать",
+        "uz": "Yorliqlar va chop etish",
+        "en": "Labels and printing"
+      },
+      "items": [
+        {
+          "q": {
+            "ru": "Какая ширина этикетки поддерживается?",
+            "uz": "Qanday kenglikdagi yorliq qoʻllab-quvvatlanadi?",
+            "en": "What label width is supported?"
+          },
+          "a": {
+            "ru": "Для серии RLS производитель указывает ширину печати до 56 мм при разрешении 203 dpi. Подходящие размеры этикеток и рулонов уточните у дилера.",
+            "uz": "RLS seriyasi uchun ishlab chiqaruvchi 203 dpi aniqlikda 56 mm gacha chop etish kengligini koʻrsatadi. Mos yorliq va rulon oʻlchamlarini dilerdan aniqlang.",
+            "en": "For the RLS series the manufacturer lists a print width up to 56 mm at 203 dpi. Ask your dealer which label and roll sizes fit."
+          }
+        },
+        {
+          "q": {
+            "ru": "Какие штрихкоды печатают весы серии RLS?",
+            "uz": "RLS seriyasidagi tarozilar qaysi shtrix-kodlarni chop etadi?",
+            "en": "Which barcodes do RLS scales print?"
+          },
+          "a": {
+            "ru": "На страницах производителя указаны ITF 2 of 5, Code 128, EAN-13 и GS1-128. Для RLS1000/RLS1100A дополнительно указана печать QR-кодов.",
+            "uz": "Ishlab chiqaruvchi sahifalarida ITF 2 of 5, Code 128, EAN-13 va GS1-128 koʻrsatilgan. RLS1000/RLS1100A uchun QR-kod chop etish ham koʻrsatilgan.",
+            "en": "The manufacturer's pages list ITF 2 of 5, Code 128, EAN-13 and GS1-128. QR code printing is also listed for RLS1000/RLS1100A."
+          }
+        },
+        {
+          "q": {
+            "ru": "Как загрузить товары и цены в весы?",
+            "uz": "Mahsulot va narxlarni taroziga qanday yuklash mumkin?",
+            "en": "How do I load products and prices into the scale?"
+          },
+          "a": {
+            "ru": "Через программу для ПК по сети Ethernet. Для RLS1000/RLS1100B производитель указывает также пакетную загрузку через USB. Программа и инструкция находятся в разделе «Драйверы и программы для ПК».",
+            "uz": "Kompyuter dasturi yordamida Ethernet tarmogʻi orqali. RLS1000/RLS1100B uchun ishlab chiqaruvchi USB orqali toʻplam holida yuklashni ham koʻrsatadi. Dastur va yoʻriqnoma «Drayverlar va kompyuter dasturlari» boʻlimida.",
+            "en": "With the PC software over Ethernet. For RLS1000/RLS1100B the manufacturer also lists bulk import over USB. The software and instructions are under “Drivers and PC software”."
+          }
+        }
+      ]
+    },
+    {
+      "id": "connect",
+      "topic": {
+        "ru": "Подключение и программы",
+        "uz": "Ulash va dasturlar",
+        "en": "Connection and software"
+      },
+      "items": [
+        {
+          "q": {
+            "ru": "Как подключить весы к кассовой программе?",
+            "uz": "Tarozini kassa dasturiga qanday ulash mumkin?",
+            "en": "How do I connect a scale to POS software?"
+          },
+          "a": {
+            "ru": "Весы с передачей данных подключаются по RS232, модель C3 через авиационный разъём к COM-порту и USB. Весы с печатью этикеток работают в сети Ethernet. Протокол обмена описан в SDK.",
+            "uz": "Maʼlumot uzatuvchi tarozilar RS232 orqali, C3 modeli esa aviatsiya razyomi orqali COM-port va USB ga ulanadi. Yorliq chop etuvchi tarozilar Ethernet tarmogʻida ishlaydi. Almashinuv protokoli SDK da tavsiflangan.",
+            "en": "Communication scales connect over RS232, and the C3 uses an aviation connector to the COM port and USB. Label printing scales work on the Ethernet network. The SDK describes the communication protocol."
+          }
+        },
+        {
+          "q": {
+            "ru": "Работают ли весы с 1С и моей кассовой программой?",
+            "uz": "Tarozilar 1C va mening kassa dasturim bilan ishlaydimi?",
+            "en": "Do the scales work with 1C and my POS software?"
+          },
+          "a": {
+            "ru": "Это зависит от программы. Список совместимых программ сейчас подтверждается. Интеграторы, которые подключают весы Rongta, перечислены на странице «Дилеры» во вкладке «Интеграторы ПО».",
+            "uz": "Bu dasturga bogʻliq. Mos dasturlar roʻyxati hozir tasdiqlanmoqda. Rongta tarozilarini ulaydigan integratorlar «Dilerlar» sahifasidagi «Dastur integratorlari» boʻlimida keltirilgan.",
+            "en": "It depends on the software. The list of compatible software is being confirmed. Integrators who connect Rongta scales are listed on the Dealers page under “Software integrators”."
+          }
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "topic": {
+        "ru": "Гарантия и сервис",
+        "uz": "Kafolat va servis",
+        "en": "Warranty and service"
+      },
+      "items": [
+        {
+          "q": {
+            "ru": "Какая гарантия на весы?",
+            "uz": "Tarozilarga qanday kafolat beriladi?",
+            "en": "What warranty do the scales carry?"
+          },
+          "a": {
+            "ru": "Срок и условия гарантии подтверждает дилер или RSG при покупке. Гарантийный талон входит в комплект поставки.",
+            "uz": "Kafolat muddati va shartlarini xarid paytida diler yoki RSG tasdiqlaydi. Kafolat taloni yetkazib berish toʻplamiga kiradi.",
+            "en": "Your dealer or RSG confirms the warranty period and terms at purchase. A warranty card comes in the box."
+          }
+        },
+        {
+          "q": {
+            "ru": "Куда обращаться за ремонтом?",
+            "uz": "Taʼmirlash uchun qayerga murojaat qilish kerak?",
+            "en": "Where do I go for repairs?"
+          },
+          "a": {
+            "ru": "К дилеру, у которого куплены весы, или к официальному дистрибьютору RSG. Адрес сервисного центра будет добавлен на сайт.",
+            "uz": "Tarozi sotib olingan dilerga yoki rasmiy distribyutor RSG ga. Servis markazi manzili saytga qoʻshiladi.",
+            "en": "To the dealer who sold the scale or to RSG, the official distributor. The service centre address will be added to the site."
+          }
+        }
+      ]
+    },
+    {
+      "id": "metrology",
+      "topic": {
+        "ru": "Метрология и документы",
+        "uz": "Metrologiya va hujjatlar",
+        "en": "Metrology and documents"
+      },
+      "items": [
+        {
+          "q": {
+            "ru": "Есть ли документы для применения весов в торговле в Узбекистане?",
+            "uz": "Tarozilarni Oʻzbekistonda savdoda qoʻllash uchun hujjatlar bormi?",
+            "en": "Are there documents for using the scales in trade in Uzbekistan?"
+          },
+          "a": {
+            "ru": "Документы по метрологии и сертификации в Узбекистане будут опубликованы в этом разделе. До публикации запросите их у дилера или RSG. Производитель указывает для весов класс точности III.",
+            "uz": "Oʻzbekistondagi metrologiya va sertifikatlash hujjatlari shu boʻlimda eʼlon qilinadi. Ungacha ularni diler yoki RSG dan soʻrang. Ishlab chiqaruvchi tarozilar uchun III aniqlik klassini koʻrsatadi.",
+            "en": "Metrology and certification documents for Uzbekistan will be published in this section. Until then, ask your dealer or RSG for them. The manufacturer lists accuracy class III for the scales."
+          }
+        }
+      ]
+    }
+  ],
+  "buyingGuide": [
+    {
+      "fam": "comm",
+      "does": {
+        "ru": "Взвешивают и передают вес в кассовую программу.",
+        "uz": "Tortadi va vaznni kassa dasturiga uzatadi.",
+        "en": "They weigh and send the weight to the POS software."
+      },
+      "fits": {
+        "ru": "Торговые точки на рынке, небольшие магазины, отделы с кассой рядом.",
+        "uz": "Bozordagi savdo nuqtalari, kichik doʻkonlar, kassasi yonida boʻlgan boʻlimlar.",
+        "en": "Market stalls, small shops, counters with a till next to them."
+      },
+      "limit": {
+        "ru": "Этикетки не печатают. Нужна касса или компьютер с программой.",
+        "uz": "Yorliq chop etmaydi. Dasturli kassa yoki kompyuter kerak.",
+        "en": "No label printing. They need a till or a computer with software."
+      },
+      "peak": {
+        "ru": "Небольшой и средний",
+        "uz": "Kichik va oʻrtacha",
+        "en": "Low to medium"
+      }
+    },
+    {
+      "fam": "label",
+      "does": {
+        "ru": "Взвешивают и печатают самоклеящуюся этикетку с весом, ценой и штрихкодом из списка товаров (PLU).",
+        "uz": "Tortadi va mahsulotlar roʻyxatidan (PLU) vazn, narx va shtrix-kodli yopishqoq yorliq chop etadi.",
+        "en": "They weigh and print a self-adhesive label with weight, price and barcode from the product list (PLU)."
+      },
+      "fits": {
+        "ru": "Магазины с прилавком, отделы свежих продуктов и кулинарии, пекарни, зоны фасовки.",
+        "uz": "Peshtaxtali doʻkonlar, yangi mahsulotlar va tayyor taomlar boʻlimlari, novvoyxonalar, qadoqlash joylari.",
+        "en": "Shops with a counter, fresh food and deli sections, bakeries, packing areas."
+      },
+      "limit": {
+        "ru": "Оплату не принимают: товар с этикеткой сканируют на кассе.",
+        "uz": "Toʻlov qabul qilmaydi: yorliqli mahsulot kassada skanerlanadi.",
+        "en": "They do not take payment: the labelled item is scanned at the till."
+      },
+      "peak": {
+        "ru": "Средний и высокий",
+        "uz": "Oʻrtacha va yuqori",
+        "en": "Medium to high"
+      }
+    },
+    {
+      "fam": "ai",
+      "does": {
+        "ru": "Распознают товар камерой, взвешивают, печатают этикетку или чек; кассовые модели принимают оплату через кассовую программу.",
+        "uz": "Mahsulotni kamera orqali taniydi, tortadi, yorliq yoki chek chop etadi; kassa modellari kassa dasturi orqali toʻlov qabul qiladi.",
+        "en": "They recognise the item by camera, weigh it and print a label or receipt; cashier models take payment through POS software."
+      },
+      "fits": {
+        "ru": "Супермаркеты и сети с большим ассортиментом, потоком покупателей и текучкой персонала.",
+        "uz": "Assortimenti katta, xaridorlar oqimi va xodimlar almashinuvi yuqori boʻlgan supermarketlar va tarmoqlar.",
+        "en": "Supermarkets and chains with a wide range, heavy footfall and staff turnover."
+      },
+      "limit": {
+        "ru": "Самые высокие начальные затраты. Нужна настройка под ассортимент магазина.",
+        "uz": "Boshlangʻich xarajatlar eng yuqori. Doʻkon assortimentiga moslab sozlash kerak.",
+        "en": "The highest upfront cost. They need setting up for the shop's range."
+      },
+      "peak": {
+        "ru": "Очень высокий",
+        "uz": "Juda yuqori",
+        "en": "Very high"
+      }
+    }
+  ],
+  "buyingGuideChecklist": [
+    {
+      "ru": "Класс точности III обычно достаточен для розницы; проверьте цену деления под свой товар.",
+      "uz": "Chakana savdo uchun odatda III aniqlik klassi yetarli; boʻlim qiymatini oʻz mahsulotingizga qarab tekshiring.",
+      "en": "Accuracy class III is usually enough for retail; check the division against what you sell."
+    },
+    {
+      "ru": "Для овощей, рыбы и мяса выбирайте весы с защитой от воды, соответствующей условиям отдела.",
+      "uz": "Sabzavot, baliq va goʻsht uchun boʻlim sharoitiga mos suvdan himoyali tarozi tanlang.",
+      "en": "For vegetables, fish and meat choose a water protection rating that matches the counter."
+    },
+    {
+      "ru": "Сверьте интерфейс с кассой: RS232 или USB для весов с передачей данных, Ethernet для весов с печатью этикеток.",
+      "uz": "Interfeysni kassa bilan solishtiring: maʼlumot uzatuvchi tarozilar uchun RS232 yoki USB, yorliq tarozilari uchun Ethernet.",
+      "en": "Match the interface to your till: RS232 or USB for communication scales, Ethernet for label scales."
+    },
+    {
+      "ru": "Для весов с ИИ проверьте распознавание при вашем освещении и то, как добавляются новые товары.",
+      "uz": "Sunʼiy intellektli tarozilarda tanishni oʻz yoritishingizda va yangi mahsulot qanday qoʻshilishini tekshiring.",
+      "en": "For AI scales, test recognition under your lighting and check how new products are added."
+    },
+    {
+      "ru": "Запросите у дилера документы по метрологии для Узбекистана до покупки.",
+      "uz": "Xariddan oldin dilerdan Oʻzbekiston uchun metrologiya hujjatlarini soʻrang.",
+      "en": "Ask the dealer for the Uzbekistan metrology documents before you buy."
+    }
+  ],
+  "chooser": {
+    "shop": {
+      "fam": "label",
+      "models": [
+        "rls1000a",
+        "rls1000b"
+      ],
+      "why": {
+        "ru": "Продавец взвешивает товар у прилавка и клеит этикетку со штрихкодом. На кассе её сканируют, как обычный товар, без ввода цены вручную.",
+        "uz": "Sotuvchi mahsulotni peshtaxtada tortadi va shtrix-kodli yorliq yopishtiradi. Kassada u oddiy mahsulot kabi skanerlanadi, narx qoʻlda kiritilmaydi.",
+        "en": "The seller weighs at the counter and sticks on a barcode label. The till scans it like any other product, with no price typed by hand."
+      },
+      "notes": {
+        "rls1000a": {
+          "ru": "Дисплей на стойке, покупатель видит вес и сумму",
+          "uz": "Ustundagi displey, xaridor vazn va summani koʻradi",
+          "en": "Pole display, the buyer sees weight and total"
+        },
+        "rls1000b": {
+          "ru": "Низкий корпус, помещается под витриной",
+          "uz": "Past korpus, vitrina ostiga sigʻadi",
+          "en": "Low body, fits under a display case"
+        }
+      }
+    },
+    "supermarket": {
+      "fam": "ai",
+      "models": [
+        "aurora-s2l-ai",
+        "aurora-y2l-ai"
+      ],
+      "why": {
+        "ru": "Когда товаров сотни, а сотрудники часто меняются, камера подсказывает товар на экране. Покупатель может взвесить сам, этикетка печатается сразу.",
+        "uz": "Mahsulotlar yuzlab boʻlib, xodimlar tez-tez almashganda, kamera mahsulotni ekranda taklif qiladi. Xaridor oʻzi tortishi mumkin, yorliq darhol chiqadi.",
+        "en": "With hundreds of items and changing staff, the camera suggests the product on screen. Shoppers can weigh for themselves and the label prints at once."
+      },
+      "notes": {
+        "aurora-s2l-ai": {
+          "ru": "Камера 2 Мп, принтер этикеток, Windows",
+          "uz": "2 MP kamera, yorliq printeri, Windows",
+          "en": "2 MP camera, label printer, Windows"
+        },
+        "aurora-y2l-ai": {
+          "ru": "Экран Full HD, этикетки и чеки",
+          "uz": "Full HD ekran, yorliq va cheklar",
+          "en": "Full HD screen, labels and receipts"
+        }
+      }
+    },
+    "market": {
+      "fam": "comm",
+      "models": [
+        "c11",
+        "c3"
+      ],
+      "why": {
+        "ru": "Для торговой точки с кассой или планшетом хватает весов, которые передают вес в программу. Нет принтера, нет расходных материалов.",
+        "uz": "Kassa yoki planshetli savdo nuqtasi uchun vaznni dasturga uzatadigan tarozi yetarli. Printer yoʻq, sarf materiallari ham yoʻq.",
+        "en": "A stall with a till or a tablet needs only a scale that sends the weight to the software. No printer and no consumables."
+      },
+      "notes": {
+        "c11": {
+          "ru": "Базовая модель с портом RS232",
+          "uz": "RS232 portli asosiy model",
+          "en": "Basic model with an RS232 port"
+        },
+        "c3": {
+          "ru": "Защита от воды для овощей, рыбы и мяса",
+          "uz": "Sabzavot, baliq va goʻsht uchun suvdan himoya",
+          "en": "Water protection for vegetables, fish and meat"
+        }
+      }
+    }
+  }
+}

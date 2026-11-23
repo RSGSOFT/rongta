@@ -9,7 +9,7 @@ use App\Models\ScaleModel;
 use Database\Seeders\Concerns\ReadsDesignData;
 use Illuminate\Database\Seeder;
 
-/** Families, models, features and specs from models.json. The "price" field is never read. */
+/** Families, models, features and specs from models.json. The file carries no price field. */
 class CatalogSeeder extends Seeder
 {
     use ReadsDesignData;

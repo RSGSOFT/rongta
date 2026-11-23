@@ -6,10 +6,13 @@ use RuntimeException;
 
 trait ReadsDesignData
 {
-    /** Reads .claude/design/data/{file} as an array. */
+    /**
+     * Reads database/seeders/data/{file} as an array. The files are price-free copies of the
+     * prototype's data (project rule: no prices anywhere), committed so they deploy with the code.
+     */
     protected function designData(string $file): array
     {
-        $path = base_path('.claude/design/data/'.$file);
+        $path = database_path('seeders/data/'.$file);
         if (! is_file($path)) {
             throw new RuntimeException("Seed data file not found: {$path}");
         }
