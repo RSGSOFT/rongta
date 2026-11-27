@@ -44,6 +44,22 @@ class Partner extends Model
         return $query->where('kind', 'integrator');
     }
 
+    /** Partners that sell scales: the ones RSG hands scales to (the "sales" offer, whatever the kind). */
+    public function scopeSellers(Builder $query): Builder
+    {
+        return $query->whereJsonContains('offers', 'sales');
+    }
+
+    public function offersSales(): bool
+    {
+        return in_array('sales', $this->offers ?? [], true);
+    }
+
+    public function offersService(): bool
+    {
+        return in_array('service', $this->offers ?? [], true);
+    }
+
     public function region(): BelongsTo
     {
         return $this->belongsTo(Region::class);

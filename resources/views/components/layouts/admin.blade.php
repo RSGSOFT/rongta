@@ -30,6 +30,7 @@
             ['admin.models', 'Модели весов', false],
             ['admin.documents', 'Документы и файлы', false],
             ['admin.videos', 'Видео', false],
+            ['admin.serials', 'Серийные номера', true],
         ]],
         ['Регионы и партнёры', [
             ['admin.regions', 'Регионы', false],
@@ -37,12 +38,16 @@
             ['admin.partners', 'Партнёры', false],
             ['admin.partner-points', 'Страница «Партнёрам»', false],
             ['admin.partner-requests', 'Заявки на партнёрство', false],
+            ['admin.cabinet-accounts', 'Кабинеты партнёров', true],
+            ['admin.serial-requests', 'Запросы по весам', true],
         ]],
         ['Контент', [
             ['admin.strings', 'Тексты интерфейса', false],
             ['admin.faq', 'Вопросы и ответы', false],
             ['admin.guide', 'Гид по выбору', false],
             ['admin.chooser', 'Подбор весов', false],
+            ['admin.hero-items', 'Образцы для весов', false],
+            ['admin.service-cases', 'Сервис и ремонт', false],
         ]],
         ['Чат-бот', [
             ['admin.leads', 'Лиды', true],

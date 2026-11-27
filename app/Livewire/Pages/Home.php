@@ -4,8 +4,10 @@ namespace App\Livewire\Pages;
 
 use App\Models\ChooserOption;
 use App\Models\Family;
+use App\Models\HeroItem;
 use App\Models\ScaleModel;
 use Illuminate\Contracts\View\View;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 
 /**
@@ -18,6 +20,15 @@ class Home extends Component
 
     /** Selected answer of "Which scale do you need?" (chooser_options.key). */
     public string $chooser = 'shop';
+
+    /** Sample product on the hero scale: a different published one on each page load. */
+    #[Locked]
+    public ?int $heroItemId = null;
+
+    public function mount(): void
+    {
+        $this->heroItemId = HeroItem::published()->inRandomOrder()->value('id');
+    }
 
     public function pick(string $key): void
     {
@@ -47,6 +58,10 @@ class Home extends Component
     {
         $sections = self::sections();
         $data = ['sections' => $sections];
+
+        if (in_array('hero', $sections, true)) {
+            $data['heroItem'] = ($this->heroItemId ? HeroItem::published()->find($this->heroItemId) : null) ?? HeroItem::fallback();
+        }
 
         if (in_array('chooser', $sections, true)) {
             $options = ChooserOption::query()

@@ -137,6 +137,10 @@ class AccessTest extends TestCase
         $pages = $this->pages();
         $this->actingAs($this->admin());
 
+        // Owner-approved exception (2026-11-24): service fees are shown in soʻm. Their two amount
+        // strings and the /admin/service-cases screens are left out; every other screen stays price-free.
+        UiString::whereIn('key', ['svc.amount', 'svc.amount.from'])->delete();
+
         foreach ([...$pages['staff'], ...$pages['admin']] as $url) {
             $html = mb_strtolower($this->get($url)->getContent());
             foreach (['сум', 'soʻm', 'цена', 'цены', 'стоимость', '10 + 1'] as $word) {

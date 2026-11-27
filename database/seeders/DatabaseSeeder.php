@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             SiteBStringSeeder::class, // extra strings for the Dealers and Knowledge base pages
             ChatbotStringSeeder::class, // chatbot widget strings
             SettingsSeeder::class,    // contacts, accent, logo, home sections, hero
+            HeroItemSeeder::class,    // sample products for the home hero display (only while the table is empty)
+            ServiceCaseSeeder::class, // starter service jobs, without amounts (only while the table is empty)
             AdminUserSeeder::class,   // staff admin from .env
         ]);
     }

@@ -1,11 +1,14 @@
 <?php
 
 use App\Livewire\Admin\Activity;
+use App\Livewire\Admin\CabinetAccounts;
 use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Items\Documents;
 use App\Livewire\Admin\Items\Families;
 use App\Livewire\Admin\Items\Models;
 use App\Livewire\Admin\Items\Videos;
+use App\Livewire\Admin\SerialRequests;
+use App\Livewire\Admin\Serials;
 use App\Livewire\Admin\Staff;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +35,20 @@ Route::livewire('/documents/{document}/edit', Documents\Form::class)->name('docu
 Route::livewire('/videos', Videos\Index::class)->name('videos.index');
 Route::livewire('/videos/create', Videos\Form::class)->name('videos.create');
 Route::livewire('/videos/{video}/edit', Videos\Form::class)->name('videos.edit');
+
+// Serial numbers of imported scales (batches and their items): admins only.
+Route::middleware('staff:admin')->group(function () {
+    Route::livewire('/serials', Serials\Index::class)->name('serials.index');
+    Route::livewire('/serials/import', Serials\Import::class)->name('serials.import');
+    Route::livewire('/serials/batches/{batch}', Serials\Show::class)->name('serials.batches.show');
+    Route::livewire('/serials/handover', Serials\Handover::class)->name('serials.handover');
+    Route::livewire('/serials/numbers/{serial}', Serials\Card::class)->name('serials.numbers.show');
+
+    // Partner cabinet: registrations to approve, and service centres' requests for a scale's history.
+    Route::livewire('/cabinet-accounts', CabinetAccounts\Index::class)->name('cabinet-accounts.index');
+    Route::livewire('/cabinet-accounts/{account}', CabinetAccounts\Show::class)->name('cabinet-accounts.show');
+    Route::livewire('/serial-requests', SerialRequests\Index::class)->name('serial-requests.index');
+});
 
 // System: admins only.
 Route::middleware('staff:admin')->group(function () {

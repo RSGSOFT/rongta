@@ -91,8 +91,14 @@ class SeedDataTest extends TestCase
 
     public function test_no_price_anywhere_in_the_schema_or_interface_strings(): void
     {
+        // Owner-approved exception (2026-11-23): the home hero's sample items carry the number a scale shows per kilogram.
+        $allowed = ['hero_items.unit_price'];
+
         foreach (Schema::getTables() as $table) {
             foreach (Schema::getColumnListing($table['name']) as $column) {
+                if (in_array($table['name'].'.'.$column, $allowed, true)) {
+                    continue;
+                }
                 $this->assertStringNotContainsStringIgnoringCase('price', $column, "{$table['name']}.{$column}");
             }
         }

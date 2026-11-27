@@ -7,6 +7,7 @@ use App\Livewire\Admin\Concerns\RequiresStaff;
 use App\Livewire\Admin\Concerns\WithTable;
 use App\Models\Family;
 use App\Models\ScaleModel;
+use App\Models\SerialNumber;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Url;
@@ -42,6 +43,13 @@ class Index extends Component
     public function delete(int $id): void
     {
         $model = ScaleModel::with('documents')->findOrFail($id);
+
+        // Imported scales of this model are on record: the model stays.
+        if (SerialNumber::where('scale_model_id', $model->id)->exists()) {
+            session()->flash('error', "Модель {$model->name} нельзя удалить: к ней загружены серийные номера. Снимите её с публикации.");
+
+            return;
+        }
 
         $files = array_filter([
             $model->image,

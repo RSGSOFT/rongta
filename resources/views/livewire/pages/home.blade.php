@@ -6,6 +6,12 @@
     @foreach ($sections as $section)
         @switch($section)
             @case('hero')
+                @php
+                    $ro = $heroItem->readout();
+                    $readoutAlt = $heroItem->exists
+                        ? ui('hero.readout.item', ['name' => $heroItem->tr('name'), 'weight' => $heroItem->weightKg(), 'unit' => $heroItem::spaced($heroItem->unit_price), 'total' => $heroItem::spaced($heroItem->total())])
+                        : ui($hero['readout_alt_key'] ?? 'hero.readout.alt');
+                @endphp
                 <section class="hero" wire:key="sec-hero">
                     <div class="wrap hero-grid">
                         <div>
@@ -17,20 +23,20 @@
                             </div>
                             <p class="hero-contact">@if ($contactsReal){{ ui($hero['contact_key'] ?? 'hero.contact') }} @endif<x-site.contact /></p>
                         </div>
-                        {{-- Decorative motif: a scale's own display and a printed label. Not a product price: no currency anywhere. --}}
+                        {{-- Decorative motif: a scale's own display and a printed label for one sample item (App\Models\HeroItem). Not a product price: no currency anywhere. --}}
                         <div class="rig" wire:ignore>
-                            <div class="readout" role="img" aria-label="{{ ui($hero['readout_alt_key'] ?? 'hero.readout.alt') }}" data-readout>
-                                <div class="readout-win"><span class="readout-cap">{{ ui('ro.weight') }}</span><div data-ro="weight"><x-site.seg7 value="1.250" /></div></div>
-                                <div class="readout-win"><span class="readout-cap">{{ ui('ro.unit') }}</span><x-site.seg7 value="12000" /></div>
-                                <div class="readout-win"><span class="readout-cap">{{ ui('ro.total') }}</span><div data-ro="total"><x-site.seg7 value="15000" /></div></div>
+                            <div class="readout" role="img" aria-label="{{ $readoutAlt }}" data-readout data-weight="{{ $heroItem->weight_g }}" data-unit="{{ $heroItem->unit_price }}">
+                                <div class="readout-win"><span class="readout-cap">{{ ui('ro.weight') }}</span><div data-ro="weight"><x-site.seg7 :value="$ro['weight']" /></div></div>
+                                <div class="readout-win"><span class="readout-cap">{{ ui('ro.unit') }}</span><x-site.seg7 :value="$ro['unit']" /></div>
+                                <div class="readout-win"><span class="readout-cap">{{ ui('ro.total') }}</span><div data-ro="total"><x-site.seg7 :value="$ro['total']" /></div></div>
                             </div>
                             <div class="rig-scale"><x-site.scale-ill kind="pole" :opts="['head' => 'wide', 'blank' => true]" name="RLS1000/RLS1100A" /></div>
                             <div class="plabel hero-label" aria-hidden="true">
-                                <span class="cap">Rongta Uzbekistan</span>
-                                <b>{{ ui('lbl.product') }}</b>
-                                <dl><dt>{{ ui('lbl.weight') }}</dt><dd>1.250</dd><dt>{{ ui('lbl.unit') }}</dt><dd>12&nbsp;000</dd></dl>
-                                <div class="sum num">15&nbsp;000</div>
-                                <x-site.barcode seed="rongta-hero" :n="46" />
+                                <span class="brand">{{ $heroItem->brandLine() }}</span>
+                                <b>{{ $heroItem->tr('name') }}</b>
+                                <dl><dt>{{ ui('lbl.weight') }}</dt><dd>{{ $heroItem->weightKg() }}</dd><dt>{{ ui('lbl.unit') }}</dt><dd>{{ $heroItem::spaced($heroItem->unit_price) }}</dd></dl>
+                                <div class="sum num">{{ $heroItem::spaced($heroItem->total()) }}</div>
+                                <x-site.barcode :seed="'rongta-hero-'.($heroItem->id ?? 0)" :n="46" />
                                 <div class="cap">{{ ui('lbl.sample') }}</div>
                             </div>
                         </div>

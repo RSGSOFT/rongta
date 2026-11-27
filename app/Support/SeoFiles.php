@@ -16,7 +16,7 @@ use XMLWriter;
 class SeoFiles
 {
     /** Indexable public pages without parameters. Compare is left out: it is noindex. */
-    public const PAGES = ['home', 'catalog', 'dealers', 'partners', 'knowledge'];
+    public const PAGES = ['home', 'catalog', 'dealers', 'partners', 'knowledge', 'serial'];
 
     /** Language names used in llms.txt, which is written in English. */
     public const LANGUAGE_NAMES = ['ru' => 'Russian', 'uz' => 'Uzbek', 'en' => 'English'];
@@ -128,6 +128,7 @@ class SeoFiles
         $lines[] = self::pageLine(ui('cta.dealer', [], $en), 'dealers', ui('dl.lead', [], $en));
         $lines[] = self::pageLine(ui('nav.partner', [], $en), 'partners', ui('ps.lead', [], $en));
         $lines[] = self::pageLine(ui('nav.knowledge', [], $en), 'knowledge', ui('kb.lead', [], $en));
+        $lines[] = self::pageLine(ui('sn.h', [], $en), 'serial', ui('sn.lead', [], $en));
         $lines[] = self::pageLine(ui('nav.catalog', [], $en), 'catalog', 'All '.$models->count().' models, with filters and a side-by-side comparison.');
 
         if ($contacts = RsgContacts::confirmed()) {

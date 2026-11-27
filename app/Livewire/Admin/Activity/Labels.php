@@ -48,6 +48,12 @@ class Labels
         'App\Models\GuideEntry' => 'Гид по выбору',
         'App\Models\GuideCheck' => 'Пункт гида',
         'App\Models\ChooserOption' => 'Вариант подбора',
+        'App\Models\HeroItem' => 'Образец для весов',
+        'App\Models\ServiceCase' => 'Работа сервиса',
+        'App\Models\SerialBatch' => 'Партия серийных номеров',
+        'App\Models\SerialMovement' => 'Запись истории весов',
+        'App\Models\CabinetAccount' => 'Кабинет партнёра',
+        'App\Models\SerialDetailRequest' => 'Запрос по весам',
         'App\Models\Setting' => 'Настройка',
     ];
 

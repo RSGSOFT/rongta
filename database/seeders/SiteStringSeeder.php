@@ -14,6 +14,12 @@ use Illuminate\Database\Seeder;
 class SiteStringSeeder extends Seeder
 {
     public const STRINGS = [
+        // Text alternative of the hero scale display when it shows a sample item (no currency).
+        'hero.readout.item' => [
+            'ru' => 'Табло весов: {name}, вес {weight} кг, за килограмм {unit}, итог {total}',
+            'uz' => 'Tarozi tablosi: {name}, vazn {weight} kg, 1 kg narxi {unit}, jami {total}',
+            'en' => 'Scale display: {name}, weight {weight} kg, price per kilogram {unit}, total {total}',
+        ],
         'site.skip' => [
             'ru' => 'Перейти к содержимому',
             'uz' => 'Asosiy mazmunga oʻtish',

@@ -7,6 +7,7 @@ use App\Models\FaqTopic;
 use App\Models\GuideCheck;
 use App\Models\GuideEntry;
 use App\Models\ScaleModel;
+use App\Models\ServiceCase;
 use App\Models\Video;
 use App\Support\Seo;
 use Illuminate\Contracts\View\View;
@@ -16,7 +17,7 @@ use Livewire\Component;
 
 /**
  * Knowledge base: search and model picker first, then manuals, drivers and PC software,
- * SDK, videos, FAQ and the buying guide. The search looks at documents, videos and FAQ
+ * SDK, videos, FAQ, the service list and the buying guide. The search looks at documents, videos and FAQ
  * in the language being viewed. State lives in the URL: /knowledge?q=label&model=c1#kb-sdk.
  */
 class Knowledge extends Component
@@ -94,6 +95,15 @@ class Knowledge extends Component
             ->filter(fn (FaqTopic $topic) => $topic->items->isNotEmpty())
             ->values();
 
+        // Service jobs with an amount, grouped by scale family; the "every scale" group (no family) comes first.
+        $services = ServiceCase::listed()->with('family')
+            ->when($picked, fn ($query) => $query->where(fn ($q) => $q->whereNull('family_id')->orWhere('family_id', $picked->family_id)))
+            ->orderBy('sort')
+            ->orderBy('id')
+            ->get()
+            ->filter(fn (ServiceCase $case) => $matches($case->tr('title').' '.$case->tr('note')))
+            ->values();
+
         $sections = collect(self::DOC_SECTIONS)->map(fn (array $s, string $type) => [
             'id' => $s[0],
             'title' => $s[1],
@@ -109,7 +119,9 @@ class Knowledge extends Component
             'videos' => $videos,
             'faq' => $faq,
             'faqCount' => $faqCount,
-            'total' => $sections->sum(fn (array $s) => $s['documents']->count()) + $videos->count() + $faqCount,
+            'serviceGroups' => $services->sortBy(fn (ServiceCase $case) => $case->family?->sort ?? -1)->groupBy(fn (ServiceCase $case) => (int) $case->family_id),
+            'servicesUpdated' => $services->max('updated_at'),
+            'total' => $sections->sum(fn (array $s) => $s['documents']->count()) + $videos->count() + $faqCount + $services->count(),
             'filtering' => $needle !== '' || $picked !== null,
             'searching' => $needle !== '',
             // The buying guide is reference reading, not a search result.

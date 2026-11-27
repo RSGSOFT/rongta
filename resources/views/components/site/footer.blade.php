@@ -21,7 +21,9 @@
                 <li><a href="{{ lroute('compare') }}">{{ ui('nav.compare') }}</a></li>
                 <li><a href="{{ lroute('dealers') }}">{{ ui('nav.dealers') }}</a></li>
                 <li><a href="{{ lroute('knowledge') }}">{{ ui('nav.knowledge') }}</a></li>
+                <li><a href="{{ lroute('serial') }}" id="ftr-serial">{{ ui('sn.nav') }}</a></li>
                 <li><a href="{{ lroute('partners') }}">{{ ui('nav.partner') }}</a></li>
+                <li><a href="{{ lroute('cabinet') }}" id="ftr-cabinet">{{ ui('cab.nav') }}</a></li>
             </ul>
         </div>
         <div>

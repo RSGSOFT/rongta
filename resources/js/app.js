@@ -34,7 +34,15 @@ function settleReadout() {
     const total = readout.querySelector('[data-ro="total"]');
     if (!weight || !total) return;
 
-    const steps = [['0.000', '    0'], ['1.318', '15816'], ['1.236', '14832'], ['1.262', '15144'], ['1.250', '15000']];
+    // The item on the scale comes from the page (grams and price per kilogram). The needle
+    // overshoots and settles; the cell counts match App\Models\HeroItem.
+    const grams = Number(readout.dataset.weight);
+    const unit = Number(readout.dataset.unit);
+    if (!(grams > 0) || !(unit > 0)) return;
+    const steps = [0, 1.054, 0.989, 1.01, 1].map((factor) => {
+        const g = Math.round(grams * factor);
+        return [(g / 1000).toFixed(3).padStart(6, ' '), String(Math.round(g * unit / 1000)).padStart(9, ' ')];
+    });
     let i = 0;
     const step = () => {
         weight.innerHTML = seg7(steps[i][0]);

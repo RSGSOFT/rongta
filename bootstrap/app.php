@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\DevAutoLogin;
+use App\Http\Middleware\EnsureCabinetAccess;
 use App\Http\Middleware\EnsureStaffActive;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Contracts\Auth\Middleware\AuthenticatesRequests;
@@ -23,6 +24,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'locale' => SetLocale::class,
             'staff' => EnsureStaffActive::class,
+            'cabinet' => EnsureCabinetAccess::class,
         ]);
 
         // Only the admin panel needs a login: guests go to the admin login page.

@@ -2,6 +2,9 @@
     $nav = $sections->map(fn ($s) => [$s['id'], $s['title']])->values()->all();
     $nav[] = ['kb-videos', 'kb.videos'];
     $nav[] = ['kb-faq', 'kb.faq'];
+    if ($serviceGroups->isNotEmpty()) {
+        $nav[] = ['kb-service', 'svc.h'];
+    }
     if (! $searching) {
         $nav[] = ['kb-guide', 'kb.guide.short'];
     }
@@ -102,6 +105,40 @@
                 <p class="pb-empty">{{ ui('kb.none') }}</p>
             @endforelse
         </section>
+
+        {{-- Service list: only jobs staff have published with an amount; hidden while there are none. --}}
+        @if ($serviceGroups->isNotEmpty())
+            <section class="pb-kb-sec" id="kb-service" tabindex="-1">
+                <h2>{{ ui('svc.h') }} <span>{{ $serviceGroups->flatten()->count() }}</span></h2>
+                <p class="pb-muted" style="max-width:70ch">{{ ui('svc.lead') }}</p>
+                @foreach ($serviceGroups as $familyId => $cases)
+                    <div class="pb-faq-topic" wire:key="svc-group-{{ $familyId }}">
+                        <table class="pb-svc">
+                            <caption>{{ $familyId ? $cases->first()->family->tr('name') : ui('svc.all') }}</caption>
+                            <thead>
+                                <tr><th scope="col">{{ ui('svc.col.job') }}</th><th scope="col">{{ ui('svc.col.amount') }}</th></tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($cases as $case)
+                                    <tr id="svc-{{ $case->id }}" wire:key="svc-{{ $case->id }}">
+                                        <th scope="row">
+                                            {{ $case->tr('title') }}
+                                            @if ($case->tr('note') !== '')
+                                                <span class="pb-small pb-muted">{{ $case->tr('note') }}</span>
+                                            @endif
+                                        </th>
+                                        <td class="num">{{ $case->amountLabel() }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @endforeach
+                @if ($servicesUpdated)
+                    <p class="pb-small pb-muted" id="svc-updated" style="margin-top:14px">{{ ui('svc.updated', ['date' => $servicesUpdated->format('d.m.Y')]) }}</p>
+                @endif
+            </section>
+        @endif
 
         @if (! $searching && ($guide->isNotEmpty() || $checks->isNotEmpty()))
             <section class="pb-kb-sec" id="kb-guide" tabindex="-1">

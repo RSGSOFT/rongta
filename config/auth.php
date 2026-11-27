@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\CabinetAccount;
 use App\Models\User;
 
 return [
@@ -42,6 +43,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        // Partner cabinet (dealers and service centres). Separate from staff: it never opens /admin.
+        'cabinet' => [
+            'driver' => 'session',
+            'provider' => 'cabinet_accounts',
+        ],
     ],
 
     /*
@@ -65,6 +72,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', User::class),
+        ],
+
+        'cabinet_accounts' => [
+            'driver' => 'eloquent',
+            'model' => CabinetAccount::class,
         ],
 
         // 'users' => [

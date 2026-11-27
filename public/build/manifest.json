@@ -1,6 +1,6 @@
 {
   "resources/css/admin.css": {
-    "file": "assets/admin-C9blVDQo.css",
+    "file": "assets/admin-eF0s3MJi.css",
     "name": "admin",
     "names": [
       "admin.css"
@@ -9,7 +9,7 @@
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-Cc8zOXln.css",
+    "file": "assets/app-kgX1FYYB.css",
     "name": "app",
     "names": [
       "app.css"
@@ -18,9 +18,15 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-BiJAVrJ-.js",
+    "file": "assets/app-CV2xFca9.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/serial-import.js": {
+    "file": "assets/serial-import-y2pFc4qx.js",
+    "name": "serial-import",
+    "src": "resources/js/serial-import.js",
     "isEntry": true
   }
 }

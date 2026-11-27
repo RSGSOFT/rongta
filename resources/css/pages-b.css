@@ -151,6 +151,31 @@ a.pb-video-frame { color: var(--color-ink); font-weight: 600; text-decoration: n
 a.pb-video-frame:hover { background: var(--accent-soft); }
 .pb-faq-topic { margin-top: 22px; }
 .pb-faq-topic h3 { font-size: 1.25rem; padding-bottom: 8px; border-bottom: 2px solid var(--color-ink); }
+/* Service list: job on the left, amount on the right; the family name is the table caption. */
+.pb-svc { width: 100%; border-collapse: collapse; }
+.pb-svc caption { text-align: left; font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; padding-bottom: 8px; border-bottom: 2px solid var(--color-ink); }
+.pb-svc thead th { font-size: 0.8rem; font-weight: 600; color: var(--color-steel); text-align: left; padding: 8px 0 4px; }
+.pb-svc thead th:last-child, .pb-svc td { text-align: right; }
+.pb-svc tbody th { font-weight: 500; text-align: left; padding: 12px 16px 12px 0; overflow-wrap: anywhere; }
+.pb-svc tbody th span { display: block; font-weight: 400; }
+.pb-svc td { padding: 12px 0; white-space: nowrap; font-weight: 600; vertical-align: top; }
+.pb-svc tbody tr { border-bottom: 1px solid var(--color-line); }
+/* Serial number check */
+.pb-sn { max-width: 640px; }
+.pb-sn-form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.pb-sn-form .pb-field { flex: 1 1 240px; min-width: 0; }
+.pb-sn-form .pb-inp { text-transform: uppercase; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.pb-sn-form .pb-err:empty { display: none; }
+.pb-sn-result { margin-top: 20px; overflow-wrap: anywhere; }
+.pb-wrap .pb-sn-result h2 { font-size: 1.5rem; }
+.pb-wrap .pb-sn-result h3 { font-size: 1.1rem; margin-top: 18px; margin-bottom: 6px; }
+.pb-sn-ok { font-weight: 600; margin-top: 4px; }
+.pb-sn-facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 20px; margin: 16px 0; }
+.pb-sn-facts dt { color: var(--color-steel); }
+.pb-sn-facts dd { margin: 0; font-weight: 600; }
+.pb-sn-state { font-weight: 700; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--color-line); }
+.pb-sn-active { border-color: var(--color-ink); }
+.pb-sn-expired, .pb-sn-none { color: var(--color-steel); }
 details.pb-acc { border-bottom: 1px solid var(--color-line); }
 details.pb-acc > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 14px 0; font-weight: 600; }
 details.pb-acc > summary::-webkit-details-marker { display: none; }
@@ -190,3 +215,25 @@ details.pb-acc > summary:hover { color: var(--accent-ink); }
 .pb-gets b { display: block; }
 .pb-gets span { color: var(--color-steel); font-size: 0.92rem; }
 @media (max-width: 860px) { .pb-p-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- partner cabinet ---------- */
+.pb-check { display: flex; align-items: flex-start; gap: 10px; min-height: 28px; cursor: pointer; }
+.pb-check input { width: 20px; height: 20px; margin-top: 2px; flex: none; accent-color: var(--color-ink); }
+.pb-cab-reg { max-width: 760px; }
+.pb-cab-roles { border: 0; padding: 0; margin: 0; }
+.pb-cab-roles legend { font-size: 0.875rem; font-weight: 600; padding: 0; margin-bottom: 6px; }
+.pb-cab-sec { padding-block: 12px clamp(28px, 5vw, 48px); }
+.pb-wrap .pb-cab-sec > h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin-bottom: 4px; }
+.pb-cab-sec > .pb-muted { margin-bottom: 16px; }
+.pb-cab-search { max-width: 360px; margin-bottom: 14px; }
+.pb-cab-desk { max-width: 760px; }
+.pb-wrap .pb-cab-sub { font-size: 1.15rem; margin: 26px 0 10px; }
+.pb-cab-scroll { overflow-x: auto; }
+.pb-cab-table { width: 100%; border-collapse: collapse; }
+.pb-cab-table thead th { font-size: 0.8rem; font-weight: 600; color: var(--color-steel); text-align: left; padding: 8px 16px 6px 0; border-bottom: 2px solid var(--color-ink); white-space: nowrap; }
+.pb-cab-table tbody th, .pb-cab-table td { text-align: left; padding: 11px 16px 11px 0; vertical-align: top; border-bottom: 1px solid var(--color-line); }
+.pb-cab-table tbody th { font-weight: 600; }
+.pb-cab-table .pb-num { white-space: nowrap; }
+@media (max-width: 640px) {
+    .pb-cab-reg .pb-form { grid-template-columns: minmax(0, 1fr); }
+}

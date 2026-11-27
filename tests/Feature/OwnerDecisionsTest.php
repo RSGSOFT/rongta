@@ -95,7 +95,8 @@ class OwnerDecisionsTest extends TestCase
 
     // 3. Leads and conversations: see Admin\Content\InboxTest and Chatbot\AdminTest.
 
-    // 4. No partner area
+    // 4. The partner area removed on 2026-11-17 stays removed. The partner cabinet the owner asked
+    //    for on 2026-11-25 (self-registration, admin approval) is separate: see SiteB\CabinetTest.
 
     public function test_partner_area_is_gone_and_links_point_at_the_partners_page(): void
     {
@@ -330,7 +331,7 @@ class OwnerDecisionsTest extends TestCase
             $start = strpos($html, '<section class="hero"');
             $hero = substr($html, $start, strpos($html, '</section>', $start) - $start);
             $this->assertStringContainsString('data-readout', $hero);
-            $this->assertStringContainsString('15&nbsp;000</div>', $hero);
+            $this->assertMatchesRegularExpression('#<div class="sum num">\d[\d\x{00A0}]*</div>#u', $hero);
             $this->assertDoesNotMatchRegularExpression("/сум(?!\\p{L})|so[ʻ'’]m|UZS|\\[lbl\\./ui", $hero, $locale);
         }
     }

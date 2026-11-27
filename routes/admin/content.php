@@ -4,11 +4,13 @@ use App\Livewire\Admin\Chooser;
 use App\Livewire\Admin\Cities;
 use App\Livewire\Admin\Faq;
 use App\Livewire\Admin\Guide;
+use App\Livewire\Admin\HeroItems;
 use App\Livewire\Admin\Leads;
 use App\Livewire\Admin\PartnerPoints;
 use App\Livewire\Admin\PartnerRequests;
 use App\Livewire\Admin\Partners;
 use App\Livewire\Admin\Regions;
+use App\Livewire\Admin\ServiceCases;
 use App\Livewire\Admin\Settings;
 use App\Livewire\Admin\Strings;
 use Illuminate\Support\Facades\Route;
@@ -65,6 +67,16 @@ Route::livewire('/guide/checks/{check}/edit', Guide\CheckForm::class)->name('gui
 Route::livewire('/chooser', Chooser\Index::class)->name('chooser.index');
 Route::livewire('/chooser/create', Chooser\Form::class)->name('chooser.create');
 Route::livewire('/chooser/{option}/edit', Chooser\Form::class)->name('chooser.edit');
+
+// Sample products for the home hero scale display and label
+Route::livewire('/hero-items', HeroItems\Index::class)->name('hero-items.index');
+Route::livewire('/hero-items/create', HeroItems\Form::class)->name('hero-items.create');
+Route::livewire('/hero-items/{item}/edit', HeroItems\Form::class)->name('hero-items.edit');
+
+// Service and repair jobs with their amounts (Knowledge base service list)
+Route::livewire('/service-cases', ServiceCases\Index::class)->name('service-cases.index');
+Route::livewire('/service-cases/create', ServiceCases\Form::class)->name('service-cases.create');
+Route::livewire('/service-cases/{case}/edit', ServiceCases\Form::class)->name('service-cases.edit');
 
 // Site settings: admins only.
 Route::middleware('staff:admin')->group(function () {

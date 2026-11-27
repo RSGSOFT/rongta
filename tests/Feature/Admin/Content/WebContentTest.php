@@ -36,7 +36,9 @@ class WebContentTest extends TestCase
         UiString::create(['key' => 'nav.catalog', 'ru' => 'Каталог', 'uz' => '', 'en' => 'Catalog']);
         UiString::create(['key' => 'nav.dealers', 'ru' => 'Дилеры', 'uz' => 'Dilerlar', 'en' => null]);
 
+        // Migrations add interface strings of their own (cabinet, serial check): show them all on one page.
         Livewire::test(Strings\Index::class)
+            ->set('perPage', 500)
             ->assertSee('hero.h1')->assertSee('nav.catalog')->assertSee('Без перевода: 2')
             ->set('search', 'hero.')->assertSee('hero.h1')->assertDontSee('nav.catalog')
             ->set('search', 'doʻkon')->assertSee('hero.h1')->assertDontSee('nav.catalog')

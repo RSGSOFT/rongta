@@ -47,7 +47,7 @@ class SeoFilesTest extends SiteTestCase
         $expected = [];
         $slugs = ScaleModel::published()->pluck('slug')->all();
         foreach (['', '/uz', '/en'] as $prefix) {
-            foreach (['', '/catalog', '/dealers', '/partners', '/knowledge'] as $path) {
+            foreach (['', '/catalog', '/dealers', '/partners', '/knowledge', '/serial'] as $path) {
                 $expected[] = url(($prefix.$path) ?: '/');
             }
             foreach ($slugs as $slug) {

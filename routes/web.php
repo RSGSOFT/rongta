@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SeoController;
+use App\Livewire\Cabinet;
 use App\Livewire\Pages;
 use App\Support\Locales;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,13 @@ $pages = function () {
     Route::livewire('/dealers', Pages\Dealers::class)->name('dealers');
     Route::livewire('/partners', Pages\Partners::class)->name('partners');
     Route::livewire('/knowledge', Pages\Knowledge::class)->name('knowledge');
+    Route::livewire('/serial', Pages\SerialCheck::class)->name('serial');
+
+    // Partner cabinet: dealers and service centres (guard "cabinet", never RSG staff).
+    Route::livewire('/cabinet/login', Cabinet\Login::class)->name('cabinet.login');
+    Route::livewire('/cabinet/register', Cabinet\Register::class)->name('cabinet.register');
+    Route::post('/cabinet/logout', Cabinet\Logout::class)->name('cabinet.logout');
+    Route::livewire('/cabinet', Cabinet\Home::class)->middleware('cabinet')->name('cabinet');
 };
 
 // Files for search engines and AI assistants (one address each, not per language).

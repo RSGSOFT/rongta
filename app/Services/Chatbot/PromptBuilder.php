@@ -63,6 +63,7 @@ class PromptBuilder
             'Dealers (map by region, resellers and software integrators)' => lroute('dealers', [], $locale, false),
             'For partners (the "Become a partner" form for resellers and software integrators)' => lroute('partners', [], $locale, false),
             'Knowledge base (manuals, drivers and PC software, SDK, videos, FAQ, buying guide)' => lroute('knowledge', [], $locale, false),
+            'Serial number check (the visitor types a serial number and sees the model and warranty period)' => lroute('serial', [], $locale, false),
         ];
         $lines = ['# Site pages you may link to'];
         foreach ($pages as $label => $path) {
